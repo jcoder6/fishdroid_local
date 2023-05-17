@@ -1,0 +1,14 @@
+{
+  "name": "fishdroid",
+  "version": "1.0.0",
+  "description": "Fishdroid application",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Jomer Dorego",
+  "license": "ISC",
+  "devDependencies": {
+    "tailwindcss": "^3.3.2"
+  }
+}

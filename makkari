@@ -1,0 +1,55 @@
+#!/usr/bin/env php
+<?php
+
+use Makkar\CLI\Generate;
+
+require_once('Generate.php');
+
+if ($argc > 0) {
+    $command = $argv[1];
+
+    switch ($command) {
+        case 'make':
+            $switch = $argv[2];
+            switch ($switch) {
+                case '-c':
+                    $name = $argv[3];
+
+                    Generate::generateControllerFile($name);
+                    break;
+                case '-m':
+                    $name = $argv[3];
+                    $g = new Generate;
+                    $g->generateModelFile($name, $g->getTableColumns($g->createDatabaseConnection(), $name));
+                    echo "{$name}";
+                    break;
+                default:
+                    echo "usage: php makkari make -c [Controller | -m Model]";
+            }
+            break;
+        case 'serve':
+            $port = $argv[2] ?? '8000';
+            $rootDirectory = '.';
+            echo "Starting PHP built-in server on localhost:{$port}\n";
+            echo "Serving files from: {$rootDirectory}\n";
+
+            exec("php -S localhost:{$port} -t {$rootDirectory}");
+            break;
+        case 'help' || '?':
+            echo "
+            \n 
+            makkari <command>
+
+            Usage:
+
+            make -c                  Create a new controller with given name.
+            make -m                  Create a new model with the given name.
+            serve <port>{Optional}   Serve the application on the sepcified port.
+            help                     Display this help message              
+            ";
+        default:
+            echo "Invalid Command";
+    }
+} else {
+    echo "Invalid Command try running this command 'php makkari help'.";
+}
