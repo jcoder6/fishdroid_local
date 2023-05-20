@@ -9,7 +9,12 @@
 <body class="w-screen h-screen">
    <div class="flex relative">
       <div class="login-container w-3/5 flex flex-col">
-         <div class="logo m-3 ml-5 text-blue-700 text-2xl font-bold">FishDroid</div>
+         <div class="logo flex items-center">
+            <div class="logo-container w-14 relative h-14 overflow-hidden">
+               <img class="absoulute inset-0 h-[100%] w-[100%]" src="./public/assets/images/logo-fishdroid.webp" alt="Fishdroid Logo">
+            </div>
+            <span class="text-blue-700 text-2xl font-bold mb-2 ml-[-.5rem]">FishDroid</span>
+         </div>
          <div class="form-container self-center mt-16 w-1/2 p-10 border border-gray-400 rounded-md drop-shadow">
             <h1 class="text-3xl font-bold">Welcome to FishDroid</h1>
             <h2 class="text-sm text-gray-400 mb-3">Welcome! Please enter your credentials.</h2>
