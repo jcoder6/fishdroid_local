@@ -1,7 +1,8 @@
-<?php include '../partials/header.php' ?>
-<?php include '../partials/sidebar.php' ?>
+<?php include PAGES_PATH . '/partials/header.php' ?>
+<?php include PAGES_PATH . '/partials/sidebar.php' ?>
+
 <div class="admin-feature-container w-full h-screen overflow-auto px-3">
-      <?php include '../partials/body-header.php' ?>
+      <?php include PAGES_PATH . '/partials/body-header.php' ?>
       <div class="contents-container w-[95%] mt-[-60px] bg-slate-100 mx-auto rounded-lg">
          <h4 class="text-xl font-bold text-blue-700 p-3">Manage Fish</h4>
          <div class="manage-header bg-slate-300 flex justify-between items-center px-4 py-2">
@@ -22,7 +23,7 @@
             <div class="text-gray-800 flex justify-center items-center font-semibold text-center img w-[25%]">Cirrhinus molitorella</div>
             <div class="text-gray-800 flex justify-center items-center font-semibold text-center img w-[25%] p-1">
                <div class="fish-image-container w-[80%] h-[100px] overflow-hidden relative">
-                  <img src="../src/images/mud-carp.PNG" class="absolute h-[100%] w-[100%] inset-0" alt="Mud Carp">
+                  <img src="./public/assets/images/mud-carp.PNG" class="absolute h-[100%] w-[100%] inset-0" alt="Mud Carp">
                </div>
             </div>
             <div class="text-blue-700 flex justify-center gap-3 items-center font-semibold text-center action w-[20%]">
@@ -37,7 +38,7 @@
             <div class="text-gray-800 flex justify-center items-center font-semibold text-center img w-[25%]">Neoglyphidodon nigroris</div>
             <div class="text-gray-800 flex justify-center items-center font-semibold text-center img w-[25%] p-1">
                <div class="fish-image-container w-[80%] h-[100px] overflow-hidden relative">
-                  <img src="../src/images/chromis.PNG" class="absolute h-[100%] w-[100%] inset-0" alt="Mud Carp">
+                  <img src="./public/assets/images/chromis.PNG" class="absolute h-[100%] w-[100%] inset-0" alt="Mud Carp">
                </div>
             </div>
             <div class="text-blue-700 flex justify-center gap-3 items-center font-semibold text-center action w-[20%]">
@@ -52,7 +53,7 @@
             <div class="text-gray-800 flex justify-center items-center font-semibold text-center img w-[25%]">Cynoscion regalis</div>
             <div class="text-gray-800 flex justify-center items-center font-semibold text-center img w-[25%] p-1">
                <div class="fish-image-container w-[80%] h-[100px] overflow-hidden relative">
-                  <img src="../src/images/weakfish.PNG" class="absolute h-[100%] w-[100%] inset-0" alt="Mud Carp">
+                  <img src="./public/assets/images/weakfish.PNG" class="absolute h-[100%] w-[100%] inset-0" alt="Mud Carp">
                </div>
             </div>
             <div class="text-blue-700 flex justify-center gap-3 items-center font-semibold text-center action w-[20%]">
@@ -67,7 +68,7 @@
             <div class="text-gray-800 flex justify-center items-center font-semibold text-center img w-[25%]">Tilapia sparrmanii</div>
             <div class="text-gray-800 flex justify-center items-center font-semibold text-center img w-[25%] p-1">
                <div class="fish-image-container w-[80%] h-[100px] overflow-hidden relative">
-                  <img src="../src/images/btilapia.PNG" class="absolute h-[100%] w-[100%] inset-0" alt="Mud Carp">
+                  <img src="./public/assets/images/btilapia.PNG" class="absolute h-[100%] w-[100%] inset-0" alt="Mud Carp">
                </div>
             </div>
             <div class="text-blue-700 flex justify-center gap-3 items-center font-semibold text-center action w-[20%]">
@@ -82,7 +83,7 @@
             <div class="text-gray-800 flex justify-center items-center font-semibold text-center img w-[25%]">Belontia hasselti</div>
             <div class="text-gray-800 flex justify-center items-center font-semibold text-center img w-[25%] p-1">
                <div class="fish-image-container w-[80%] h-[100px] overflow-hidden relative">
-                  <img src="../src/images/combtail.PNG" class="absolute h-[100%] w-[100%] inset-0" alt="Mud Carp">
+                  <img src="./public/assets/images/combtail.PNG" class="absolute h-[100%] w-[100%] inset-0" alt="Mud Carp">
                </div>
             </div>
             <div class="text-blue-700 flex justify-center gap-3 items-center font-semibold text-center action w-[20%]">
@@ -94,4 +95,4 @@
          
       </div>
    </div>
-<?php include '../partials/footer.php' ?>
+<?php include PAGES_PATH . '/partials/footer.php' ?>

@@ -17,7 +17,9 @@ $m = ucfirst($page[2] ?? "");
 
 
 require_once("./Controller/App.php"); // Default
-require_once("./Controller/Roles.php"); // Default
+// require_once("./Controller/Roles.php"); // Defaul
+require_once("./Controller/Dashboard.php");
+require_once("./Controller/Fish.php");
 
 
 Route::contentToRender();

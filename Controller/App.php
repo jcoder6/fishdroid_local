@@ -14,8 +14,8 @@ class App extends Controller
 
     public static function index()
     {
-        $view = new View(PAGES_PATH . "/home");
-        $view->render("welcome");
+        $view = new View(PAGES_PATH);
+        $view->render("login");
     }
     public static function out()
     {
