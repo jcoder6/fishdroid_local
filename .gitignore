@@ -1,1 +1,3 @@
 node_modules
+
+npx tailwindcss -i ./public/assets/style/input.css -o ./public/assets/style/output.css --watch
