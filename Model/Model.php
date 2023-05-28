@@ -46,7 +46,7 @@ class Model
     public function all($table)
     {
         $stmt = $this->executeQuery("SELECT * FROM $table");
-        return $stmt->fetchAll(\PDO::FETCH_ASSOC);
+        return $stmt->fetchAll(\PDO::FETCH_OBJ);
     }
     public function delete($table, $id)
     {

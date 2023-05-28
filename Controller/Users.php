@@ -3,14 +3,24 @@
 namespace Makkari\Controllers;
 
 use Makkari\Controllers\Controller;
+use Makkari\Models\User;
 
-class User extends Controller
+require_once "./Model/User.php";
+
+class Users extends Controller
 {
     public static function index()
     {
         // Your code here
         $view = new View(PAGES_PATH . "/user");
-        $view->render("manage-user");
+
+        $users = User::getAll();
+
+        $data = array(
+            'users' => $users
+        );
+
+        $view->render("manage-user", $data);
     }
     public static function create()
     {
