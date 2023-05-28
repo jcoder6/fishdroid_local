@@ -13,7 +13,7 @@ class Dashboard extends Controller
     }
     public static function create()
     {
-        // Your code here
+        echo 'creted';
     }
     public static function edit()
     {
