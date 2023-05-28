@@ -17,10 +17,11 @@ class App extends Controller
         $view = new View(PAGES_PATH);
         $view->render("login");
     }
+
     public static function out()
     {
         session_destroy();
-        header("Location: /login");
+        header("Location: /");
     }
 
     public static function activateLink($current, $page)

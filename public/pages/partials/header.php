@@ -9,3 +9,9 @@
    <title>Index</title>
 </head>
 <body class="flex overflow-hidden">
+
+<?php
+   if(!isset($_SESSION['user-logged'])){
+      header('Location: ' . ROOT_URL);
+   }
+?>
