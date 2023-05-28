@@ -17,10 +17,10 @@ $m = ucfirst($page[2] ?? "");
 
 
 require_once("./Controller/App.php"); // Default
-// require_once("./Controller/Roles.php"); // Defaul
+require_once("./Controller/Roles.php"); // Defaul
 require_once("./Controller/Dashboard.php");
 require_once("./Controller/Fish.php");
-require_once("./Controller/user.php");
+require_once("./Controller/Users.php");
 require_once("./Controller/jokes.php");
 require_once("./Controller/quiz.php");
 require_once("./Controller/term.php");
