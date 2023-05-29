@@ -63,6 +63,7 @@ function login() {
                $user = mysqli_fetch_array($result);
                $_SESSION['user-logged'] = $user['id'];
                $_SESSION['fullname'] = $user['fullname'];
+               $_SESSION['img'] = $user['img'];
                header('location: /dashboard');
                echo 'success';
             } else {
