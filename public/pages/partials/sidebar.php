@@ -2,7 +2,7 @@
 
    <div class="logo flex items-center border-b-4 border-blue-700 pt-2 shadow-md">
       <div class="logo-container w-12 relative h-12 overflow-hidden"> 
-         <img class="absoulute inset-0 h-[100%] w-[100%]" src="./public/assets/images/logo-fishdroid.webp" alt="Fishdroid Logo">
+         <img class="absoulute inset-0 h-[100%] w-[100%]" src="<?= ROOT_URL ?>/public/assets/images/logo-fishdroid.webp" alt="Fishdroid Logo">
       </div>
       <span class="text-blue-700 text-xl font-bold mb-2">FishDroid</span>
    </div>
