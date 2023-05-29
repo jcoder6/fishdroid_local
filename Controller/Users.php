@@ -22,9 +22,12 @@ class Users extends Controller
 
         $view->render("manage-user", $data);
     }
+
     public static function create()
     {
         // Your code here
+        $view = new View(PAGES_PATH . '/user');
+        $view->render('add-user');
     }
     public static function edit()
     {

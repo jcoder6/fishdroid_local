@@ -1,6 +1,5 @@
 <?php include PAGES_PATH . '/partials/header.php' ?>
 <?php include PAGES_PATH . '/partials/sidebar.php' ?>
-
 <div class="admin-feature-container w-full h-screen overflow-auto px-3">
       <?php include PAGES_PATH . '/partials/body-header.php' ?>
 
@@ -8,7 +7,7 @@
          <h4 class="text-xl font-bold text-blue-700 p-3">Manage User</h4>
          <div class="manage-header bg-slate-300 flex justify-between items-center px-4 py-2">
             <p class="manage-header-title font-bold text-blue-700 text-lg">User List</p>
-            <a href="/users/create" class="bg-blue-700 rounded-md font-semibold text-white px-5 py-1 hover:bg-white transition-all hover:text-blue-700"><i class="fa-solid fa-plus pr-2"></i>Add User</a>
+            <button class="bg-blue-700 rounded-md font-semibold text-white px-5 py-1 hover:bg-white transition-all hover:text-blue-700"><i class="fa-solid fa-plus pr-2"></i>Add User</button>
          </div>
          <div class=" bg-blue-700 flex px-5 py-1 border ">
             <div class="text-white font-semibold no w-[9%]">No</div>
@@ -34,5 +33,4 @@
       </div>
       
 </div>
-
 <?php include PAGES_PATH . '/partials/footer.php' ?>
