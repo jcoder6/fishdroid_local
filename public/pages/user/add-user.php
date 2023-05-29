@@ -4,32 +4,53 @@
       <?php include PAGES_PATH . '/partials/body-header.php' ?>
 
       <div class="contents-container w-[95%] mt-[-60px] bg-slate-100 mx-auto rounded-lg min-h-[90vh]">
-         <h4 class="text-xl font-bold text-blue-700 p-3">Manage User</h4>
-         <div class="manage-header bg-slate-300 flex justify-between items-center px-4 py-2">
-            <p class="manage-header-title font-bold text-blue-700 text-lg">User List</p>
-            <button class="bg-blue-700 rounded-md font-semibold text-white px-5 py-1 hover:bg-white transition-all hover:text-blue-700"><i class="fa-solid fa-plus pr-2"></i>Add User</button>
-         </div>
-         <div class=" bg-blue-700 flex px-5 py-1 border ">
-            <div class="text-white font-semibold no w-[9%]">No</div>
-            <div class="text-white font-semibold fish-name w-[33%]">Name</div>
-            <div class="text-white font-semibold img w-[33%]">Email</div>
-            <div class="text-white font-semibold action w-[25%]">Action</div>
-         </div>
-         <?php 
-            $i = 0;
-            foreach($users as $user) :
-            $i++;
-         ?>
-         <div class="fish-table border-b border-b-gray-400 bg-slate-100 flex px-5 py-1">
-            <div class="text-gray-800 flex items-center font-semibold no w-[9%]"><?= $i ?></div>
-            <div class="text-gray-800 flex items-center font-semibold fish-name w-[33%]"><?= $user->getFullname() ?></div>
-            <div class="text-gray-800 flex items-center font-semibold img w-[33%]"><?= $user->getEmail() ?></div>
-            <div class="text-blue-700 flex gap-3 items-center font-semibold text-center action w-[20%]">
-               <button class="py-1 px-4 bg-slate-300 rounded-sm text-green-500 hover:bg-green-500 hover:text-white transition-all"><i class="fa-solid fa-pencil pr-3"></i>Edit</button>
-               <button class="py-1 px-4 bg-slate-300 rounded-sm text-red-500 hover:bg-red-500 hover:text-white transition-all"><i class="fa-solid fa-trash pr-3"></i>Delete</button>
+      <h4 class="text-xl font-bold text-blue-700 p-3">Add User</h4>
+         <form class="upload-form text-center" action="" method="post" enctype="multipart/form-data">
+            <div class="flex flex-col-reverse justify-center items-center p-4">
+               <div class="image-label flex items-center gap-3">
+                  <span class=" text-gray-500 ">Insert user image: </span>
+                  <label for="eventPhoto" class="bg-blue-700 font-semibold border border-blue-700 cursor-pointer text-white py-1 px-4 rounded-md hover:text-blue-700 hover:bg-white transition-all"><i class="fa-solid fa-upload mr-3  "></i>Upload Photo</label>
+                  </div>
+               <input type="file" name="event_photo" id="eventPhoto" class="hidden" onChange="((e)=>{
+                  file = e.target.files.item(0);
+                  var fr = new FileReader;
+                  fr.onloadend =(imgsrc)=>{
+                     imgsrc = imgsrc.target.result; // file reader
+                  var img = document.createElement('img');
+                     img.src =imgsrc;
+                  this.nextSibling.nextSibling.innerHTML='';
+                  this.nextSibling.nextSibling.appendChild(img);
+                  };
+                  fr.readAsDataURL(file);
+                  })(event)">
+               <div id="inputPhoto" class="relative h-44 w-44 border mb-5 border-slate-400 overflow-hidden text-slate-400 rounded-full flex justify-center items-center">No Image Choose</div>
             </div>
-         </div>
-         <?php endforeach; ?>
+
+            <div class="flex justify-center gap-5 p-3">
+               <div class="fullname w-[40%]">
+                  <label for="fullname" class="block text-left mb-2 text-sm font-medium text-gray-900 dark:text-white">Fullname</label>
+                  <input type="text" name="fullname" id="fullname" placeholder="Enter your fullname" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 mb-3">
+               </div>
+               <div class="email w-[40%]">
+               <label for="email" class="block text-left mb-2 text-sm font-medium text-gray-900 dark:text-white">Email</label>
+                  <input type="email" name="email" id="email" placeholder="Enter your email" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 mb-3">
+               </div>
+            </div>
+
+            <div class="flex justify-center gap-5 p-3">
+               <div class="username w-[40%]">
+                  <label for="username" class="block text-left mb-2 text-sm font-medium text-gray-900 dark:text-white">Username</label>
+                  <input type="text" name="username" id="username" placeholder="Enter your username" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 mb-3">
+               </div>
+               <div class="password w-[40%]">
+               <label for="password" class="block text-left mb-2 text-sm font-medium text-gray-900 dark:text-white">Password</label>
+                  <input type="password" name="password" id="password" placeholder="Enter your password" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 mb-3">
+               </div>
+            </div>
+            
+            <input type="submit" value="Add new user" class="border border-blue-700 bg-blue-700 transition-all font-semibold text-white py-1 rounded-md w-[80%] cursor-pointer hover:bg-white hover:text-blue-700">
+         </form>
+            
       </div>
       
 </div>
