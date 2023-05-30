@@ -113,6 +113,7 @@ class Users extends Controller
                     $sourcePath = $_FILES['user_photo']['tmp_name'];  
                     $destinationPath = './public/assets/images/user_images/' . $imgNewName; 
                     $imgPath = './public/assets/images/user_images/' . $currentImg;
+                    $_SESSION['img'] = $imgNewName;
                     self::deleteCurrentImg($currentImg, $imgPath);
                     self::uploadImageDirectory($sourcePath, $destinationPath);
                 }
@@ -124,10 +125,26 @@ class Users extends Controller
         }
     }
     
-    public static function confirm(){
+    public static function confirm($id){
         // Your code goes here
+        $view = new View(PAGES_PATH . '/user');
+        $user = User::getById($id);
+
+        $data = array(
+            'user' => $user
+        );
+
+        $view->render("delete-user", $data);
     }
-    public static function delete(){
-        echo 'delete';
+
+    public static function delete($id){
+        $user = User::getById($id);
+        if($user->remove()){
+            self::messageNotif('error', 'User Deleted');
+            header('location: /users');
+        } else {
+            self::messageNotif('error', 'Something went wrong');
+            header('location: /users');
+        }
     }
 }
