@@ -120,18 +120,24 @@ class User extends Model
     public static function getById($value){
         $m = new Model;
         $data = NULL;
-        $r = $m->getOne('users','id', $value);
-        if($r){
-            
-            $data = new User(...$r);
-            
+        $v = $m->getOne('users','id', $value);
+        if($v){
+            $data = new User(
+                $v->id, 
+                $v->fullname, 
+                $v->username, 
+                $v->email, 
+                $v->password, 
+                $v->img,
+                $v->created_at
+            );   
         }
         return $data;
     }
 
     public function save(){
         if($this->id){
-            $query = 'UPDATE users SET id=:id,fullname=:fullname,username=:username,email=:email,password=:password,img=:img,created_at=:created_at';
+            $query = 'UPDATE users SET fullname=:fullname,username=:username,email=:email,password=:password,img=:img,created_at=:created_at WHERE  id=:id';
             $params = array(':id'=>$this->id,':fullname'=>$this->fullname,':username'=>$this->username,':email'=>$this->email,':password'=>$this->password,':img'=>$this->img,':created_at'=>$this->created_at);
             $result = $this->executeQuery($query,$params);
             return $result;

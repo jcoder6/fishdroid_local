@@ -41,7 +41,7 @@ class Model
     public function getOne($table, $field, $id)
     {
         $stmt = $this->executeQuery("SELECT * FROM $table WHERE $field=:id", array(':id' => $id));
-        return $stmt->fetch(\PDO::FETCH_ASSOC);
+        return $stmt->fetch(\PDO::FETCH_OBJ);
     }
     public function all($table)
     {

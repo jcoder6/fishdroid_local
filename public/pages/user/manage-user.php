@@ -26,8 +26,8 @@
             <div class="text-gray-800 flex items-center font-semibold fish-name w-[33%]"><?= $user->getFullname() ?></div>
             <div class="text-gray-800 flex items-center font-semibold img w-[33%]"><?= $user->getEmail() ?></div>
             <div class="text-blue-700 flex gap-3 items-center font-semibold text-center action w-[20%]">
-               <button class="py-1 px-4 bg-slate-300 rounded-sm text-green-500 hover:bg-green-500 hover:text-white transition-all"><i class="fa-solid fa-pencil pr-3"></i>Edit</button>
-               <button class="py-1 px-4 bg-slate-300 rounded-sm text-red-500 hover:bg-red-500 hover:text-white transition-all"><i class="fa-solid fa-trash pr-3"></i>Delete</button>
+               <a href="/users/edit/<?= $user->getId() ?>" class="py-1 px-4 bg-slate-300 rounded-sm text-green-500 hover:bg-green-500 hover:text-white transition-all"><i class="fa-solid fa-pencil pr-3"></i>Edit</a>
+               <a href="/users/delete/<?= $user->getId() ?>" class="py-1 px-4 bg-slate-300 rounded-sm text-red-500 hover:bg-red-500 hover:text-white transition-all"><i class="fa-solid fa-trash pr-3"></i>Delete</a>
             </div>
          </div>
          <?php endforeach; ?>

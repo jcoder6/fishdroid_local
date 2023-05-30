@@ -82,18 +82,11 @@ class Controller
         $isImg = $imgName != 'Image is not currently available' && $imgName != '';
         if ($isImg) {
           if (file_exists($imgPath)) {
-            echo 'img-deleted';
             unlink($imgPath);
+            echo 'img-deleted';
           } else {
             echo 'file does not exist';
           }
-        }
-      }
-      
-      public static function uploadNewImage($sourcePath, $destinationPath, $pdo, $query, $data) {
-        if(move_uploaded_file($sourcePath, $destinationPath)) {
-          $stmt = $pdo->prepare($query);
-          $stmt->execute($data);
         }
       }
 
@@ -111,6 +104,7 @@ class Controller
             return 'file uploaded';
         }
       }
+      
 
       function messageNotif($messagetype, $message) {
         $_SESSION['msg'] = '<div class="message fixed z-10 right-5 p-4 rounded-lg text-white font-semibold shadow-md text-md transition-all min-w-[25vw] text-center opacity-0 translate-x-[120%] top-5" data-messageType=' . $messagetype . '>' . $message . '</div>';
