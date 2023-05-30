@@ -44,7 +44,8 @@ class Users extends Controller
                 self::uploadImageDirectory($sourcePath, $destinationPath);
             } else {
                 self::messageNotif('error', 'Please insert image');
-                self::showMessage();
+                header('location: /users/create');
+                die();
             }
             $date = date('Y-m-d H:i:s');
             $data = array(
@@ -59,6 +60,7 @@ class Users extends Controller
             $user = new User(NULL, ...$data);
 
             if($user->save()){
+                self::messageNotif('success', 'User added successfuly');
                 header('location: /users');
             } else {
                 echo 'failed';

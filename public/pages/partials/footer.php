@@ -15,16 +15,19 @@
       if (msgType == 'success') {
         msg.style.color = '#3d3d3d';
         msg.style.backgroundColor = '#96FE8A';
-        msg.classList.add('message-active');
+        msg.style.opacity = 1;
+        msg.style.transform = 'translate(0)';
       }
 
       if (msgType == 'error') {
         msg.style.backgroundColor = '#F96F6F';
-        msg.classList.add('message-active');
+        msg.style.opacity = 1;
+        msg.style.transform = 'translate(0)';
       }
 
       setTimeout(() => {
-        msg.classList.remove('message-active');
+        msg.style.opacity = 0;
+        msg.style.transform = 'translate(120%)';
       }, 2000);
     })
   } catch (e) {

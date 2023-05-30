@@ -11,7 +11,7 @@
                   <span class=" text-gray-500 ">Insert user image: </span>
                   <label for="eventPhoto" class="bg-blue-700 font-semibold border border-blue-700 cursor-pointer text-white py-1 px-4 rounded-md hover:text-blue-700 hover:bg-white transition-all"><i class="fa-solid fa-upload mr-3  "></i>Upload Photo</label>
                   </div>
-               <input type="file" name="user_photo" id="eventPhoto" class="hidden" onChange="previewChoosenImage(event)" required>
+               <input type="file" name="user_photo" id="eventPhoto" class="hidden" onChange="previewChoosenImage(event)">
                <div id="inputPhoto" class="relative h-44 w-44 border mb-5 border-slate-400 overflow-hidden text-slate-400 rounded-full flex justify-center items-center">No Image Choose</div>
                <input type="hidden" name="default_img" value="default yern">
             </div>
