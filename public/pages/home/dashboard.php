@@ -20,7 +20,7 @@
                <i class="fa-solid fa-users mr-3 text-9xl ml-[-30px] text-white"></i>
                <div class="data-fetched">
                   <p class="text-5xl font-bold text-white">4</p>
-                  <p class="text-2xl font-bold text-white">Fish</p>
+                  <p class="text-2xl font-bold text-white">User</p>
                </div>
             </div>
 
@@ -28,7 +28,7 @@
                <i class="fa-solid fa-lightbulb mr-3 text-9xl ml-[-30px] text-white"></i>
                <div class="data-fetched">
                   <p class="text-5xl font-bold text-white">42</p>
-                  <p class="text-2xl font-bold text-white">Fish</p>
+                  <p class="text-2xl font-bold text-white">Fun Facts</p>
                </div>
             </div>
 
@@ -36,7 +36,7 @@
                <i class="fa-solid fa-pen-square mr-3 text-9xl ml-[-30px] text-white"></i>
                <div class="data-fetched">
                   <p class="text-5xl font-bold text-white">20</p>
-                  <p class="text-2xl font-bold text-white">Fish</p>
+                  <p class="text-2xl font-bold text-white">Quizzes</p>
                </div>
             </div>
 

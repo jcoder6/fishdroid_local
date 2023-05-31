@@ -3,6 +3,6 @@
       <div class="user-img-container w-7 h-7 relative bg-black rounded-full overflow-hidden">
          <img class="absolute h-full w-full inset-0" src="./public/assets/images/userprofile.PNG" alt="User profile">
       </div>
-      <a href="#" class="userfullname text-white font-semibold text-sm ml-2">John Paul Vicente</a>
+      <a href="#" class="userfullname text-white font-semibold text-sm ml-2">Admin</a>
    </div>
 </header>
