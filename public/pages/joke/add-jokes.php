@@ -12,7 +12,6 @@
                   <label for="fullname" class="block text-left mb-2 text-sm font-medium text-gray-900 dark:text-white">Question</label>
                   <input type="text" name="fullname" id="fullname" placeholder="Enter fish jokes" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 mb-3">
                </div>
-              
             </div>
 
             <div class="flex justify-between py-3 px-10">
@@ -20,7 +19,6 @@
                   <label for="username" class="block text-left mb-2 text-sm font-medium text-gray-900 dark:text-white">Answer</label>
                   <input type="text" name="username" id="username" placeholder="Enter Answer" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 mb-3">
                </div>
-              
             </div>
 
             <div class="ml-10 mt-6">
@@ -28,8 +26,11 @@
                   <span class="font-semibold text-gray-900 ">Insert joke image: </span>
                   <label for="eventPhoto" class="bg-blue-700 font-semibold border border-blue-700 cursor-pointer text-white py-1 px-4 rounded-md hover:text-blue-700 hover:bg-white transition-all"><i class="fa-solid fa-upload mr-3  "></i>Upload Photo</label>
                 </div>
+
                <input type="file" name="user_photo" id="eventPhoto" class="hidden" onChange="previewChoosenImage(event)">
-               <div id="inputPhoto" class="relative h-52 w-96 border mb-5 bg-white border-slate-400 overflow-hidden rounded-md text-slate-400 flex justify-center items-center mt-6">No Image Choose</div>
+               <div id="inputPhoto" class="relative h-52 w-96 border mb-5 bg-white border-slate-400 overflow-hidden rounded-md text-slate-400 flex justify-center items-center mt-6">
+                  No Image Choose
+               </div>
                <input type="hidden" name="default_img" value="default yern">
             </div>
             

@@ -7,9 +7,9 @@
          <h4 class="text-xl font-bold text-blue-700 p-3">Manage Fish</h4>
          <div class="manage-header bg-slate-300 flex justify-between items-center px-4 py-2">
             <p class="manage-header-title font-bold text-blue-700 text-lg">Fish List</p>
-            <a href="/fish/create" class="bg-blue-700 rounded-md font-semibold text-white px-5 py-1 hover:bg-white transition-all hover:text-blue-700"><i class="fa-solid fa-plus pr-2"></i>Add Fish</a>
+            <a href="/fish/create" class="bg-white hover:bg-gradient-to-r from-blue-500 to-cyan-500 rounded-md font-semibold hover:text-white px-5 py-1 transition-all text-blue-700"><i class="fa-solid fa-plus pr-2"></i>Add Fish</a>
          </div>
-         <div class="fish-table bg-blue-700 flex px-5 py-1 border ">
+         <div class="bg-gradient-to-r from-blue-500 to-cyan-500 flex px-5 py-1">
             <div class="text-white font-semibold text-center no w-[5%]">No</div>
             <div class="text-white font-semibold text-center fish-name w-[25%]">Fish Name</div>
             <div class="text-white font-semibold text-center img w-[25%]">Scientific Name</div>
