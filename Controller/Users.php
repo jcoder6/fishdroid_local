@@ -139,7 +139,10 @@ class Users extends Controller
 
     public static function delete($id){
         $user = User::getById($id);
+        $currentImg = $user->getImg();
         if($user->remove()){
+            $imgPath = './public/assets/images/user_images/' . $currentImg;
+            self::deleteCurrentImg($currentImg, $imgPath);
             self::messageNotif('error', 'User Deleted');
             header('location: /users');
         } else {
