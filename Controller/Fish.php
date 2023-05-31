@@ -13,7 +13,8 @@ class Fish extends Controller
     }
     public static function create()
     {
-        // Your code here
+        $view = new View(PAGES_PATH . "/fish");
+        $view->render("add-fish");
     }
     public static function edit()
     {

@@ -15,6 +15,8 @@ class Quiz extends Controller
     public static function create()
     {
         // Your code here
+        $view = new View(PAGES_PATH . "/quiz");
+        $view->render('add-quiz');
     }
     public static function edit()
     {

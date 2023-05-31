@@ -14,7 +14,8 @@ class Term extends Controller
     }
     public static function create()
     {
-        // Your code here
+        $view = new View(PAGES_PATH . "/term");
+        $view->render("add-terms");
     }
     public static function edit()
     {

@@ -106,7 +106,7 @@ class Controller
       }
       
 
-      function messageNotif($messagetype, $message) {
+      public static function messageNotif($messagetype, $message) {
         $_SESSION['msg'] = '<div class="message fixed z-10 right-5 p-4 rounded-lg text-white font-semibold shadow-md text-md transition-all min-w-[25vw] text-center opacity-0 translate-x-[120%] top-5" data-messageType=' . $messagetype . '>' . $message . '</div>';
       }
 

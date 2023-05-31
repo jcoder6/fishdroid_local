@@ -14,8 +14,9 @@ class Jokes extends Controller
     }
     public static function create()
     {
-        // Your code here
-    }
+        $view = new View(PAGES_PATH . "/joke");
+        $view->render("add-jokes");
+   }
     public static function edit()
     {
         // Your edit code goes here

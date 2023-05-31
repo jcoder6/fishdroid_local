@@ -8,7 +8,7 @@
          <h4 class="text-xl font-bold text-blue-700 p-3">Manage Quiz</h4>
          <div class="manage-header bg-slate-300 flex justify-between items-center px-4 py-2">
             <p class="manage-header-title font-bold text-blue-700 text-lg">Quiz List</p>
-            <button class="bg-blue-700 rounded-md font-semibold text-white px-5 py-1 hover:bg-white transition-all hover:text-blue-700"><i class="fa-solid fa-plus pr-2"></i>Add Quiz</button>
+            <a href="/quiz/create" class="bg-blue-700 rounded-md font-semibold text-white px-5 py-1 hover:bg-white transition-all hover:text-blue-700"><i class="fa-solid fa-plus pr-2"></i>Add Quiz</a>
          </div>
          <div class=" bg-blue-700 flex px-5 py-1 border ">
             <div class="text-white font-semibold no w-[9%]">No</div>

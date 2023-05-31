@@ -113,7 +113,7 @@ class Users extends Controller
                     $sourcePath = $_FILES['user_photo']['tmp_name'];  
                     $destinationPath = './public/assets/images/user_images/' . $imgNewName; 
                     $imgPath = './public/assets/images/user_images/' . $currentImg;
-                    $_SESSION['img'] = $imgNewName;
+                    $_SESSION['img'] = ($_SESSION['user-logged'] == $id) ? $imgNewName : $_SESSION['img'];
                     self::deleteCurrentImg($currentImg, $imgPath);
                     self::uploadImageDirectory($sourcePath, $destinationPath);
                 }
