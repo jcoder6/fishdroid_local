@@ -71,7 +71,11 @@ class Term extends Model
         $r = $m->getOne('terms','id', $value);
         if($r){
             
-            $data = new Term(...$r);
+            $data = new Term(
+                $r->id, 
+                $r->tech_term,
+                $r->tech_desc
+            );
             
         }
         return $data;
@@ -79,7 +83,7 @@ class Term extends Model
 
     public function save(){
         if($this->id){
-            $query = 'UPDATE terms SET id=:id,tech_term=:tech_term,tech_desc=:tech_desc';
+            $query = 'UPDATE terms SET tech_term=:tech_term,tech_desc=:tech_desc WHERE id=:id';
             $params = array(':id'=>$this->id,':tech_term'=>$this->tech_term,':tech_desc'=>$this->tech_desc);
             $result = $this->executeQuery($query,$params);
             return $result;
