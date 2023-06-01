@@ -82,10 +82,6 @@ class Users extends Controller
     public static function update($id) {
         // your code goes here
         if($_SERVER['REQUEST_METHOD'] === 'POST'){
-            // $imgNewName = self::clean($_POST['default_img']);
-            // if(!empty($_FILES['user_photo']['name'])){
-            //     $imgNewName = self::renameImg($_FILES['user_photo']['name'], 'USER_IMG');
-            // }
 
             $imgNewName = (!empty($_FILES['user_photo']['name'])) ? self::renameImg($_FILES['user_photo']['name'], 'USER_IMG') : self::clean($_POST['default_img']);
 

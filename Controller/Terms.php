@@ -83,10 +83,26 @@ class Terms extends Controller
         }
     }
     
-    public static function confirm(){
-        // Your code goes here
+    public static function confirm($id){
+        $view = new View(PAGES_PATH . "/term");
+
+        $terms = Term::getAll();
+
+        $data = array(
+            'id' => $id,    
+            'terms' => $terms
+        ); 
+
+        $view->render("delete-term", $data);
     }
-    public static function delete(){
-        //your delete code goes here
+    public static function delete($id){
+        $term = Term::getById($id);
+        if($term->remove()){
+            self::messageNotif('error', 'Term Deleted');
+            header('location: /terms');
+        } else {
+            self::messageNotif('error', 'Something went wrong, please try again');
+            header('location: /terms'); 
+        }
     }
 }
