@@ -14,10 +14,22 @@
             <div class="text-white font-semibold w-[5%]">No</div>
             <div class="text-white font-semibold w-[20%]">Term</div>   
             <div class="text-white font-semibold w-[55%]">Description</div>
-            <div class="text-white font-semibold w-[20%]">Action</div>
+            <div class="text-white font-semibold w-[20%] ml-6">Action</div>
          </div>
 
+         <?php $num = 0; foreach($terms as $term) : $num++?>
          <div class="fish-table border-b border-b-gray-400 bg-slate-100 flex px-5 py-1">
+            <div class="text-gray-800 flex items-center font-semibold w-[5%]"><?=$num?></div>
+            <div class="text-gray-800 flex items-center font-semibold w-[20%]"><?=$term->getTech_term()?></div>
+            <div class="text-gray-800 flex items-center font-semibold w-[55%] truncate pr-8"><?=$term->getTech_desc()?></div>
+            <div class="text-blue-700 flex gap-3 items-center font-semibold text-center action w-[20%] ml-6">
+               <button class="py-1 px-4 bg-slate-300 rounded-sm text-green-500 hover:bg-green-500 hover:text-white transition-all"><i class="fa-solid fa-pencil pr-3"></i>Edit</button>
+               <button class="py-1 px-4 bg-slate-300 rounded-sm text-red-500 hover:bg-red-500 hover:text-white transition-all"><i class="fa-solid fa-trash pr-3"></i>Delete</button>
+            </div>
+         </div>
+         <?php endforeach ?>
+
+         <!-- <div class="fish-table border-b border-b-gray-400 bg-slate-100 flex px-5 py-1">
             <div class="text-gray-800 flex items-center font-semibold w-[5%]">1</div>
             <div class="text-gray-800 flex items-center font-semibold w-[20%]">Aquacultures</div>
             <div class="text-gray-800 flex items-center font-semibold w-[55%]">Aquaculture is the cultivation of....</div>
@@ -65,7 +77,7 @@
                <button class="py-1 px-4 bg-slate-300 rounded-sm text-green-500 hover:bg-green-500 hover:text-white transition-all"><i class="fa-solid fa-pencil pr-3"></i>Edit</button>
                <button class="py-1 px-4 bg-slate-300 rounded-sm text-red-500 hover:bg-red-500 hover:text-white transition-all"><i class="fa-solid fa-trash pr-3"></i>Delete</button>
             </div>
-         </div>
+         </div> -->
                  
          
       </div>
