@@ -72,7 +72,8 @@ class Users extends Controller
                 self::messageNotif('success', 'User added successfuly');
                 header('location: /users');
             } else {
-                echo 'failed';
+                self::messageNotif('error', 'Something went wrong, please try again');
+                header('location: /terms');
             }
 
         }
