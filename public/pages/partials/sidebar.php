@@ -14,7 +14,7 @@
          <a href="/users"><li class="p-1 pl-3 text-blue-700 font-semibold border-b border-gray-400 cursor-pointer hover:bg-gradient-to-r from-blue-500 to-cyan-500 hover:text-white transition-all"><i class="fa-solid fa-users mr-3"></i>Manage User</li></a>
          <a href="/jokes"><li class="p-1 pl-3 text-blue-700 font-semibold border-b border-gray-400 cursor-pointer hover:bg-gradient-to-r from-blue-500 to-cyan-500 hover:text-white transition-all"><i class="fa-solid fa-lightbulb mr-3"></i>Fun Facts</li></a>
          <a href="/quiz"><li class="p-1 pl-3 text-blue-700 font-semibold border-b border-gray-400 cursor-pointer hover:bg-gradient-to-r from-blue-500 to-cyan-500 hover:text-white transition-all"><i class="fa-sharp fa-solid fa-pen-to-square mr-3"></i>Quizzes</li></a>
-         <a href="/term"><li class="p-1 pl-3 text-blue-700 font-semibold border-b border-gray-400 cursor-pointer hover:bg-gradient-to-r from-blue-500 to-cyan-500 hover:text-white transition-all"><i class="fa-solid fa-book mr-3"></i>Terms</li></a>
+         <a href="/terms"><li class="p-1 pl-3 text-blue-700 font-semibold border-b border-gray-400 cursor-pointer hover:bg-gradient-to-r from-blue-500 to-cyan-500 hover:text-white transition-all"><i class="fa-solid fa-book mr-3"></i>Terms</li></a>
       </ul>
    </div>
 

@@ -23,7 +23,7 @@ require_once("./Controller/Fish.php");
 require_once("./Controller/Users.php");
 require_once("./Controller/jokes.php");
 require_once("./Controller/quiz.php");
-require_once("./Controller/term.php");
+require_once("./Controller/terms.php");
 
 
 Route::contentToRender();
