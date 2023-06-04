@@ -22,7 +22,7 @@ require_once("./Controller/Dashboard.php");
 require_once("./Controller/Fish.php");
 require_once("./Controller/Users.php");
 require_once("./Controller/jokes.php");
-require_once("./Controller/quiz.php");
+require_once("./Controller/quizzes.php");
 require_once("./Controller/terms.php");
 
 
