@@ -10,7 +10,7 @@
    <div class="featurebtns-container">
       <ul>
          <a href="/dashboard"><li class="p-1 pl-3 text-blue-700 font-semibold border-b border-gray-400 cursor-pointer hover:bg-gradient-to-r from-blue-500 to-cyan-500 hover:text-white transition-all"><i class="fa-solid fa-table-columns mr-3"></i>Dashboard</li></a>
-         <a href="/fish"><li class="p-1 pl-3 text-blue-700 font-semibold border-b border-gray-400 cursor-pointer hover:bg-gradient-to-r from-blue-500 to-cyan-500 hover:text-white transition-all"><i class="fa-solid fa-fish mr-3"></i>Manage Fish</li></a>
+         <a href="/fishes"><li class="p-1 pl-3 text-blue-700 font-semibold border-b border-gray-400 cursor-pointer hover:bg-gradient-to-r from-blue-500 to-cyan-500 hover:text-white transition-all"><i class="fa-solid fa-fish mr-3"></i>Manage Fish</li></a>
          <a href="/users"><li class="p-1 pl-3 text-blue-700 font-semibold border-b border-gray-400 cursor-pointer hover:bg-gradient-to-r from-blue-500 to-cyan-500 hover:text-white transition-all"><i class="fa-solid fa-users mr-3"></i>Manage User</li></a>
          <a href="/jokes"><li class="p-1 pl-3 text-blue-700 font-semibold border-b border-gray-400 cursor-pointer hover:bg-gradient-to-r from-blue-500 to-cyan-500 hover:text-white transition-all"><i class="fa-solid fa-lightbulb mr-3"></i>Fun Facts</li></a>
          <a href="/quizzes"><li class="p-1 pl-3 text-blue-700 font-semibold border-b border-gray-400 cursor-pointer hover:bg-gradient-to-r from-blue-500 to-cyan-500 hover:text-white transition-all"><i class="fa-sharp fa-solid fa-pen-to-square mr-3"></i>Quizzes</li></a>

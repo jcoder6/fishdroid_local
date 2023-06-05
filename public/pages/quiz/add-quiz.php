@@ -40,14 +40,14 @@
             <div class="ml-10 mt-6">
                <div class="image-label flex items-center gap-3">
                   <span class="font-semibold text-gray-900 ">Insert fish image: </span>
-                  <label for="eventPhoto" class="bg-blue-700 font-semibold border border-blue-700 cursor-pointer text-white py-1 px-4 rounded-md hover:text-blue-700 hover:bg-white transition-all"><i class="fa-solid fa-upload mr-3  "></i>Upload Photo</label>
+                  <label for="eventPhoto" class="bg-white font-semibold border border-blue-700 cursor-pointer text-blue-700 py-1 px-4 rounded-md hover:text-white hover:bg-gradient-to-r from-cyan-500 to-blue-500 transition-all"><i class="fa-solid fa-upload mr-3  "></i>Upload Photo</label>
                 </div>
                <input type="file" name="quiz_image" id="eventPhoto" class="hidden" onChange="previewChoosenImage(event)">
                <div id="inputPhoto" class="relative h-52 w-96 border mb-5 bg-white border-slate-400 overflow-hidden rounded-md text-slate-400 flex justify-center items-center mt-6">No Image Choose</div>
                <input type="hidden" name="default_img" value="default yern">
             </div>
             
-            <input type="submit" value="Add new quiz" class="border mr-10 border-blue-700 bg-blue-700 transition-all font-semibold text-white py-1 rounded-md w-[8rem] cursor-pointer hover:bg-white hover:text-blue-700">
+            <input type="submit" value="Add new quiz" class="border mr-10 border-blue-700 transition-all font-semibold text-blue-700 py-1 rounded-md w-[8rem] cursor-pointer bg-white hover:bg-gradient-to-r from-cyan-500 to-blue-500 hover:text-white">
          </form>
             
         </div>
