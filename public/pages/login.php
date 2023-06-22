@@ -4,6 +4,7 @@
    <meta charset="UTF-8">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <link rel="stylesheet" href="./public/assets/style/output.css">
+   <link rel="shortcut icon" href="./public/assets/images/logo-fishdroid.webp" type="image/x-icon">
    <title>Log in - Fishdroid</title>
 </head>
 <body class="w-screen h-screen">
@@ -31,14 +32,13 @@
                <div class="forgot text-sm font-bold text-blue-700 mb-5">Forgot password?</div>
                <input type="submit" name="login" class="bg-blue-700 rounded-md p-2 border border-blue-700 text-white text-sm hover:bg-white hover:text-blue-700 hover:border-blue-700 hover:border transition-all cursor-pointer mb-2" value="Log in" />
                
-               <div class="rounded-md border-gray-400 text-sm p-2 text-gray-900 hover:bg-white hover:text-blue-700 hover:border-blue-700hover: border transition-all cursor-pointer flex justify-center" >
-                  
+               <!-- <div class="rounded-md border-gray-400 text-sm p-2 text-gray-900 hover:bg-white hover:text-blue-700 hover:border-blue-700hover: border transition-all cursor-pointer flex justify-center" >
                   <div 
                      class=" icon-google w-5 h-5 rounded-full mr-3">
                         <img src="./public/assets/images/icons8-google.svg" alt="google">
                   </div>
                   <p>Continue to google</p>
-               </div>
+               </div> -->
             </form>
          </div>
       </div>
