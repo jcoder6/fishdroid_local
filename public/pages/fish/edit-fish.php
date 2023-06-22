@@ -4,7 +4,7 @@
       <?php include PAGES_PATH . '/partials/body-header.php' ?>
 
       <div class="contents-container w-[95%] mt-[-60px] bg-slate-100 mx-auto rounded-lg min-h-[90vh]">
-      <h4 class="text-xl font-bold text-blue-700 p-3">Add User</h4>
+      <h4 class="text-xl font-bold text-blue-700 p-3">Edit Fish</h4>
          <form class="pb-6 upload-form text-right" action="/fishes/update/<?= $fish->getId() ?>" method="post" enctype="multipart/form-data">
 
             <div class="flex justify-between py-3 gap-3 px-10">
