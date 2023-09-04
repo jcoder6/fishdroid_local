@@ -43,7 +43,7 @@
          </div>
       </div>
       <div class="img-container h-screen w-2/5 relative">
-         <img class="absolute h-full w-full inset-0" src="./public/assets/images/loginimg.webp" alt="fishbg">
+         <img class="absolute h-full w-full inset-0" src="./public/assets/images/bglogin2.jpg" alt="fishbg">
       </div>
    </div>
 </body>

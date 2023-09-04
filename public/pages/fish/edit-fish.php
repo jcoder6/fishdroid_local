@@ -24,8 +24,8 @@
                   <input type="text" value="<?= $fish->getFamily_name() ?>" name="family_name" id="family_name" placeholder="Enter family name" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 mb-3">
                </div>
                <div class="life_span w-[50%]">
-               <label for="life_span" class="block text-left mb-2 text-sm font-medium text-gray-900 dark:text-white">Life span</label>
-                  <input type="text" value="<?= $fish->getLife_span() ?>" name="life_span" id="life_span" placeholder="Enter life span" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 mb-3">
+               <label for="life_span" class="block text-left mb-2 text-sm font-medium text-gray-900 dark:text-white">Local Name</label>
+                  <input type="text" value="<?= $fish->getLife_span() ?>" name="life_span" id="life_span" placeholder="Enter local name" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 mb-3">
                </div>
             </div>
 
@@ -33,7 +33,7 @@
                <div class="image-label flex items-center gap-3">
                   <span class="font-semibold text-gray-900 ">Insert fish image: </span>
                   <label for="eventPhoto" class="bg-blue-700 font-semibold border border-blue-700 cursor-pointer text-white py-1 px-4 rounded-md hover:text-blue-700 hover:bg-white transition-all"><i class="fa-solid fa-upload mr-3  "></i>Upload Photo</label>
-                </div>
+               </div>
                <input type="file" name="fish_image" id="eventPhoto" class="hidden" onChange="previewChoosenImage(event)">
                <div id="inputPhoto" class="relative h-52 w-96 border mb-5 bg-white border-slate-400 overflow-hidden rounded-md text-slate-400 flex justify-center items-center mt-6">
                   <img src="<?= ROOT_URL ?>/public/assets/images/fish_images/<?= $fish->getFish_image() ?>" alt="Fish Image">
@@ -48,10 +48,9 @@
                      <?= $fish->getFish_info() ?>
                   </textarea>
                </div>
-              
             </div>     
             <input type="submit" value="Update fish" class="border mr-10 border-blue-700 bg-blue-700 transition-all font-semibold text-white py-1 rounded-md w-[8rem] cursor-pointer hover:bg-white hover:text-blue-700">
-        </form>
+      </form>
             
       </div>
       
