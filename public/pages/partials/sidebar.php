@@ -15,8 +15,9 @@
          <a href="/jokes"><li class="p-1 pl-3 text-blue-700 font-semibold border-b border-gray-400 cursor-pointer hover:bg-gradient-to-r from-blue-500 to-cyan-500 hover:text-white transition-all"><i class="fa-solid fa-lightbulb mr-3"></i>Fun Facts</li></a>
          <a href="/quizzes"><li class="p-1 pl-3 text-blue-700 font-semibold border-b border-gray-400 cursor-pointer hover:bg-gradient-to-r from-blue-500 to-cyan-500 hover:text-white transition-all"><i class="fa-sharp fa-solid fa-pen-to-square mr-3"></i>Quizzes</li></a>
          <a href="/terms"><li class="p-1 pl-3 text-blue-700 font-semibold border-b border-gray-400 cursor-pointer hover:bg-gradient-to-r from-blue-500 to-cyan-500 hover:text-white transition-all"><i class="fa-solid fa-book mr-3"></i>Terms</li></a>
+         <a href="/familynames"><li class="p-1 pl-3 text-blue-700 font-semibold border-b border-gray-400 cursor-pointer hover:bg-gradient-to-r from-blue-500 to-cyan-500 hover:text-white transition-all"><i class="fa-solid fa-people-roof mr-3"></i>Family Name</li></a>
          <a href="/hatcheries"><li class="p-1 pl-3 text-blue-700 font-semibold border-b border-gray-400 cursor-pointer hover:bg-gradient-to-r from-blue-500 to-cyan-500 hover:text-white transition-all"><i class="fa-solid fa-egg mr-3"></i>Hatchery</li></a>
-         <a href="/fishrecognitions"><li class="p-1 pl-3 text-blue-700 font-semibold border-b border-gray-400 cursor-pointer hover:bg-gradient-to-r from-blue-500 to-cyan-500 hover:text-white transition-all"><i class="fa-solid fa-camera mr-3"></i>Recognition</li></a>
+         <!-- <a href="/fishrecognitions"><li class="p-1 pl-3 text-blue-700 font-semibold border-b border-gray-400 cursor-pointer hover:bg-gradient-to-r from-blue-500 to-cyan-500 hover:text-white transition-all"><i class="fa-solid fa-camera mr-3"></i>Recognition</li></a> -->
       </ul>
    </div>
 
