@@ -6,14 +6,14 @@
 
     <div class="contents-container w-[60%] mt-[-60px] bg-slate-100 mx-auto rounded-lg min-h-[90vh] shadow-lg">
         <h4 class="text-xl font-bold text-blue-700 p-3">Manage Family Name</h4>
-        <form action="/familyNames/save" method="post">
+        <form action="/familyNames/update/<?= $editFamilyName->getId() ?>" method="post">
             <div class="add-family-name bg-white p-2 flex justify-center gap-3 items-center text-center mb-10 mt-5">
                 <label for="family_name" class="text-left text-sm font-medium text-gray-900 dark:text-white">Add Family Name:</label>
-                <input type="text" name="family_name" placeholder="Enter Family Name" id="family_name" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 p-2 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 ml-3 w-[40%]">
-                <input type="submit" value="Add" class="border border-blue-700 transition-all font-semibold text-blue-700 py-1 rounded-md w-[8rem] cursor-pointer bg-white hover:bg-gradient-to-r from-cyan-500 to-blue-500 hover:text-white">
+                <input type="text" name="family_name" value="<?=$editFamilyName->getFamily_name()?>" id="family_name" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 p-2 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 ml-3 w-[40%]">
+                <input type="submit" value="Update" class="border border-blue-700 transition-all font-semibold text-blue-700 py-1 rounded-md w-[8rem] cursor-pointer bg-white hover:bg-gradient-to-r from-cyan-500 to-blue-500 hover:text-white">
             </div>
         </form>
-    
+
         <div class="manage-header bg-slate-300 flex justify-between items-center px-4 py-2">
             <p class="manage-header-title font-bold text-blue-700 text-lg">Family name list</p>
         </div>
