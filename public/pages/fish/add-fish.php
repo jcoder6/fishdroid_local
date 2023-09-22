@@ -3,7 +3,7 @@
 <div class="admin-feature-container w-full h-screen overflow-auto px-3">
       <?php include PAGES_PATH . '/partials/body-header.php' ?>
 
-      <div class="contents-container w-[60%] mt-[-60px] bg-slate-100 mx-auto rounded-lg min-h-[90vh]">
+      <div class="contents-container w-[60%] mt-[-60px] bg-slate-200 mx-auto rounded-lg min-h-[90vh]">
       <h4 class="text-xl font-bold text-blue-700 p-3">Add Fish</h4>
          <form class="pb-6 upload-form text-right" action="/fishes/save" method="post" enctype="multipart/form-data">
 
@@ -24,7 +24,7 @@
                   <input type="text" name="life_span" id="life_span" placeholder="Enter local name" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 mb-3">
                </div>
                <div class="family_name w-[50%]">
-               <label for="family_name" class="block text-left mb-2 text-sm font-medium text-gray-900 dark:text-white">Family name</label>
+                  <label for="family_name" class="block text-left mb-2 text-sm font-medium text-gray-900 dark:text-white">Family name</label>
                   <input type="text" placeholder="Select the family name" autocomplete="off" id="family_name" name="family_name" list="options" class="select-family-name bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 mb-3">
                   <datalist id="options">
                      <?php foreach($familyNames as $familyName) : ?>
