@@ -39,8 +39,10 @@ class Fishes extends Controller
         $view = new View(PAGES_PATH . "/fish");
 
         $fish = Fish::getById($id); 
+        $familyNames = FamilyName::getAll();
 
         $data = array(
+            'familyNames' => $familyNames,
             'fish' => $fish
         );
 
@@ -55,38 +57,37 @@ class Fishes extends Controller
             } else {
                 echo 'The family name is not set.';
             }
-            die();
 
-            // $imgNewName = self::clean($_POST['default_img']);
-            // if(!empty($_FILES['fish_image']['name'])){
-            //     $imgNewName = self::renameImg($_FILES['fish_image']['name'], 'FISH_IMG');
-            //     $sourcePath = $_FILES['fish_image']['tmp_name'];  
-            //     $destinationPath = './public/assets/images/fish_images/' . $imgNewName; 
-            //     self::uploadImageDirectory($sourcePath, $destinationPath);
-            // } else {
-            //     self::messageNotif('error', 'Fish image is required');
-            //     header('location: /fishes/create');
-            //     die();
-            // }
+            $imgNewName = self::clean($_POST['default_img']);
+            if(!empty($_FILES['fish_image']['name'])){
+                $imgNewName = self::renameImg($_FILES['fish_image']['name'], 'FISH_IMG');
+                $sourcePath = $_FILES['fish_image']['tmp_name'];  
+                $destinationPath = './public/assets/images/fish_images/' . $imgNewName; 
+                self::uploadImageDirectory($sourcePath, $destinationPath);
+            } else {
+                self::messageNotif('error', 'Fish image is required');
+                header('location: /fishes/create');
+                die();
+            }
 
-            // $data = array(
-            //     self::clean($_POST['fish_name']),
-            //     self::clean($_POST['scientific_name']),
-            //     self::clean($_POST['family_name']),
-            //     self::clean($_POST['life_span']),
-            //     $imgNewName,
-            //     $_POST['fish_info']
-            // ); 
+            $data = array(
+                self::clean($_POST['fish_name']),
+                self::clean($_POST['scientific_name']),
+                self::clean($_POST['family_name']),
+                self::clean($_POST['life_span']),
+                $imgNewName,
+                $_POST['fish_info']
+            ); 
             
-            // $fish = new Fish(NULL, ...$data);
+            $fish = new Fish(NULL, ...$data);
 
-            // if($fish->save()){
-            //     self::messageNotif('success', 'New fish Added');
-            //     header('location: /fishes');   
-            // } else {
-            //     self::messageNotif('error', 'Something went wrong, please try again');
-            //     header('location: /fishes');
-            // }
+            if($fish->save()){
+                self::messageNotif('success', 'New fish Added');
+                header('location: /fishes');   
+            } else {
+                self::messageNotif('error', 'Something went wrong, please try again');
+                header('location: /fishes');
+            }
         }
     }
 
