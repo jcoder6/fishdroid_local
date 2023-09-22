@@ -3,6 +3,7 @@
 namespace Makkari\Controllers;
 
 use Makkari\Controllers\Controller;
+use Makkari\Models\FamilyName;
 use Makkari\Models\Fish;
 
 require_once './Model/Fish.php';
@@ -24,7 +25,14 @@ class Fishes extends Controller
     public static function create()
     {
         $view = new View(PAGES_PATH . "/fish");
-        $view->render("add-fish");
+        $familyNameData = FamilyName::getAll();
+        // var_dump($familyNameData);
+
+        $data = array(
+            'familyNames' => $familyNameData
+        );
+
+        $view->render("add-fish", $data);
     }
     public static function edit($id)
     {
@@ -40,36 +48,45 @@ class Fishes extends Controller
     }
     public static function save(){
         if($_SERVER['REQUEST_METHOD'] === 'POST'){
-            $imgNewName = self::clean($_POST['default_img']);
-            if(!empty($_FILES['fish_image']['name'])){
-                $imgNewName = self::renameImg($_FILES['fish_image']['name'], 'FISH_IMG');
-                $sourcePath = $_FILES['fish_image']['tmp_name'];  
-                $destinationPath = './public/assets/images/fish_images/' . $imgNewName; 
-                self::uploadImageDirectory($sourcePath, $destinationPath);
-            } else {
-                self::messageNotif('error', 'Fish image is required');
-                header('location: /fishes/create');
-                die();
-            }
-
-            $data = array(
-                self::clean($_POST['fish_name']),
-                self::clean($_POST['scientific_name']),
-                self::clean($_POST['family_name']),
-                self::clean($_POST['life_span']),
-                $imgNewName,
-                $_POST['fish_info']
-            ); 
+            if (isset($_POST['family_name'])) {
+                $familyNameId = $_POST['family_name_id'];
             
-            $fish = new Fish(NULL, ...$data);
-
-            if($fish->save()){
-                self::messageNotif('success', 'New fish Added');
-                header('location: /fishes');   
+                echo $familyNameId;
             } else {
-                self::messageNotif('error', 'Something went wrong, please try again');
-                header('location: /fishes');
+                echo 'The family name is not set.';
             }
+            die();
+
+            // $imgNewName = self::clean($_POST['default_img']);
+            // if(!empty($_FILES['fish_image']['name'])){
+            //     $imgNewName = self::renameImg($_FILES['fish_image']['name'], 'FISH_IMG');
+            //     $sourcePath = $_FILES['fish_image']['tmp_name'];  
+            //     $destinationPath = './public/assets/images/fish_images/' . $imgNewName; 
+            //     self::uploadImageDirectory($sourcePath, $destinationPath);
+            // } else {
+            //     self::messageNotif('error', 'Fish image is required');
+            //     header('location: /fishes/create');
+            //     die();
+            // }
+
+            // $data = array(
+            //     self::clean($_POST['fish_name']),
+            //     self::clean($_POST['scientific_name']),
+            //     self::clean($_POST['family_name']),
+            //     self::clean($_POST['life_span']),
+            //     $imgNewName,
+            //     $_POST['fish_info']
+            // ); 
+            
+            // $fish = new Fish(NULL, ...$data);
+
+            // if($fish->save()){
+            //     self::messageNotif('success', 'New fish Added');
+            //     header('location: /fishes');   
+            // } else {
+            //     self::messageNotif('error', 'Something went wrong, please try again');
+            //     header('location: /fishes');
+            // }
         }
     }
 

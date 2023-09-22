@@ -64,7 +64,29 @@ CKEDITOR.replace( eventDesc );
   console.log(e);
 }
 
+//for displaying the label only in the datalist items when selecting the family name
+
+const des = Object.getOwnPropertyDescriptor(HTMLInputElement.prototype, 'value');
+Object.defineProperty(HTMLInputElement.prototype, 'value', {
+  get: function() {
+    const value = des.get.call(this);
   
+    if (this.type === 'text' && this.list) {
+      const opt = [].find.call(this.list.options, o => o.value === value);
+      return opt ? opt.dataset.value : value;
+    }
+
+    return value;  
+  } 
+});
+
+const input = document.getElementById('family_name');
+const selectedDataValueInput = document.getElementById('selected_data_value'); // Get the hidden input field
+
+input.addEventListener('input', () => {
+  selectedDataValueInput.value = input.value;
+});
+
 </script>
 
 </html>
