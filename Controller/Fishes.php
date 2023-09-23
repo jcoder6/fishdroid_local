@@ -2,6 +2,7 @@
 
 namespace Makkari\Controllers;
 
+use Exception;
 use Makkari\Controllers\Controller;
 use Makkari\Models\FamilyName;
 use Makkari\Models\Fish;
@@ -14,7 +15,7 @@ class Fishes extends Controller
     {
         $view = new View(PAGES_PATH . "/fish");
 
-        $fishes = Fish::getAll(); 
+        $fishes = Fish::getLast15(); 
 
         $data = array(
             'fishes' => $fishes
@@ -46,16 +47,24 @@ class Fishes extends Controller
             'fish' => $fish
         );
 
-        $view->render("edit-fish", $data);
+        $view->render("edit-fish", $data);  
     }
     public static function save(){
         if($_SERVER['REQUEST_METHOD'] === 'POST'){
+            $familyNameID = 0;
             if (isset($_POST['family_name'])) {
-                $familyNameId = $_POST['family_name_id'];
-            
-                echo $familyNameId;
+                $familyNameID = intval(self::clean($_POST['family_name_id'])); 
+
+                if($familyNameID == 0) {
+                    self::messageNotif('error', 'Enter a valid family Name');
+                    header('location: /fishes/create');
+                    die();
+                }
+                echo $familyNameID;
             } else {
-                echo 'The family name is not set.';
+                self::messageNotif('error', 'Something went wrong try again');
+                header('location: /fishes/create');
+                die();
             }
 
             $imgNewName = self::clean($_POST['default_img']);
@@ -73,7 +82,7 @@ class Fishes extends Controller
             $data = array(
                 self::clean($_POST['fish_name']),
                 self::clean($_POST['scientific_name']),
-                self::clean($_POST['family_name']),
+                $familyNameID,
                 self::clean($_POST['life_span']),
                 $imgNewName,
                 $_POST['fish_info']
@@ -93,13 +102,29 @@ class Fishes extends Controller
 
     public static function update($id){
         if($_SERVER['REQUEST_METHOD'] === 'POST'){
-            
+
             $imgNewName = (!empty($_FILES['fish_image']['name'])) ? self::renameImg($_FILES['fish_image']['name'], 'FISH_IMG') : self::clean($_POST['default_img']);
+
+            $familyNameID = 0;
+            if (isset($_POST['family_name'])) {
+                $familyNameID = intval(self::clean($_POST['family_name_id'])); 
+
+                if($familyNameID == 0) {
+                    self::messageNotif('error', 'Enter a valid family Name');
+                    header('location: /fishes/create');
+                    die();
+                }
+                echo $familyNameID;
+            } else {
+                self::messageNotif('error', 'Something went wrong try again');
+                header('location: /fishes/create');
+                die();
+            }
 
             $data = array(
                 'fish_name' => self::clean($_POST['fish_name']),
                 'scientific_name' => self::clean($_POST['scientific_name']),
-                'family_name' => self::clean($_POST['family_name']),
+                'family_name' => $familyNameID,
                 'life_span' => self::clean($_POST['life_span']),
                 'fish_image' => $imgNewName,
                 'fish_info' => $_POST['fish_info']
@@ -111,8 +136,8 @@ class Fishes extends Controller
 
             $fish->setFish_name($data['fish_name']);
             $fish->setScientific_name($data['scientific_name']);
-            $fish->setFamily_name($data['family_name']);
-            $fish->setLife_span($data['life_span']);
+            $fish->setFamily_name_id($data['family_name']);
+            $fish->setLocal_name($data['life_span']);
             $fish->setFish_image($data['fish_image']);
             $fish->setFish_info($data['fish_info']);
 

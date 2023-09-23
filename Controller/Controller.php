@@ -72,25 +72,25 @@ class Controller
         # GET THE EXTENSION NAME OF THE CURRENT IMAGE
         $ext = explode('.', $imageCurrentName);
         $ext = '.' . end($ext);
-      
+        
         # GENERATE THE NEW NAME WITH THE CUSTOM NAME
         $newName = $imgCustomName . '_' . random_int(000, 999) . $ext;
         return $newName;
-      }
-      
-      public static function deleteCurrentImg($imgName, $imgPath) {
-        $isImg = $imgName != 'Image is not currently available' && $imgName != '';
+        }
+        
+    public static function deleteCurrentImg($imgName, $imgPath) {
+    $isImg = $imgName != 'Image is not currently available' && $imgName != '';
         if ($isImg) {
-          if (file_exists($imgPath)) {
+            if (file_exists($imgPath)) {
             unlink($imgPath);
             echo 'img-deleted';
-          } else {
+            } else {
             echo 'file does not exist';
-          }
+            }
         }
-      }
+    }
 
-      public static function uploadImageDirectory($sourcePath, $destinationPath){
+    public static function uploadImageDirectory($sourcePath, $destinationPath){
         #upload the image in to our file folder
         # 1. get the source path
         // $sourcePath = $_FILES['event_photo']['tmp_name'];
@@ -103,17 +103,17 @@ class Controller
         } else {
             return 'file uploaded';
         }
-      }
-      
+    }
+        
 
-      public static function messageNotif($messagetype, $message) {
+    public static function messageNotif($messagetype, $message) {
         $_SESSION['msg'] = '<div class="message fixed z-10 right-5 p-4 rounded-lg text-white font-semibold shadow-md text-md transition-all min-w-[25vw] text-center opacity-0 translate-x-[120%] top-5" data-messageType=' . $messagetype . '>' . $message . '</div>';
-      }
+    }
 
-      public static function showMessage() {
+    public static function showMessage() {
         if (isset($_SESSION['msg'])) {
-          echo $_SESSION['msg'];
-          unset($_SESSION['msg']);
+            echo $_SESSION['msg'];
+            unset($_SESSION['msg']);
         }
-      }
+    }
 }

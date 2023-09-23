@@ -30,22 +30,4 @@ class Dashboard extends Controller
         $view = new View(PAGES_PATH . "/home");
         $view->render("dashboard", $data);
     }
-    public static function create()
-    {
-        echo 'creted';
-    }
-    public static function edit()
-    {
-        // Your edit code goes here
-    }
-    public static function save(){
-        // Your save code goes here
-    }
-    
-    public static function confirm(){
-        // Your code goes here
-    }
-    public static function delete(){
-        //your delete code goes here
-    }
 }

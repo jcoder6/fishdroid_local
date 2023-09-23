@@ -21,17 +21,18 @@
             <div class="flex justify-between py-3 gap-3 px-10">
                <div class="life_span w-[50%]">
                   <label for="life_span" class="block text-left mb-2 text-sm font-medium text-gray-900 dark:text-white">Local Name</label>
-                  <input type="text" value="<?= $fish->getLife_span() ?>" name="life_span" id="life_span" placeholder="Enter local name" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 mb-3">
+                  <input type="text" value="<?= $fish->getLocal_name() ?>" name="life_span" id="life_span" placeholder="Enter local name" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 mb-3">
                </div>
                <div class="family_name w-[50%]">
                   <label for="family_name" class="block text-left mb-2 text-sm font-medium text-gray-900 dark:text-white">Family name</label>
-                  <input type="text" placeholder="Select the family name" value="<?= $fish->getFamily_name()?>" autocomplete="off" id="family_name" name="family_name" list="options" class="select-family-name bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 mb-3">
+                  <input type="text" placeholder="Select the family name" value="<?= getFamilyName($fish->getFamily_name_id(), $familyNames); ?>" autocomplete="off" id="family_name" name="family_name" list="options" class="select-family-name bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 mb-3">
                   <datalist id="options">
                      <?php foreach($familyNames as $familyName) : ?>
                      <option data-value="<?= $familyName->getId()?>" ><?= $familyName->getFamily_name() ?></option>
                      <?php endforeach;?>  
                   </datalist>
                </div>
+               <input type="hidden" id="selected_data_value" name="family_name_id" value="<?=$fish->getFamily_name_id()?>"/>
             </div>
 
             <div class="ml-10 mt-6">
@@ -61,3 +62,17 @@
       
 </div>
 <?php include PAGES_PATH . '/partials/footer.php' ?>
+
+
+<?php 
+   //function for diplaying the current fish familyname
+   function getFamilyName($id, $familyNames){
+      $familyName = '';
+      foreach($familyNames as $fn){
+         if($fn->getId() == $id){
+            $familyName = $fn->getFamily_name();
+         }
+      }
+      echo $familyName;
+   }
+?>
