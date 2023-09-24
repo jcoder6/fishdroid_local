@@ -1,4 +1,4 @@
-<header class="w-full bg-gradient-to-r from-cyan-500 to-blue-500 p-3 h-28 rounded-b-3xl mt flex justify-end items-start">
+<header class="w-full bg-gradient-to-r from-teal-400 via-teal-500 to-teal-600 p-3 h-28 rounded-b-3xl mt flex justify-end items-start">
    <div class="user-container flex items-center">
       <div class="user-img-container w-7 h-7 relative bg-black rounded-full overflow-hidden">
          <img class="absolute h-full w-full inset-0" src="<?= ROOT_URL ?>/public/assets/images/user_images/<?= $_SESSION['img'] ?>" alt="User profile">

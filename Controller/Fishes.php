@@ -162,7 +162,7 @@ class Fishes extends Controller
     public static function confirm($id){
         $view = new View(PAGES_PATH . "/fish");
 
-        $fishes = Fish::getAll();
+        $fishes = Fish::getLast15();
 
         $data = array(
             'id' => $id,    
