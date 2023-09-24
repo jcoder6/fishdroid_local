@@ -4,11 +4,11 @@
 
       <?php include PAGES_PATH . '/partials/body-header.php'?>
 
-      <div class="contents-container w-[75%] mt-[-60px] bg-slate-100 mx-auto rounded-lg p-5">
-         <h4 class="text-xl font-bold text-blue-700 mb-6">Dashboard</h4>
+      <div class="contents-container w-[75%] mt-[-60px] bg-slate-100 shadow-2xl mx-auto rounded-lg p-5 min-h-[40rem]">
+         <h4 class="font-bold text-center text-3xl text-gray-700 mb-10 mt-4">Dashboard</h4>
          <div class="dashboard-container flex flex-wrap justify-around">
 
-            <div class="content fish-data bg-slate-300 w-[48%] flex justify-center items-center gap-5 mb-5 p-10 rounded-lg">
+            <div class="content fish-data bg-gradient-to-r from-green-400 via-green-500 to-green-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-green-300 dark:focus:ring-green-800 w-[48%] flex justify-center items-center gap-5 mb-5 p-10 rounded-lg">
                <i class="fa-solid fa-fish mr-3 text-9xl ml-[-30px] text-white"></i>
                <div class="data-fetched">
                   <p class="text-5xl font-bold text-white"><?= $countData['fishCount']?></p>
@@ -16,7 +16,7 @@
                </div>
             </div>
 
-            <div class="content user-data bg-slate-700 w-[48%] flex justify-center items-center gap-5 mb-5 p-10 rounded-lg">
+            <div class="content user-data bg-gradient-to-br from-green-400 to-blue-600 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-green-200 dark:focus:ring-green-800 w-[48%] flex justify-center items-center gap-5 mb-5 p-10 rounded-lg">
                <i class="fa-solid fa-users mr-3 text-9xl ml-[-30px] text-white"></i>
                <div class="data-fetched">
                   <p class="text-5xl font-bold text-white"><?= $countData['userCount'] ?></p>
@@ -24,7 +24,7 @@
                </div>
             </div>
 
-            <div class="content fish-data bg-slate-500 w-[48%] flex justify-center items-center gap-5 mb-5 p-10 rounded-lg">
+            <div class="content fish-data bg-gradient-to-br from-green-400 to-blue-600 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-green-200 dark:focus:ring-green-800 w-[48%] flex justify-center items-center gap-5 mb-5 p-10 rounded-lg">
                <i class="fa-solid fa-lightbulb mr-3 text-9xl ml-[-30px] text-white"></i>
                <div class="data-fetched">
                   <p class="text-5xl font-bold text-white"><?= $countData['userCount'] ?></p>
@@ -32,7 +32,7 @@
                </div>
             </div>
 
-            <div class="content fish-data bg-blue-700 w-[48%] flex justify-center items-center gap-5 mb-5 p-10 rounded-lg">
+            <div class="content fish-data bg-gradient-to-r from-green-400 via-green-500 to-green-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-green-300 dark:focus:ring-green-800 w-[48%] flex justify-center items-center gap-5 mb-5 p-10 rounded-lg">
                <i class="fa-solid fa-book mr-3 text-9xl ml-[-30px] text-white"></i>
                <div class="data-fetched">
                   <p class="text-5xl font-bold text-white"><?= $countData['termCount'] ?></p>

@@ -10,7 +10,7 @@
             <p class="manage-header-title font-bold text-blue-700 text-lg">Technological Term List</p>
             <a href="/terms/create" class="bg-white hover:bg-gradient-to-r from-cyan-500 to-blue-500 rounded-md font-semibold hover:text-white px-5 py-1 transition-all text-blue-700"><i class="fa-solid fa-plus pr-2"></i>Add Term</a>
          </div>
-         <div class="bg-gradient-to-r from-blue-500 to-cyan-500 flex px-5 py-1 border ">
+         <div class="bg-gradient-to-r from-cyan-500 to-blue-500 flex px-5 py-1 border ">
             <div class="text-white font-semibold w-[5%]">No</div>
             <div class="text-white font-semibold w-[20%]">Term</div>   
             <div class="text-white font-semibold w-[55%]">Description</div>
@@ -35,7 +35,7 @@
 </div>
 
 <div class="relative z-10" aria-labelledby="modal-title" role="dialog" aria-modal="true">
-  <div class="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity"></div>
+  <div class="fixed inset-0 bg-opacity-75 bg-slate-500 transition-opacity"></div>
   <div class="fixed inset-0 z-10 overflow-y-auto">
     <div class="flex min-h-full items-center justify-center p-4 text-center">
       <div class="relative transform overflow-hidden rounded-lg bg-white text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-lg">

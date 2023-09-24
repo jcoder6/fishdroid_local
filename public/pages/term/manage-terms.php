@@ -10,7 +10,7 @@
             <p class="manage-header-title font-bold text-blue-700 text-lg">Technological Term List</p>
             <a href="/terms/create" class="bg-white hover:bg-gradient-to-r from-cyan-500 to-blue-500 rounded-md font-semibold hover:text-white px-5 py-1 transition-all text-blue-700"><i class="fa-solid fa-plus pr-2"></i>Add Term</a>
          </div>
-         <div class="bg-gradient-to-r from-blue-500 to-cyan-500 flex px-5 py-1 border ">
+         <div class="bg-gradient-to-r from-cyan-500 to-blue-500 flex px-5 py-1 border ">
             <div class="text-white font-semibold w-[5%]">No</div>
             <div class="text-white font-semibold w-[20%]">Term</div>   
             <div class="text-white font-semibold w-[55%]">Description</div>
