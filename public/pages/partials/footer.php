@@ -53,6 +53,33 @@ try {
   }
 }
 
+function previewChosenVideo(event) {
+        const videoPreview = document.getElementById("videoPreview");
+        const fileInput = event.target;
+        const files = fileInput.files;
+
+        if (files.length === 0) {
+            return; // No file selected
+        }
+
+        const videoFile = files[0];
+
+        // Create a video element for preview
+        const videoElement = document.createElement("video");
+        videoElement.controls = true;
+
+        // Create a source element for the video
+        const sourceElement = document.createElement("source");
+        sourceElement.src = URL.createObjectURL(videoFile);
+        sourceElement.type = videoFile.type;
+
+        // Append source to video and video to preview container
+        videoElement.appendChild(sourceElement);
+        videoPreview.innerHTML = ''; // Clear previous preview, if any
+        videoPreview.appendChild(videoElement);
+    }
+
+
   /* ======================================
           FOR CK EDITORS
 ========================================*/
