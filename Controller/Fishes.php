@@ -23,6 +23,12 @@ class Fishes extends Controller
 
         $view->render("manage-fish", $data);
     }
+
+    public static function view($id) {
+        $view = new View(PAGES_PATH . "/fish");
+        $view->render('view-fish');
+    }
+
     public static function create()
     {
         $view = new View(PAGES_PATH . "/fish");
