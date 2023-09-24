@@ -10,10 +10,10 @@
 
          <div class="manage-header bg-slate-300 flex justify-between items-center px-4 py-2">
             <p class="manage-header-title font-bold text-blue-700 text-lg">Fish Jokes List</p>
-            <a href="/jokes/create" class="bg-white hover:bg-gradient-to-r from-blue-500 to-cyan-500 rounded-md font-semibold hover:text-white px-5 py-1 transition-all text-blue-700"><i class="fa-solid fa-plus pr-2"></i>Add Jokes</a>
+            <a href="/jokes/create" class="bg-white hover:bg-blue-700 rounded-md font-semibold hover:text-white px-5 py-1 transition-all text-blue-700"><i class="fa-solid fa-plus pr-2"></i>Add Jokes</a>
          </div>
 
-         <div class="bg-gradient-to-r from-blue-500 to-cyan-500 flex px-5 py-1">
+         <div class="bg-gradient-to-r from-cyan-500 to-blue-500 flex px-5 py-1">
             <div class="text-white font-semibold no w-[9%]">No</div>
             <div class="text-white font-semibold fish-name w-[66%]">Jokes</div>
             <div class="text-white font-semibold action w-[25%]">Action</div>

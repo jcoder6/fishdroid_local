@@ -8,9 +8,9 @@
       <h4 class="text-xl font-bold text-blue-700 p-3">Manage Quiz</h4>
       <div class="manage-header bg-slate-300 flex justify-between items-center px-4 py-2">
          <p class="manage-header-title font-bold text-blue-700 text-lg">Quiz List</p>
-         <a href="/quizzes/create" class="bg-white hover:bg-gradient-to-r from-blue-500 to-cyan-500 rounded-md font-semibold hover:text-white px-5 py-1 transition-all text-blue-700"><i class="fa-solid fa-plus pr-2"></i>Add Quiz</a>
+         <a href="/quizzes/create" class="bg-white hover:bg-blue-700 rounded-md font-semibold hover:text-white px-5 py-1 transition-all text-blue-700"><i class="fa-solid fa-plus pr-2"></i>Add Quiz</a>
       </div>
-      <div class="bg-gradient-to-r from-blue-500 to-cyan-500 flex px-5 py-1">
+      <div class="bg-gradient-to-r from-cyan-500 to-blue-500 flex px-5 py-1">
          <div class="text-white font-semibold no w-[9%]">No</div>
          <div class="text-white font-semibold fish-name w-[33%]">Fish Name</div>
          <div class="text-white font-semibold img w-[33%]">Family Name</div>
@@ -33,7 +33,7 @@
 
 
 <div class="relative z-10" aria-labelledby="modal-title" role="dialog" aria-modal="true">
-  <div class="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity"></div>
+  <div class="fixed inset-0 bg-opacity-75 bg-slate-500 transition-opacity"></div>
   <div class="fixed inset-0 z-10 overflow-y-auto">
     <div class="flex min-h-full items-center justify-center p-4 text-center">
       <div class="relative transform overflow-hidden rounded-lg bg-white text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-lg">

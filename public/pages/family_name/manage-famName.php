@@ -19,7 +19,7 @@
         </div>
 
         
-        <div class="bg-gradient-to-r from-blue-500 to-cyan-500 flex justify-between px-5 py-1">
+        <div class="bg-gradient-to-r from-cyan-500 to-blue-500 flex justify-between px-5 py-1">
             <div class="text-white font-semibold no w-[10%]">No</div>
             <div class="text-white font-semibold fish-name w-[60%]">Family Name</div>
             <div class="text-white font-semibold action w-[30%]">Action</div>
