@@ -4,7 +4,7 @@
 
       <?php include PAGES_PATH . '/partials/body-header.php'?>
 
-      <div class="contents-container w-[75%] mt-[-60px] bg-slate-100 shadow-2xl mx-auto rounded-lg p-5 min-h-[40rem]">
+      <div class="contents-container w-[75%] mt-[-60px] bg-slate-100 shadow-teal-500 shadow-xl mx-auto rounded-lg p-5 min-h-[40rem]">
          <h4 class="font-bold text-center text-3xl text-gray-700 mb-10 mt-4">Dashboard</h4>
          <div class="dashboard-container flex flex-wrap justify-around">
 

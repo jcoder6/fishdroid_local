@@ -24,6 +24,8 @@ require_once("./Controller/Users.php");
 require_once("./Controller/jokes.php");
 require_once("./Controller/quizzes.php");
 require_once("./Controller/FamilyNames.php");
+require_once("./Controller/Nutritions.php");
+require_once("./Controller/Recipes.php");
 require_once("./Controller/terms.php");
 require_once("./Controller/hatcheries.php");
 require_once("./Controller/fishrecognitions.php");
