@@ -9,12 +9,12 @@
             <p class="manage-header-title font-bold text-white text-lg">Fish List</p>
             <a href="/fishes/create" class="bg-white hover:bg-gradient-to-r from-teal-400 via-teal-500 to-teal-600 rounded-md text-sm font-semibold hover:text-white pr-4 py-1 pl-3 transition-all text-gray-700"><i class="fa-solid fa-plus pr-2"></i>Add Fish</a>
          </div>
-         <div class="bg-gray-500 flex px-5 py-1">
-            <div class="text-white font-semibold text-center no w-[5%]">No</div>
-            <div class="text-white font-semibold text-center img w-[31%]">Images</div>
-            <div class="text-white font-semibold text-left fish-name w-[22%]">Fish Name</div>
-            <div class="text-white font-semibold text-left img w-[22%]">Scientific Name</div>
-            <div class="text-white font-semibold text-center action w-[20%]">Action</div>
+         <div class="bg-gray-200 flex px-5 py-1">
+            <div class="text-gray-700 font-semibold text-center no w-[5%]">No</div>
+            <div class="text-gray-700 font-semibold text-center img w-[31%]">Images</div>
+            <div class="text-gray-700 font-semibold text-left fish-name w-[22%]">Fish Name</div>
+            <div class="text-gray-700 font-semibold text-left img w-[22%]">Scientific Name</div>
+            <div class="text-gray-700 font-semibold text-center action w-[20%]">Action</div>
          </div>
 
          <?php $num = 0; foreach($fishes as $fish) : $num++;?>
