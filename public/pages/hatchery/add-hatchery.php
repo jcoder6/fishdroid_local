@@ -5,12 +5,12 @@
 
     <div class="contents-container w-[60%] mt-[-60px] bg-slate-200 mx-auto rounded-lg min-h-[90vh] pb-10">
         <h4 class="text-xl font-bold text-blue-700 p-3">Add Hatchery</h4>
-        <form class="upload-form text-right" action="/terms/save" method="post" enctype="multipart/form-data">
+        <form class="upload-form text-right" action="/hatcheries/save" method="post" enctype="multipart/form-data">
 
             <div class="flex justify-between py-3 px-10">
                 <div class="w-[100%]">
-                    <label for="tech_term" class="block text-left mb-2 text-sm font-medium text-gray-900 dark:text-white">Fish Name</label>
-                    <input required type="text" name="tech_term" id="tech_term" placeholder="Enter Name of Fish" class="bg-gray-100 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 mb-3">
+                    <label for="fish_name" class="block text-left mb-2 text-sm font-medium text-gray-900 dark:text-white">Fish Name</label>
+                    <input required type="text" name="fish_name" id="tech_term" placeholder="Enter Name of Fish" class="bg-gray-100 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 mb-3">
                 </div>
             </div>
 
@@ -24,10 +24,12 @@
 
             <div class="flex justify-between py-3 px-10">
                 <div class="username w-[100%]">
-                    <label for="hatch-process" class="block text-left mb-2 text-sm font-medium text-gray-900 dark:text-white">Hatchery Process</label>
-                    <textarea required type="text" name="hatch-process" id="hatch-process" placeholder="Enter the Hatching Process..." class="bg-gray-50 block border min-h-[20rem] border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500  w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 mb-3"></textarea>
+                    <label for="hatch_process" class="block text-left mb-2 text-sm font-medium text-gray-900 dark:text-white">Hatchery Process</label>
+                    <textarea required type="text" name="hatch_process" id="hatch-process" placeholder="Enter the Hatching Process..." class="bg-gray-50 block border min-h-[20rem] border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500  w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 mb-3"></textarea>
                 </div>
-            </div>              
+            </div>  
+            
+            <input type="text" name="default_video" value="NO_VIDEO_YET" class="hidden">
             
             <input type="submit" value="Add Hatchery" class="mr-10 transition-all font-semibold text-gray-700 shadow-md py-1 rounded-md w-[8rem] cursor-pointer bg-white hover:bg-gradient-to-r from-teal-400 via-teal-500 to-teal-600 hover:text-white">
         </form>    

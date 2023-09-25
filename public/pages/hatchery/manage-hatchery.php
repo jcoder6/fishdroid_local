@@ -18,67 +18,17 @@
       
       <!-- THIS IS WHERE WE LOOP THE DATA -->
 
+      <?php $num = 0; foreach($hatcheries as $hatchery): $num++ ?>
       <div class="fish-table border-b border-b-gray-400 bg-slate-100 flex px-5 py-2">
-         <div class="text-gray-800 flex items-center font-semibold w-[8%]">1</div>
-         <div class="text-gray-800 flex items-center font-semibold w-[20%]">Bangus</div>
-         <div class="text-gray-800 flex items-center font-semibold w-[52%] truncate pl-2 pr-8">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Non at quaerat, ea reprehenderit excepturi magnam voluptatem reiciendis iusto magni temporibus cumque culpa? Cumque incidunt repudiandae dolores alias officiis vitae voluptatem commodi eos fugit, asperiores maiores voluptates veniam, illum fugiat quidem eius vel itaque sequi animi quos! Suscipit voluptatum quia iste!
-         </div>
+         <div class="text-gray-800 flex items-center font-semibold w-[8%]"><?= $num ?></div>
+         <div class="text-gray-800 flex items-center font-semibold w-[20%]"><?= $hatchery->getFish_name() ?></div>
+         <div class="text-gray-800 flex items-center font-semibold w-[52%] truncate pl-2 pr-8"><?= $hatchery->getHatch_process() ?></div>
          <div class="text-blue-700 flex gap-3 justify-center items-center font-semibold text-center action w-[20%] ml-6">
-            <a href="/hatcheries/edit/1" class="py-1 px-4 shadow-md bg-white text-green-500 hover:bg-green-500 rounded-md hover:text-white transition-all"><i class="fa-solid fa-pencil"></i></a>
-            <a href="/hatcheries/confirm/1" class="py-1 px-4 shadow-md bg-white text-red-500 hover:bg-red-500 rounded-md hover:text-white transition-all"><i class="fa-solid fa-trash"></i></a>
+            <a href="/hatcheries/edit/<?= $hatchery->getId() ?>" class="py-1 px-4 shadow-md bg-white text-green-500 hover:bg-green-500 rounded-md hover:text-white transition-all"><i class="fa-solid fa-pencil"></i></a>
+            <a href="/hatcheries/confirm/<?= $hatchery->getId() ?>" class="py-1 px-4 shadow-md bg-white text-red-500 hover:bg-red-500 rounded-md hover:text-white transition-all"><i class="fa-solid fa-trash"></i></a>
          </div>
       </div>
-
-      <div class="fish-table border-b border-b-gray-400 bg-slate-100 flex px-5 py-2">
-         <div class="text-gray-800 flex items-center font-semibold w-[8%]">1</div>
-         <div class="text-gray-800 flex items-center font-semibold w-[20%]">Bangus</div>
-         <div class="text-gray-800 flex items-center font-semibold w-[52%] truncate pl-2 pr-8">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Non at quaerat, ea reprehenderit excepturi magnam voluptatem reiciendis iusto magni temporibus cumque culpa? Cumque incidunt repudiandae dolores alias officiis vitae voluptatem commodi eos fugit, asperiores maiores voluptates veniam, illum fugiat quidem eius vel itaque sequi animi quos! Suscipit voluptatum quia iste!
-         </div>
-         <div class="text-blue-700 flex gap-3 justify-center items-center font-semibold text-center action w-[20%] ml-6">
-            <a href="/haticheries/edit/" class="py-1 px-4 shadow-md bg-white text-green-500 hover:bg-green-500 rounded-md hover:text-white transition-all"><i class="fa-solid fa-pencil"></i></a>
-            <a href="/haticheries/confirm/" class="py-1 px-4 shadow-md bg-white text-red-500 hover:bg-red-500 rounded-md hover:text-white transition-all"><i class="fa-solid fa-trash"></i></a>
-         </div>
-      </div>
-      
-      <div class="fish-table border-b border-b-gray-400 bg-slate-100 flex px-5 py-2">
-         <div class="text-gray-800 flex items-center font-semibold w-[8%]">1</div>
-         <div class="text-gray-800 flex items-center font-semibold w-[20%]">Bangus</div>
-         <div class="text-gray-800 flex items-center font-semibold w-[52%] truncate pl-2 pr-8">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Non at quaerat, ea reprehenderit excepturi magnam voluptatem reiciendis iusto magni temporibus cumque culpa? Cumque incidunt repudiandae dolores alias officiis vitae voluptatem commodi eos fugit, asperiores maiores voluptates veniam, illum fugiat quidem eius vel itaque sequi animi quos! Suscipit voluptatum quia iste!
-         </div>
-         <div class="text-blue-700 flex gap-3 justify-center items-center font-semibold text-center action w-[20%] ml-6">
-            <a href="/haticheries/edit/" class="py-1 px-4 shadow-md bg-white text-green-500 hover:bg-green-500 rounded-md hover:text-white transition-all"><i class="fa-solid fa-pencil"></i></a>
-            <a href="/haticheries/confirm/" class="py-1 px-4 shadow-md bg-white text-red-500 hover:bg-red-500 rounded-md hover:text-white transition-all"><i class="fa-solid fa-trash"></i></a>
-         </div>
-      </div>
-      
-      <div class="fish-table border-b border-b-gray-400 bg-slate-100 flex px-5 py-2">
-         <div class="text-gray-800 flex items-center font-semibold w-[8%]">1</div>
-         <div class="text-gray-800 flex items-center font-semibold w-[20%]">Bangus</div>
-         <div class="text-gray-800 flex items-center font-semibold w-[52%] truncate pl-2 pr-8">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Non at quaerat, ea reprehenderit excepturi magnam voluptatem reiciendis iusto magni temporibus cumque culpa? Cumque incidunt repudiandae dolores alias officiis vitae voluptatem commodi eos fugit, asperiores maiores voluptates veniam, illum fugiat quidem eius vel itaque sequi animi quos! Suscipit voluptatum quia iste!
-         </div>
-         <div class="text-blue-700 flex gap-3 justify-center items-center font-semibold text-center action w-[20%] ml-6">
-            <a href="/haticheries/edit/" class="py-1 px-4 shadow-md bg-white text-green-500 hover:bg-green-500 rounded-md hover:text-white transition-all"><i class="fa-solid fa-pencil"></i></a>
-            <a href="/haticheries/confirm/" class="py-1 px-4 shadow-md bg-white text-red-500 hover:bg-red-500 rounded-md hover:text-white transition-all"><i class="fa-solid fa-trash"></i></a>
-         </div>
-      </div>
-      
-      <div class="fish-table border-b border-b-gray-400 bg-slate-100 flex px-5 py-2">
-         <div class="text-gray-800 flex items-center font-semibold w-[8%]">1</div>
-         <div class="text-gray-800 flex items-center font-semibold w-[20%]">Bangus</div>
-         <div class="text-gray-800 flex items-center font-semibold w-[52%] truncate pl-2 pr-8">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Non at quaerat, ea reprehenderit excepturi magnam voluptatem reiciendis iusto magni temporibus cumque culpa? Cumque incidunt repudiandae dolores alias officiis vitae voluptatem commodi eos fugit, asperiores maiores voluptates veniam, illum fugiat quidem eius vel itaque sequi animi quos! Suscipit voluptatum quia iste!
-         </div>
-         <div class="text-blue-700 flex gap-3 justify-center items-center font-semibold text-center action w-[20%] ml-6">
-            <a href="/haticheries/edit/" class="py-1 px-4 shadow-md bg-white text-green-500 hover:bg-green-500 rounded-md hover:text-white transition-all"><i class="fa-solid fa-pencil"></i></a>
-            <a href="/haticheries/confirm/" class="py-1 px-4 shadow-md bg-white text-red-500 hover:bg-red-500 rounded-md hover:text-white transition-all"><i class="fa-solid fa-trash"></i></a>
-         </div>
-      </div>
-      
-      
+      <?php endforeach; ?>
       <!-- THIS IS WHERE WE LOOP THE DATA -->
    </div>
 </div>   
