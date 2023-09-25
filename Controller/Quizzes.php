@@ -79,7 +79,7 @@ class Quizzes extends Controller
     public static function update($id) {
         if($_SERVER['REQUEST_METHOD'] === 'POST'){
             
-            $imgNewName = (!empty($_FILES['quiz_image']['name'])) ? self::renameImg($_FILES['quiz_image']['name'], 'USER_IMG') : self::clean($_POST['default_img']);
+            $imgNewName = (!empty($_FILES['quiz_image']['name'])) ? self::renameImg($_FILES['quiz_image']['name'], 'QUIZ_IMG') : self::clean($_POST['default_img']);
 
             $data = array(
                 'fish_name' => self::clean($_POST['fish_name']),
@@ -112,7 +112,7 @@ class Quizzes extends Controller
                     self::deleteCurrentImg($currentImg, $imgPath);
                     self::uploadImageDirectory($sourcePath, $destinationPath);
                 }
-                self::messageNotif('success', 'quiz updated');
+                self::messageNotif('success', 'Quiz Updated');
                 header('location: /quizzes');
             } else {
                 echo 'failed';
@@ -135,6 +135,7 @@ class Quizzes extends Controller
     public static function delete($id){
         $quiz = Quiz::getById($id);
         if($quiz->remove()){
+            self::deleteCurrentImg($quiz->getQuiz_image(), './public/assets/images/quiz_images/' . $quiz->getQuiz_image());
             self::messageNotif('error', 'Quiz Deleted');
             header('location: /quizzes');
         } else {

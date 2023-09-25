@@ -180,6 +180,8 @@ class Fishes extends Controller
     public static function delete($id){
         $fish = Fish::getById($id);
         if($fish->remove()){
+            $currentImgPath = './public/assets/images/fish_images/' . $fish->getFish_image();
+            self::deleteCurrentImg($fish->getFish_image(), $currentImgPath);
             self::messageNotif('error', 'fish Deleted');
             header('location: /fishes');
         } else {
