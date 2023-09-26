@@ -14,9 +14,9 @@ class Jokes extends Controller
         // Your code here
         $view = new View(PAGES_PATH . "/joke");
 
-        $jokes = Joke::getAll();
+        $trivias = Joke::getAll();
         $data = array(
-            'jokes' => $jokes
+            'trivias' => $trivias
         );
 
         $view->render("manage-jokes", $data);
@@ -25,40 +25,38 @@ class Jokes extends Controller
     {
         $view = new View(PAGES_PATH . "/joke");
         $view->render("add-jokes");
-   }
+    }
     public static function edit($id)
     {
         $view = new View(PAGES_PATH . '/joke');
-        $joke = Joke::getById($id);
+        $trivia = Joke::getById($id);
 
         $data = array(
-            'joke' => $joke
+            'trivia' => $trivia
         );
         $view->render('edit-joke', $data); 
     }
     public static function save(){
         if($_SERVER['REQUEST_METHOD'] === 'POST'){
-            $imgNewName = self::clean($_POST['default_img']);
-            if(!empty($_FILES['joke_image']['name'])){
-                $imgNewName = self::renameImg($_FILES['joke_image']['name'], 'JOKE_IMG');
-                $sourcePath = $_FILES['joke_image']['tmp_name'];  
-                $destinationPath = './public/assets/images/joke_images/' . $imgNewName; 
-                self::uploadImageDirectory($sourcePath, $destinationPath);
-            } else {
-                self::messageNotif('error', 'Joke image is required');
-                header('location: /jokes/create');
-                die();
+            $imgNewName = self::clean($_POST['default_video']);
+            $sourcePath = '';
+            $destinationPath = '';
+
+            if(!empty($_FILES['trivia_video']['name'])){
+                $imgNewName = self::renameImg($_FILES['trivia_video']['name'], 'TRIVIA_VIDEO');
+                $sourcePath = $_FILES['trivia_video']['tmp_name'];  
+                $destinationPath = './public/assets/videos/trivia_videos/' . $imgNewName; 
             }
 
             $data = array(
-                self::clean($_POST['question']),
-                self::clean($_POST['answer']),
+                self::clean($_POST['trivia']),
                 $imgNewName
             );
 
             $joke = new Joke(NULL, ...$data);
 
             if($joke->save()){
+                self::uploadImageDirectory($sourcePath, $destinationPath);
                 self::messageNotif('success', 'New Joke Added');
                 header('location: /jokes');
             } else {
@@ -71,27 +69,27 @@ class Jokes extends Controller
     public static function update($id) {   
         if($_SERVER['REQUEST_METHOD'] === 'POST'){
             
-            $imgNewName = (!empty($_FILES['joke_image']['name'])) ? self::renameImg($_FILES['joke_image']['name'], 'USER_IMG') : self::clean($_POST['default_img']);
+            $videoName = (!empty($_FILES['trivia_video']['name'])) ? self::renameImg($_FILES['trivia_video']['name'], 'TRIVIA_VIDEO') : self::clean($_POST['default_video']);
 
             $data = array(
-                'question' => self::clean($_POST['question']),
-                'answer' => self::clean($_POST['answer']),
-                'joke_image' => $imgNewName
+                'trivia' => self::clean($_POST['trivia']),
+                'trivia_video' => $videoName
             );
 
-            $joke = Joke::getById($id);
-            $currentImg = $joke->getJoke_image();
+            $trivia = Joke::getById($id);
+            $currentImg = $trivia->getTrivia_video();
 
-            $joke->setQuestion($data['question']);
-            $joke->setAnswer($data['answer']);
-            $joke->setJoke_image($data['joke_image']);
+            $trivia->setTrivia($data['trivia']);
+            $trivia->setTrivia_video($data['trivia_video']);
 
-            if($joke->save()){
-                if(!empty($_FILES['joke_image']['name'])){
-                    $sourcePath = $_FILES['joke_image']['tmp_name'];  
-                    $destinationPath = './public/assets/images/joke_images/' . $imgNewName; 
-                    $imgPath = './public/assets/images/joke_images/' . $currentImg;
-                    self::deleteCurrentImg($currentImg, $imgPath);
+            if($trivia->save()){
+                if(!empty($_FILES['trivia_video']['name'])){
+                    $sourcePath = $_FILES['trivia_video']['tmp_name'];  
+                    $destinationPath = './public/assets/videos/trivia_videos/' . $videoName; 
+                    $imgPath = './public/assets/videos/trivia_videos/' . $currentImg;
+                    if($currentImg != 'NO_VIDEO_YET'){
+                        self::deleteCurrentImg($currentImg, $imgPath);
+                    }
                     self::uploadImageDirectory($sourcePath, $destinationPath);
                 }
                 self::messageNotif('success', 'Joke updated');
@@ -105,11 +103,11 @@ class Jokes extends Controller
     public static function confirm($id){
         $view = new View(PAGES_PATH . "/joke");
 
-        $jokes = Joke::getAll();
+        $trivias = Joke::getAll();
 
         $data = array(
-            'id' => $id,    
-            'jokes' => $jokes
+            'id' => $id,        
+            'trivias' => $trivias
         ); 
 
         $view->render("delete-joke", $data);
@@ -117,7 +115,10 @@ class Jokes extends Controller
 
     public static function delete($id){
         $joke = Joke::getById($id);
+        $deleteTriviaVideo = $joke->getTrivia_video();
+        $videoPath = './public/assets/videos/trivia_videos/' . $deleteTriviaVideo;
         if($joke->remove()){
+            self::deleteCurrentImg($deleteTriviaVideo, $videoPath);
             self::messageNotif('error', 'joke Deleted');
             header('location: /jokes');
         } else {

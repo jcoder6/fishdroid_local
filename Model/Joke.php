@@ -7,17 +7,15 @@ require_once './Model/Model.php';
 class Joke extends Model
 {
     protected $id;
-    protected $question;
-    protected $answer;
-    protected $joke_image;
+    protected $trivia;
+    protected $trivia_video;
 
-    public function __construct($id,$question,$answer,$joke_image)
+    public function __construct($id,$trivia,$trivia_video)
     {
         parent::__construct();
            $this->id=$id;
-    $this->question=$question;
-    $this->answer=$answer;
-    $this->joke_image=$joke_image;
+    $this->trivia=$trivia;
+    $this->trivia_video=$trivia_video;
     }
 
     public function getId()
@@ -25,19 +23,14 @@ class Joke extends Model
         return $this->id;
     }
 
-    public function getQuestion()
+    public function getTrivia()
     {
-        return $this->question;
+        return $this->trivia;
     }
 
-    public function getAnswer()
+    public function getTrivia_video()
     {
-        return $this->answer;
-    }
-
-    public function getJoke_image()
-    {
-        return $this->joke_image;
+        return $this->trivia_video;
     }
 
     public function setId($value)
@@ -45,19 +38,14 @@ class Joke extends Model
         $this->id = $value;
     }
 
-    public function setQuestion($value)
+    public function setTrivia($value)
     {
-        $this->question = $value;
+        $this->trivia = $value;
     }
 
-    public function setAnswer($value)
+    public function setTrivia_video($value)
     {
-        $this->answer = $value;
-    }
-
-    public function setJoke_image($value)
-    {
-        $this->joke_image = $value;
+        $this->trivia_video = $value;
     }
 
     public static function getAll(){
@@ -68,9 +56,9 @@ class Joke extends Model
             foreach($r as $v){
                 $data = new Joke(
                     $v->id,
-                    $v->question,
-                    $v->answer,
-                    $v->joke_image
+                    $v->trivia,
+                    $v->trivia_video
+
                 );
                 $list[] = $data;
             }
@@ -86,9 +74,8 @@ class Joke extends Model
             
             $data = new Joke(
                 $r->id,
-                $r->question,
-                $r->answer,
-                $r->joke_image
+                $r->trivia,
+                $r->trivia_video
             );
             
         }
@@ -97,13 +84,13 @@ class Joke extends Model
 
     public function save(){
         if($this->id){
-            $query = 'UPDATE jokes SET question=:question,answer=:answer,joke_image=:joke_image WHERE id=:id';
-            $params = array(':id'=>$this->id,':question'=>$this->question,':answer'=>$this->answer,':joke_image'=>$this->joke_image);
+            $query = 'UPDATE jokes SET trivia=:trivia,trivia_video=:trivia_video WHERE id=:id';
+            $params = array(':id'=>$this->id,':trivia'=>$this->trivia,':trivia_video'=>$this->trivia_video);
             $result = $this->executeQuery($query,$params);
             return $result;
         }else{
-            $query = 'INSERT INTO jokes VALUES (:id,:question,:answer,:joke_image)';
-            $params = array(':id'=>$this->id,':question'=>$this->question,':answer'=>$this->answer,':joke_image'=>$this->joke_image);
+            $query = 'INSERT INTO jokes VALUES (:id,:trivia,:trivia_video)';
+            $params = array(':id'=>$this->id,':trivia'=>$this->trivia,':trivia_video'=>$this->trivia_video);
             $result = $this->executeQuery($query,$params);
             return $result;
         }

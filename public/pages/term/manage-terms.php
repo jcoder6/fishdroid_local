@@ -11,10 +11,10 @@
             <a href="/terms/create" class="bg-white hover:bg-gradient-to-tr from-teal-400 via-teal-500 to-teal-600 rounded-md font-semibold hover:text-white pr-3 pl-2 py-1 transition-all text-gray-700 text-sm"><i class="fa-solid fa-plus pr-2"></i>Add Term</a>
          </div>
          <div class="bg-slate-300 flex px-5 py-1 border ">
-            <div class="text-white font-semibold w-[5%]">No</div>
-            <div class="text-white font-semibold w-[20%]">Term</div>   
-            <div class="text-white font-semibold w-[55%]">Description</div>
-            <div class="text-white text-center font-semibold w-[20%] ml-6">Action</div>
+            <div class="text-gray-700 font-semibold w-[5%]">No</div>
+            <div class="text-gray-700 font-semibold w-[20%]">Term</div>   
+            <div class="text-gray-700 font-semibold w-[55%]">Description</div>
+            <div class="text-gray-700 text-center font-semibold w-[20%] ml-6">Action</div>
          </div>
 
          <?php $num = 0; foreach($terms as $term) : $num++?>
