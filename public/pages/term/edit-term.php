@@ -40,7 +40,7 @@
          <input type="submit" value="Update term" class="border mr-10 border-blue-700 transition-all font-semibold text-blue-700 py-1 rounded-md w-[8rem] cursor-pointer bg-white hover:bg-gradient-to-r from-cyan-500 to-blue-500 hover:text-white">
       </form>
             
-        </div>
+      </div>
       
 </div>
 <?php include PAGES_PATH . '/partials/footer.php' ?>

@@ -46,24 +46,14 @@ class Quizzes extends Controller
                 $sourcePath = $_FILES['quiz_image']['tmp_name'];  
                 $destinationPath = './public/assets/images/quiz_images/' . $imgNewName; 
                 self::uploadImageDirectory($sourcePath, $destinationPath);
-            } else {
-                self::messageNotif('error', 'quiz image is required');
-                header('location: /quizzes/create');
-                die();
             }
 
             $data = array(
-                self::clean($_POST['fish_name']),
-                self::clean($_POST['scientific_name']),
-                self::clean($_POST['answer']),
-                self::clean($_POST['option1']),
-                self::clean($_POST['option2']),
-                self::clean($_POST['option3']),
+                self::clean($_POST['quiz_answer']),
+                self::clean($_POST['quiz_hint']),
                 $imgNewName
             );
 
-            // var_dump($data);    
-            
             $quiz = new Quiz(NULL, ...$data);
 
             if($quiz->save()){
@@ -82,28 +72,20 @@ class Quizzes extends Controller
             $imgNewName = (!empty($_FILES['quiz_image']['name'])) ? self::renameImg($_FILES['quiz_image']['name'], 'QUIZ_IMG') : self::clean($_POST['default_img']);
 
             $data = array(
-                'fish_name' => self::clean($_POST['fish_name']),
-                'scientific_name' => self::clean($_POST['scientific_name']),
-                'answer' => self::clean($_POST['answer']),
-                'option1' => self::clean($_POST['option1']),
-                'option2' => self::clean($_POST['option2']),
-                'option3' => self::clean($_POST['option3']),
+                'quiz_answer' => self::clean($_POST['quiz_answer']),
+                'quiz_hint' => self::clean($_POST['quiz_hint']),
                 'quiz_image' => $imgNewName
             );
 
             $quiz = Quiz::getById($id);
             $currentImg = $quiz->getQuiz_image();
 
-            $quiz->setFish_name($data['fish_name']);
-            $quiz->setScientific_name($data['scientific_name']);
-            $quiz->setAnswer($data['answer']);
-            $quiz->setOption1($data['option1']);
-            $quiz->setOption2($data['option2']);
-            $quiz->setOption3($data['option3']);
+            $quiz->setQuiz_answer($data['quiz_answer']);
+            $quiz->setquiz_hint($data['quiz_hint']);
             $quiz->setQuiz_image($data['quiz_image']);
 
-            var_dump($data);
-
+            // var_dump($data);
+            // die();
             if($quiz->save()){
                 if(!empty($_FILES['quiz_image']['name'])){
                     $sourcePath = $_FILES['quiz_image']['tmp_name'];  
