@@ -7,25 +7,17 @@ require_once './Model/Model.php';
 class Quiz extends Model
 {
     protected $id;
-    protected $fish_name;
-    protected $scientific_name;
-    protected $answer;
-    protected $option1;
-    protected $option2;
-    protected $option3;
+    protected $quiz_answer;
+    protected $quiz_hint;
     protected $quiz_image;
 
-    public function __construct($id,$fish_name,$scientific_name,$answer,$option1,$option2,$option3,$quiz_image)
+    public function __construct($id,$quiz_answer,$quiz_hint,$quiz_image)
     {
         parent::__construct();
-            $this->id=$id;
-            $this->fish_name=$fish_name;
-            $this->scientific_name=$scientific_name;
-            $this->answer=$answer;
-            $this->option1=$option1;
-            $this->option2=$option2;
-            $this->option3=$option3;
-            $this->quiz_image=$quiz_image;
+           $this->id=$id;
+    $this->quiz_answer=$quiz_answer;
+    $this->quiz_hint=$quiz_hint;
+    $this->quiz_image=$quiz_image;
     }
 
     public function getId()
@@ -33,34 +25,14 @@ class Quiz extends Model
         return $this->id;
     }
 
-    public function getFish_name()
+    public function getQuiz_answer()
     {
-        return $this->fish_name;
+        return $this->quiz_answer;
     }
 
-    public function getScientific_name()
+    public function getQuiz_hint()
     {
-        return $this->scientific_name;
-    }
-
-    public function getAnswer()
-    {
-        return $this->answer;
-    }
-
-    public function getOption1()
-    {
-        return $this->option1;
-    }
-
-    public function getOption2()
-    {
-        return $this->option2;
-    }
-
-    public function getOption3()
-    {
-        return $this->option3;
+        return $this->quiz_hint;
     }
 
     public function getQuiz_image()
@@ -73,34 +45,14 @@ class Quiz extends Model
         $this->id = $value;
     }
 
-    public function setFish_name($value)
+    public function setQuiz_answer($value)
     {
-        $this->fish_name = $value;
+        $this->quiz_answer = $value;
     }
 
-    public function setScientific_name($value)
+    public function setQuiz_hint($value)
     {
-        $this->scientific_name = $value;
-    }
-
-    public function setAnswer($value)
-    {
-        $this->answer = $value;
-    }
-
-    public function setOption1($value)
-    {
-        $this->option1 = $value;
-    }
-
-    public function setOption2($value)
-    {
-        $this->option2 = $value;
-    }
-
-    public function setOption3($value)
-    {
-        $this->option3 = $value;
+        $this->quiz_hint = $value;
     }
 
     public function setQuiz_image($value)
@@ -116,12 +68,8 @@ class Quiz extends Model
             foreach($r as $v){
                 $data = new Quiz(
                     $v->id,
-                    $v->fish_name,
-                    $v->scientific_name,
-                    $v->answer,
-                    $v->option1,
-                    $v->option2,
-                    $v->option3,
+                    $v->quiz_answer,
+                    $v->quiz_hint,
                     $v->quiz_image
                 );
                 $list[] = $data;
@@ -138,14 +86,10 @@ class Quiz extends Model
             
             $data = new Quiz(
                 $r->id,
-                $r->fish_name,
-                $r->scientific_name,
-                $r->answer,
-                $r->option1,
-                $r->option2,
-                $r->option3,
+                $r->quiz_answer,
+                $r->quiz_hint,
                 $r->quiz_image
-        );
+            );
             
         }
         return $data;
@@ -153,13 +97,13 @@ class Quiz extends Model
 
     public function save(){
         if($this->id){
-            $query = 'UPDATE quiz SET id=:id,fish_name=:fish_name,scientific_name=:scientific_name,answer=:answer,option1=:option1,option2=:option2,option3=:option3,quiz_image=:quiz_image WHERE id=:id';
-            $params = array(':id'=>$this->id,':fish_name'=>$this->fish_name,':scientific_name'=>$this->scientific_name,':answer'=>$this->answer,':option1'=>$this->option1,':option2'=>$this->option2,':option3'=>$this->option3,':quiz_image'=>$this->quiz_image);
+            $query = 'UPDATE quiz SET quiz_answer=:quiz_answer,quiz_hint=:quiz_hint,quiz_image=:quiz_image WHERE id=:id';
+            $params = array(':id'=>$this->id,':quiz_answer'=>$this->quiz_answer,':quiz_hint'=>$this->quiz_hint,':quiz_image'=>$this->quiz_image);
             $result = $this->executeQuery($query,$params);
             return $result;
         }else{
-            $query = 'INSERT INTO quiz VALUES (:id,:fish_name,:scientific_name,:answer,:option1,:option2,:option3,:quiz_image)';
-            $params = array(':id'=>$this->id,':fish_name'=>$this->fish_name,':scientific_name'=>$this->scientific_name,':answer'=>$this->answer,':option1'=>$this->option1,':option2'=>$this->option2,':option3'=>$this->option3,':quiz_image'=>$this->quiz_image);
+            $query = 'INSERT INTO quiz VALUES (:id,:quiz_answer,:quiz_hint,:quiz_image)';
+            $params = array(':id'=>$this->id,':quiz_answer'=>$this->quiz_answer,':quiz_hint'=>$this->quiz_hint,':quiz_image'=>$this->quiz_image);
             $result = $this->executeQuery($query,$params);
             return $result;
         }
