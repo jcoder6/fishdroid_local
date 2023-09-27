@@ -10,7 +10,7 @@
 <body class="w-screen h-screen flex flex-col justify-center items-center bg-slate-200">
 
    
-   <div class="login-container bg-slate-100 border mt-[-2rem] border-gray-700 relative w-[30%] h-[60%] flex flex-col justify-center items-center rounded-xl drop-shadow-gray-600 drop-shadow-2xl">
+   <div class="login-container bg-slate-100 border mt-[-2rem] border-gray-700 relative w-[28%] h-[60%] flex flex-col justify-center items-center rounded-xl drop-shadow-gray-600 drop-shadow-2xl">
       <div class="logo w-36 h-36 inset-0 mx-auto mt-[-4.2rem] absolute justify-center rounded-full flex flex-col items-center">
          <div class="logo-container mt-[-3px] w-[11.3rem] h-48 relative overflow-hidden">
             <img class="absoulute inset-0 h-[110%] w-[100%]" src="./public/assets/images/logo-fishdroid.webp" alt="Fishdroid Logo">

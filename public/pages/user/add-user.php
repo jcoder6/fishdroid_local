@@ -3,9 +3,9 @@
 <div class="admin-feature-container w-full h-screen overflow-auto px-3">
       <?php include PAGES_PATH . '/partials/body-header.php' ?>
 
-      <div class="contents-container w-[95%] mt-[-60px] bg-slate-100 mx-auto rounded-lg min-h-[90vh]">
-      <h4 class="text-xl font-bold text-blue-700 p-3">Add User</h4>
-         <form class="upload-form text-center" action="/users/save" method="post" enctype="multipart/form-data">
+      <div class="contents-container w-[40%] mt-[-60px] bg-slate-200 mx-auto rounded-lg">
+      <h4 class="text-xl font-bold text-blue-700 p-3 pl-10 pt-6">Add User</h4>
+         <form class="upload-form text-right pb-12" action="/users/save" method="post" enctype="multipart/form-data">
             <div class="flex flex-col-reverse justify-center items-center p-4">
                <div class="image-label flex items-center gap-3">
                   <span class=" text-gray-900 font-semibold">Insert user image: </span>
@@ -19,26 +19,26 @@
             <div class="flex justify-center gap-5 p-3">
                <div class="fullname w-[40%]">
                   <label for="fullname" class="block text-left mb-2 text-sm font-medium text-gray-900 dark:text-white">Fullname</label>
-                  <input type="text" name="fullname" id="fullname" placeholder="Enter your fullname" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 mb-3">
+                  <input type="text" name="fullname" id="fullname" placeholder="Enter your fullname" class="bg-gray-50 border border-gray-300 text-gray-900 text-xs rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 mb-3">
                </div>
                <div class="email w-[40%]">
                <label for="email" class="block text-left mb-2 text-sm font-medium text-gray-900 dark:text-white">Email</label>
-                  <input type="email" name="email" id="email" placeholder="Enter your email" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 mb-3">
+                  <input type="email" name="email" id="email" placeholder="Enter your email" class="bg-gray-50 border border-gray-300 text-gray-900 text-xs rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 mb-3">
                </div>
             </div>
 
             <div class="flex justify-center gap-5 p-3">
                <div class="username w-[40%]">
                   <label for="username" class="block text-left mb-2 text-sm font-medium text-gray-900 dark:text-white">Username</label>
-                  <input type="text" name="username" id="username" placeholder="Enter your username" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 mb-3">
+                  <input type="text" name="username" id="username" placeholder="Enter your username" class="bg-gray-50 border border-gray-300 text-gray-900 text-xs rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 mb-3">
                </div>
                <div class="password w-[40%]">
                <label for="password" class="block text-left mb-2 text-sm font-medium text-gray-900 dark:text-white">Password</label>
-                  <input type="password" name="password" id="password" placeholder="Enter your password" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 mb-3">
+                  <input type="password" name="password" id="password" placeholder="Enter your password" class="bg-gray-50 border border-gray-300 text-gray-900 text-xs rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 mb-3">
                </div>
             </div>
             
-            <input type="submit" value="Add new user" class="border border-blue-700 bg-blue-700 transition-all font-semibold text-white py-1 rounded-md w-[80%] cursor-pointer hover:bg-white hover:text-blue-700">
+            <input type="submit" value="Add user" class="mr-10 transition-all font-semibold text-gray-700 shadow-md py-1 rounded-md w-[8rem] cursor-pointer bg-white hover:bg-gradient-to-r from-teal-400 via-teal-500 to-teal-600 hover:text-white">
          </form>
             
       </div>

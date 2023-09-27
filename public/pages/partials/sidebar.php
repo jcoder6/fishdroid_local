@@ -6,7 +6,7 @@
       </div>
       <span class="text-white text-xl font-bold mb-2 tracking-[1px]">FishDroid</span>
    </div>
-   <div class="divider h-1 w-full bg-orange-400 shadow-md"></div>
+   <!-- <div class="divider h-1 w-full bg-green-600 shadow-md"></div> -->
    <div class="featurebtns-container">
       <ul>
          <a href="/dashboard"><li class="py-2 pl-2 text-gray-700 border-b border-gray-400 cursor-pointer hover:bg-gradient-to-l to-green-600 via-green-500 from-green-400  hover:text-white transition-all"><i class="fa-solid fa-table-columns w-8 mr-1 text-center"></i>Dashboard</li></a>

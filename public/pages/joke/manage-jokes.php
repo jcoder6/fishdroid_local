@@ -8,9 +8,9 @@
 
          <h4 class="text-xl text-center font-bold text-gray-700 p-3">Manage Trivia</h4>
 
-         <div class="manage-header bg-gray-700 flex justify-between items-center px-4 py-2">
+         <div class="manage-header bg-gradient-to-l from-green-400 via-green-500 to-green-600 flex justify-between items-center px-4 py-2">
             <p class="manage-header-title font-bold text-slate-100 text-lg">Trivia list</p>
-            <a href="/jokes/create" class="bg-white hover:bg-gradient-to-tr from-teal-400 via-teal-500 to-teal-600 rounded-md font-semibold hover:text-white pr-3 pl-2 py-1 transition-all text-gray-700 text-sm"><i class="fa-solid fa-plus pr-2"></i>Add Term</a>
+            <a href="/jokes/create" class="bg-white hover:bg-gradient-to-tr from-teal-400 via-teal-500 to-teal-600 rounded-md font-semibold hover:text-white pr-3 pl-2 py-1 transition-all text-gray-700 text-sm"><i class="fa-solid fa-plus pr-2"></i>Add Trivia</a>
          </div>
 
          <div class="bg-slate-200 flex px-5 py-1">
@@ -22,7 +22,7 @@
          <?php $num = 0; foreach($trivias as $trivia): $num++ ?>
          <div class="fish-table border-b border-b-gray-400 bg-slate-100 flex px-5 py-1">
             <div class="text-gray-800 flex justify-center items-center font-semibold no w-[3%]"><?= $num ?></div>
-            <div class="text-gray-800 flex ml-10 items-center truncate font-semibold fish-name w-[72%]"><?= $trivia->getTrivia() ?></div>
+            <div class="text-gray-800 flex ml-10 items-center truncate fish-name w-[72%]"><?= $trivia->getTrivia() ?></div>
             <div class="text-blue-700 flex justify-center gap-3 items-center font-semibold text-center action w-[25%]">
                <a href="/jokes/edit/<?= $trivia->getId() ?>" class="py-1 px-4 bg-white shadow-md text-center rounded-sm text-green-500 hover:bg-green-500 hover:text-white transition-all"><i class="fa-solid fa-pencil"></i></a>
                <a href="/jokes/confirm/<?= $trivia->getId() ?>" class="py-1 px-4 bg-white shadow-md text-center rounded-sm text-red-500 hover:bg-red-500 hover:text-white transition-all"><i class="fa-solid fa-trash"></i></a>
