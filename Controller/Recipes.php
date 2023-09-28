@@ -12,9 +12,11 @@ class Recipes extends Controller
         $view = new View(PAGES_PATH . "/recipe");
         $view->render('manage-recipe');
     }
-    public static function create()
+    public static function create($id)
     {
         // Your code here
+        $view = new View(PAGES_PATH . "/recipe");
+        $view->render('add-recipe');
     }
     public static function edit($id)
     {
