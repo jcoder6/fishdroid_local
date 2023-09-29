@@ -40,8 +40,8 @@
                 <div class="text-gray-800 flex items-center text-sm  w-[27%] pl-8">Recipe Name</div>
                 <div class="text-gray-800 flex items-center text-sm  w-[50%] truncate pr-8">Steps in Recipe</div>
                 <div class="text-blue-700 flex gap-3  justify-center items-center font-semibold text-center action w-[20%] ml-6">
-                <a href="#" class="py-1 px-4 bg-white shadow-md rounded-sm text-green-500 hover:bg-green-500 hover:text-white transition-all"><i class="fa-solid fa-pencil"></i></a>
-                <a href="#" class="py-1 px-4 bg-white shadow-md rounded-sm text-red-500 hover:bg-red-500 hover:text-white transition-all"><i class="fa-solid fa-trash"></i></a>
+                <a href="/recipes/edit/1" class="py-1 px-4 bg-white shadow-md rounded-sm text-green-500 hover:bg-green-500 hover:text-white transition-all"><i class="fa-solid fa-pencil"></i></a>
+                <a href="/recipes/confirm/1" class="py-1 px-4 bg-white shadow-md rounded-sm text-red-500 hover:bg-red-500 hover:text-white transition-all"><i class="fa-solid fa-trash"></i></a>
                 </div>
             </div>
             

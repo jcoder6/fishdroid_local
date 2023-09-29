@@ -24,12 +24,13 @@ class Nutritions extends Controller
         // Your save code goes here
     }
     
-    public static function confirm(){
+    public static function confirm($id){
+        $view = new View(PAGES_PATH . "/nutrition");
+        $view->render("delete-fish-nutrition");
         // Your code goes here
     }
     public static function delete($id){
-        $view = new View(PAGES_PATH . "/nutrition");
-        $view->render("delete-fish-nutrition");
+        
         //your delete code goes here
     }
 }
