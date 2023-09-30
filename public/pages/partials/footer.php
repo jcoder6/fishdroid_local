@@ -80,17 +80,7 @@ function previewChosenVideo(event) {
     }
 
 
-  /* ======================================
-          FOR CK EDITORS
-========================================*/
 
-try {
-  //for editor input when adding event description
-const eventDesc = document.querySelector( '#eventDesc' );
-CKEDITOR.replace( eventDesc );
-} catch (e) {
-  console.log(e);
-}
 
 //for displaying the label only in the datalist items when selecting the family name
 
@@ -111,9 +101,13 @@ Object.defineProperty(HTMLInputElement.prototype, 'value', {
 const input = document.getElementById('family_name');
 const selectedDataValueInput = document.getElementById('selected_data_value'); // Get the hidden input field
 
-input.addEventListener('input', () => {
-  selectedDataValueInput.value = input.value;
-});
+try{
+  input.addEventListener('input', () => {
+    selectedDataValueInput.value = input.value;
+  });
+} catch(e) {
+  console.log(e)
+}
 
 </script>
 
