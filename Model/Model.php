@@ -55,6 +55,12 @@ class Model
         LIMIT 15 OFFSET 0");
         return $stmt->fetchAll(\PDO::FETCH_OBJ);
     }
+
+    public function allById($table, $field,$id) {
+        $stmt = $this->executeQuery("SELECT * FROM $table WHERE $field=:id", array(':id' => $id));
+        return $stmt->fetchAll(\PDO::FETCH_OBJ);
+    }
+
     public function delete($table, $id)
     {
         $stmt = $this->executeQuery("DELETE FROM $table WHERE id=:id", array(':id' => $id));

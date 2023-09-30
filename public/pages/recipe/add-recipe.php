@@ -5,7 +5,7 @@
 
 <div class="contents-container w-[40%] mt-[-60px] bg-slate-100 mx-auto rounded-lg">
     <h4 class="text-xl font-bold text-blue-700 p-3 pl-10 pt-6">Add Recipe</h4>
-        <form class="upload-form text-right pb-10" action="/quizzes/save" method="post" enctype="multipart/form-data">
+        <form class="upload-form text-right pb-10" action="/recipes/save/<?= $fishID ?>" method="post" enctype="multipart/form-data">
             <div class="px-10 h-[100%]">
                 
                 <input type="file" name="recipe_image" id="eventPhoto" class="hidden" onChange="previewChoosenImage(event)">
@@ -18,11 +18,11 @@
                 
                 <div class="w-[100%] mt-5">
                     <label for="recipe_name" class="block text-left mb-2 text-sm font-medium text-gray-900 dark:text-white">Recipe Name</label>
-                    <input type="text" name="recipe_name" id="recipe_name" placeholder="Enter a recipe" class="bg-gray-50 border border-gray-300 text-gray-900 text-xs rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 mb-3">
+                    <input type="text" name="recipe_name" id="recipe_name" placeholder="Enter a recipe" class="bg-gray-50 border border-gray-300 text-gray-900 text-xs rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 mb-3" required>
                 </div>
                 <div class="w-[100%]">
                     <label for="recipe_steps" class="block text-left mb-2 text-sm font-medium text-gray-900 dark:text-white">Recipe Steps</label>
-                    <textarea type="text" name="recipe_steps" id="recipe_steps" placeholder="Write the steps for making the recipe" class="bg-gray-50 block border min-h-[20rem] border-gray-300 text-gray-900 text-xs rounded-lg focus:ring-blue-500 focus:border-blue-500 w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 mb-8"></textarea>
+                    <textarea type="text" name="recipe_steps" id="recipe_steps" placeholder="Write the steps for making the recipe" class="bg-gray-50 block border min-h-[20rem] border-gray-300 text-gray-900 text-xs rounded-lg focus:ring-blue-500 focus:border-blue-500 w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 mb-8" required></textarea>
                 </div>
                 
                 
