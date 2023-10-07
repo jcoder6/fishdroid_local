@@ -17,11 +17,11 @@
             <input type="hidden" name="default_img" value="NO_IMG_YET">
             
             <div class="fullname w-[100%] mt-5">
-               <label for="quiz_answer" class="block text-left mb-2 text-sm font-medium text-gray-900 dark:text-white">Answer</label>
+               <label for="quiz_answer" class="block text-left mb-2 text-sm font-medium text-gray-900 dark:text-white">Answer<span class="text-red-500 font-bold"> *</span></label>
                <input type="text" name="quiz_answer" id="quiz_answer" placeholder="Enter fish name" class="bg-gray-50 border border-gray-300 text-gray-900 text-xs rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 mb-3">
             </div>
             <div class="email w-[100%]">
-               <label for="quiz_hint" class="block text-left mb-2 text-sm font-medium text-gray-900 dark:text-white">Hint</label>
+               <label for="quiz_hint" class="block text-left mb-2 text-sm font-medium text-gray-900 dark:text-white">Hint<span class="text-red-500 font-bold"> *</span></label>
                <textarea type="text" name="quiz_hint" id="quiz_hint" placeholder="Write a hint about the answer" class="bg-gray-50 block border min-h-[5rem] border-gray-300 text-gray-900 text-xs rounded-lg focus:ring-blue-500 focus:border-blue-500  w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 mb-8"></textarea>
             </div>
             

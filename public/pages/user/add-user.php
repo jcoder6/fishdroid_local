@@ -18,22 +18,22 @@
 
             <div class="flex justify-center gap-5 p-3">
                <div class="fullname w-[40%]">
-                  <label for="fullname" class="block text-left mb-2 text-sm font-medium text-gray-900 dark:text-white">Fullname</label>
+                  <label for="fullname" class="block text-left mb-2 text-sm font-medium text-gray-900 dark:text-white">Fullname<span class="text-red-500 font-bold"> *</span></label>
                   <input type="text" name="fullname" id="fullname" placeholder="Enter your fullname" class="bg-gray-50 border border-gray-300 text-gray-900 text-xs rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 mb-3">
                </div>
                <div class="email w-[40%]">
-               <label for="email" class="block text-left mb-2 text-sm font-medium text-gray-900 dark:text-white">Email</label>
+               <label for="email" class="block text-left mb-2 text-sm font-medium text-gray-900 dark:text-white">Email<span class="text-red-500 font-bold"> *</span></label>
                   <input type="email" name="email" id="email" placeholder="Enter your email" class="bg-gray-50 border border-gray-300 text-gray-900 text-xs rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 mb-3">
                </div>
             </div>
 
             <div class="flex justify-center gap-5 p-3">
                <div class="username w-[40%]">
-                  <label for="username" class="block text-left mb-2 text-sm font-medium text-gray-900 dark:text-white">Username</label>
+                  <label for="username" class="block text-left mb-2 text-sm font-medium text-gray-900 dark:text-white">Username<span class="text-red-500 font-bold"> *</span></label>
                   <input type="text" name="username" id="username" placeholder="Enter your username" class="bg-gray-50 border border-gray-300 text-gray-900 text-xs rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 mb-3">
                </div>
                <div class="password w-[40%]">
-               <label for="password" class="block text-left mb-2 text-sm font-medium text-gray-900 dark:text-white">Password</label>
+               <label for="password" class="block text-left mb-2 text-sm font-medium text-gray-900 dark:text-white">Password<span class="text-red-500 font-bold"> *</span></label>
                   <input type="password" name="password" id="password" placeholder="Enter your password" class="bg-gray-50 border border-gray-300 text-gray-900 text-xs rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 mb-3">
                </div>
             </div>
