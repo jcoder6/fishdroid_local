@@ -18,7 +18,7 @@
 
          <div class="flex justify-between py-3 px-10">
             <div class="username w-[100%]">
-               <label for="trivia" class="block text-left mb-2 text-sm font-medium text-gray-900 dark:text-white">Term Description</label>
+               <label for="trivia" class="block text-left mb-2 text-sm font-medium text-gray-900 dark:text-white">Term Description<span class="text-red-500 font-bold"> *</span></label>
                <textarea required type="text" name="trivia" id="trivia" placeholder="Description..." class="bg-gray-50 block border min-h-[20rem] border-gray-300 text-gray-900 text-xs rounded-lg focus:ring-blue-500 focus:border-blue-500  w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 mb-3"><?= $trivia->getTrivia(); ?></textarea>
             </div>
          

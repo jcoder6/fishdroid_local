@@ -9,7 +9,7 @@
 
             <div class="flex justify-between py-3 px-10">
                 <div class="w-[100%]">
-                    <label for="fish_name" class="block text-left mb-2 text-sm font-medium text-gray-900 dark:text-white">Fish Name</label>
+                    <label for="fish_name" class="block text-left mb-2 text-sm font-medium text-gray-900 dark:text-white">Fish Name<span class="text-red-500 font-bold"> *</span></label>
                     <input required type="text" name="fish_name" id="tech_term" placeholder="Enter Name of Fish" class="bg-slate-100 border border-gray-300 text-gray-900 text-xs rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 mb-3">
                 </div>
             </div>
@@ -24,7 +24,7 @@
 
             <div class="flex justify-between py-3 px-10">
                 <div class="username w-[100%]">
-                    <label for="hatch_process" class="block text-left mb-2 text-sm font-medium text-gray-900 dark:text-white">Hatchery Process</label>
+                    <label for="hatch_process" class="block text-left mb-2 text-sm font-medium text-gray-900 dark:text-white">Hatchery Process<span class="text-red-500 font-bold"> *</span></label>
                     <textarea required type="text" name="hatch_process" id="hatch-process" placeholder="Enter the Hatching Process..." class="w-[100%] min-h-[15rem] mb-6 bg-slate-100 border-none rounded-lg text-xs "></textarea>
                 </div>
             </div>  

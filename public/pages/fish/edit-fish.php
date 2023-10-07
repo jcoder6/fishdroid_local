@@ -9,22 +9,22 @@
 
             <div class="flex justify-between py-3 gap-3 px-10">
                <div class="fish_name w-[50%]">
-                  <label for="fish_name" class="block text-left mb-2 text-sm font-medium text-gray-900 dark:text-white">Fish name</label>
+                  <label for="fish_name" class="block text-left mb-2 text-sm font-medium text-gray-900 dark:text-white">Fish name<span class="text-red-500 font-bold"> *</span></label>
                   <input type="text" value="<?= $fish->getFish_name() ?>" name="fish_name" id="fish_name" placeholder="Enter fish name" class="bg-gray-50 border border-gray-300 text-gray-900 text-xs rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 mb-3">
                </div>
                <div class="scientific_name w-[50%]">
-               <label for="scientific_name" class="block text-left mb-2 text-sm font-medium text-gray-900 dark:text-white">Scientific name</label>
+               <label for="scientific_name" class="block text-left mb-2 text-sm font-medium text-gray-900 dark:text-white">Scientific name<span class="text-red-500 font-bold"> *</span></label>
                   <input type="text" value="<?= $fish->getScientific_name() ?>" name="scientific_name" id="scientific_name" placeholder="Enter scientific name" class="bg-gray-50 border border-gray-300 text-gray-900 text-xs rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 mb-3">
                </div>
             </div>
 
             <div class="flex justify-between py-3 gap-3 px-10">
                <div class="life_span w-[50%]">
-                  <label for="life_span" class="block text-left mb-2 text-sm font-medium text-gray-900 dark:text-white">Local Name</label>
+                  <label for="life_span" class="block text-left mb-2 text-sm font-medium text-gray-900 dark:text-white">Local Name<span class="text-red-500 font-bold"> *</span></label>
                   <input type="text" value="<?= $fish->getLocal_name() ?>" name="life_span" id="life_span" placeholder="Enter local name" class="bg-gray-50 border border-gray-300 text-gray-900 text-xs rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 mb-3">
                </div>
                <div class="family_name w-[50%]">
-                  <label for="family_name" class="block text-left mb-2 text-sm font-medium text-gray-900 dark:text-white">Family name</label>
+                  <label for="family_name" class="block text-left mb-2 text-sm font-medium text-gray-900 dark:text-white">Family name<span class="text-red-500 font-bold"> *</span></label>
                   <input type="text" placeholder="Select the family name" value="<?= getFamilyName($fish->getFamily_name_id(), $familyNames); ?>" autocomplete="off" id="family_name" name="family_name" list="options" class="select-family-name bg-gray-50 border border-gray-300 text-gray-900 text-xs rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 mb-3">
                   <datalist id="options">
                      <?php foreach($familyNames as $familyName) : ?>
@@ -49,7 +49,7 @@
 
             <div class="flex justify-between py-3 px-10">
                <div class="fish_info w-[100%]">
-                  <label for="fish_info" class="block text-left mb-2 text-sm font-medium text-gray-900 dark:text-white">Fish Information</label>
+                  <label for="fish_info" class="block text-left mb-2 text-sm font-medium text-gray-900 dark:text-white">Fish Information<span class="text-red-500 font-bold"> *</span></label>
                   <textarea type="text" name="fish_info" id="fish_info" placeholder="Enter a description or some information about the fish..." class="bg-gray-50 block border min-h-[20rem] border-gray-300 text-gray-900 text-xs rounded-lg focus:ring-blue-500 focus:border-blue-500  w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 mb-3">
                      <?= $fish->getFish_info() ?>
                   </textarea>

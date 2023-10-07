@@ -9,7 +9,7 @@
 
          <div class="flex justify-between py-3 px-10">
             <div class="fullname w-[100%]">
-               <label for="tech_term" class="block text-left mb-2 text-sm font-medium text-gray-900 dark:text-white">Technological Term</label>
+               <label for="tech_term" class="block text-left mb-2 text-sm font-medium text-gray-900 dark:text-white">Technological Term<span class="text-red-500 font-bold"> *</span></label>
                <input required type="text" name="tech_term" id="tech_term" value="<?=$term->getTech_term()?>" placeholder="Enter Technological Term" class="bg-gray-50 border border-gray-300 text-gray-900 text-xs rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 mb-3">
             </div>
          </div>
@@ -32,7 +32,7 @@
 
          <div class="flex justify-between py-3 px-10">
             <div class="username w-[100%]">
-               <label for="tech_desc" class="block text-left mb-2 text-sm font-medium text-gray-900 dark:text-white">Term Description</label>
+               <label for="tech_desc" class="block text-left mb-2 text-sm font-medium text-gray-900 dark:text-white">Term Description<span class="text-red-500 font-bold"> *</span></label>
                <textarea required type="text" name="tech_desc" id="tech_desc" placeholder="Description..." class="bg-gray-50 block border min-h-[20rem] border-gray-300 text-gray-900 text-xs rounded-lg focus:ring-blue-500 focus:border-blue-500  w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 mb-3"><?=$term->getTech_desc()?></textarea>
             </div>
          </div>              
