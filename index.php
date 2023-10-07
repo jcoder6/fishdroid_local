@@ -29,6 +29,7 @@ require_once("./Controller/Recipes.php");
 require_once("./Controller/terms.php");
 require_once("./Controller/hatcheries.php");
 require_once("./Controller/fishrecognitions.php");
+require_once("./Controller/Messages.php");
 
 
 Route::contentToRender();
