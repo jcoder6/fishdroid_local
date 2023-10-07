@@ -4,7 +4,7 @@
       <?php include PAGES_PATH . '/partials/body-header.php' ?>
 
    <div class="contents-container w-[40%] mt-[-60px] bg-slate-100 mx-auto rounded-lg">
-      <h4 class="text-xl font-bold text-blue-700 p-3 pl-10 pt-6">Edit Quiz</h4>
+      <h4 class="text-xl font-bold text-green-600 p-3 pl-10 pt-6">Edit Quiz</h4>
       <form class="upload-form text-right pb-10" action="/quizzes/update/<?= $quiz->getId(); ?>" method="post" enctype="multipart/form-data">
          <div class="px-10 h-[100%]">
             
@@ -17,8 +17,8 @@
                <?php endif; ?>
             </div>
             <div class="image-label flex justify-center items-center gap-3">
-               <span class="font-semibold text-gray-900 ">Insert fish image: </span>
-               <label for="eventPhoto" class="bg-blue-700 font-semibold border border-blue-700 cursor-pointer text-white py-1 px-4 rounded-md hover:text-blue-700 hover:bg-white transition-all"><i class="fa-solid fa-upload mr-3  "></i>Upload Photo</label>
+               <span class="font-semibold text-gray-900">Insert fish image: </span>
+               <label for="eventPhoto" class="bg-white font-semibold text-[13px] cursor-pointer text-green-600 py-1 px-4 rounded-md  hover:text-white hover:bg-gradient-to-r from-green-400 via-green-500 to-green-600  transition-all"><i class="fa-solid fa-upload mr-3  "></i>Upload Photo</label>
             </div>
             <input type="hidden" name="default_img" value="NO_IMG_YET">
             
@@ -33,7 +33,7 @@
             
          </div>
             
-         <input type="submit" value="Update Quiz" class="mr-10 transition-all font-semibold text-gray-700 shadow-md py-1 rounded-md w-[8rem] cursor-pointer bg-white hover:bg-gradient-to-r from-teal-400 via-teal-500 to-teal-600 hover:text-white">
+         <input type="submit" value="Update Quiz" class="mr-10 transition-all font-semibold text-[13px] text-green-600 shadow-md py-1 rounded-md w-[8rem] cursor-pointer bg-white  hover:text-white hover:bg-gradient-to-r from-green-400 via-green-500 to-green-600">
       </form>
             
    </div>

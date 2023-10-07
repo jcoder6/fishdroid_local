@@ -9,6 +9,6 @@
   "author": "Jomer Dorego",
   "license": "ISC",
   "devDependencies": {
-    "tailwindcss": "^3.3.2"
+    "tailwindcss": "^3.3.3"
   }
 }

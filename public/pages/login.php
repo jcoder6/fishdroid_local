@@ -10,10 +10,10 @@
 <body class="w-screen h-screen flex flex-col justify-center items-center bg-slate-200">
 
    
-   <div class="login-container bg-slate-100 border mt-[-2rem] border-gray-700 relative w-[28%] h-[60%] flex flex-col justify-center items-center rounded-xl drop-shadow-gray-600 drop-shadow-2xl">
+   <div class="login-container bg-slate-100 border mt-[-2rem]relative w-[28%] h-[60%] flex flex-col item-center justify-center items-center rounded-xl drop-shadow-gray-600 drop-shadow-2xl">
       <div class="logo w-36 h-36 inset-0 mx-auto mt-[-4.2rem] absolute justify-center rounded-full flex flex-col items-center">
          <div class="logo-container mt-[-3px] w-[11.3rem] h-48 relative overflow-hidden">
-            <img class="absoulute inset-0 h-[110%] w-[100%]" src="./public/assets/images/logo-fishdroid.webp" alt="Fishdroid Logo">
+            <img class="absolute inset-0 h-[100%] w-[99%]" src="./public/assets/images/logo-fishdroid.webp" alt="Fishdroid Logo">
          </div>
          <!-- <span class="text-gray-700 text-lg mt-[-2rem] font-bold">FishDroid</span> -->
       </div>
@@ -46,8 +46,8 @@
          <img class="absolute h-full w-full inset-0" src="./public/assets/images/bglogin2.jpg" alt="fishbg">
       </div> -->
    </div>
-   <div class="wave-container absolute z-[-1] bottom-0 w-[100%] h-[40vh] overflow-hidden">
-      <img src="./public/assets/images/wave.svg" class="mt-[-9rem]" alt="Svg Wave">
+   <div class="wave-container absolute z-[-1] bottom-0 w-[100%] h-[50vh] overflow-hidden">
+      <img src="./public/assets/images/wave.svg" class="mt-[-8rem]" alt="Svg Wave">
    </div>
 </body>
 </html>
