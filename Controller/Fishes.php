@@ -25,8 +25,16 @@ class Fishes extends Controller
     }
 
     public static function view($id) {
+        $fish = Fish::getById($id);
+        $familyName = FamilyName::getById($fish->getFamily_name_id());
+
+        $data = array(
+            'fish' => $fish,
+            'familyName' => $familyName->getFamily_name()
+        );
+
         $view = new View(PAGES_PATH . "/fish");
-        $view->render('view-fish');
+        $view->render('view-fish', $data);
     }
 
     public static function create()
