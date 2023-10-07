@@ -4,12 +4,12 @@
       <?php include PAGES_PATH . '/partials/body-header.php' ?>
 
       <div class="contents-container w-[40%] mt-[-60px] bg-slate-100 mx-auto rounded-lg">
-      <h4 class="text-xl font-bold text-blue-700 p-3 pl-10 pt-6">Edit User</h4>
+      <h4 class="text-xl font-bold text-green-600 p-3 pl-10 pt-6">Edit User</h4>
          <form class="upload-form text-right pb-12" action="/users/update/<?= $user->getId() ?>" method="post" enctype="multipart/form-data">
             <div class="flex flex-col-reverse justify-center items-center p-4">
                <div class="image-label flex items-center gap-3">
-                  <span class=" text-gray-500 ">Insert user image: </span>
-                  <label for="eventPhoto" class="bg-blue-700 font-semibold border border-blue-700 cursor-pointer text-white py-1 px-4 rounded-md hover:text-blue-700 hover:bg-white transition-all"><i class="fa-solid fa-upload mr-3  "></i>Upload Photo</label>
+                  <span class="font-semibold text-gray-900 ">Insert user image: </span>
+                  <label for="eventPhoto" class="bg-white font-semibold text-[13px] cursor-pointer text-green-600 py-1 px-4 rounded-md hover:text-white hover:bg-gradient-to-r from-green-400 via-green-500 to-green-600  transition-all"><i class="fa-solid fa-upload mr-3  "></i>Upload Photo</label>
                   </div>
                <input type="file" name="user_photo" id="eventPhoto" class="hidden" onChange="previewChoosenImage(event)">
                <div id="inputPhoto" class="relative h-44 w-44 border mb-5 text-xs border-slate-400 overflow-hidden text-slate-400 rounded-full flex justify-center items-center">
@@ -40,7 +40,7 @@
                </div>
             </div>
             
-            <input type="submit" value="Update User" class="mr-10 transition-all font-semibold text-gray-700 shadow-md py-1 rounded-md w-[8rem] cursor-pointer bg-white hover:bg-gradient-to-r from-teal-400 via-teal-500 to-teal-600 hover:text-white">
+            <input type="submit" value="Update User" class="mr-10 transition-all font-semibold text-[13px] text-green-600 shadow-md py-1 rounded-md w-[8rem] cursor-pointer bg-white hover:bg-gradient-to-r from-green-400 via-green-500 to-green-600  hover:text-white">
          </form>
             
       </div>

@@ -4,7 +4,7 @@
       <?php include PAGES_PATH . '/partials/body-header.php' ?>
 
       <div class="contents-container w-[50%] mt-[-60px] bg-slate-200 mx-auto rounded-lg min-h-[90vh]">
-      <h4 class="text-xl font-bold text-blue-700 p-3 pl-10 pt-6">Add Fish</h4>
+      <h4 class="text-xl font-bold text-green-600 p-3 pl-10 pt-6">Add Fish</h4>
          <form class="pb-6 upload-form text-right" action="/fishes/save" method="post" enctype="multipart/form-data">
 
             <div class="flex justify-between py-3 gap-3 px-10">
@@ -38,7 +38,7 @@
             <div class="ml-10 mt-6">
                <div class="image-label flex items-center gap-3">
                   <span class="font-semibold text-gray-900 ">Insert fish image: </span>
-                  <label for="eventPhoto" class="bg-blue-700 font-semibold border border-blue-700 cursor-pointer text-white py-1 px-4 rounded-md hover:text-blue-700 hover:bg-white transition-all"><i class="fa-solid fa-upload mr-3  "></i>Upload Photo</label>
+                  <label for="eventPhoto" class=" font-semibold text-[13px] cursor-pointer text-green-600 py-1 px-4 rounded-md hover:text-white bg-white hover:bg-gradient-to-r from-green-400 via-green-500 to-green-600  transition-all"><i class="fa-solid fa-upload mr-3  "></i>Upload Photo</label>
                </div>
                <input type="file" name="fish_image" id="eventPhoto" class="hidden" onChange="previewChoosenImage(event)">
                <div id="inputPhoto" class="relative h-52 w-96 border mb-5 bg-white border-slate-400 overflow-hidden rounded-md text-slate-400 flex justify-center text-xs items-center mt-6">No Image Choose</div>
@@ -51,7 +51,7 @@
                   <textarea type="text" name="fish_info" id="fish_info" placeholder="Enter a description or some information about the fish..." class="bg-gray-50 block border min-h-[20rem] border-gray-300 text-gray-900 text-xs rounded-lg focus:ring-blue-500 focus:border-blue-500  w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 mb-3"></textarea>
                </div>
             </div>     
-            <input type="submit" value="Add new fish" class="mr-10 transition-all font-semibold text-gray-700 shadow-md py-1 rounded-md w-[8rem] cursor-pointer bg-white hover:bg-gradient-to-r from-teal-400 via-teal-500 to-teal-600 hover:text-white">
+            <input type="submit" value="Add fish" class="mr-10 transition-all font-semibold text-green-600 text-[13px] shadow-md py-1 rounded-md w-[8rem] cursor-pointer bg-white hover:bg-gradient-to-r from-green-400 via-green-500 to-green-600 hover:text-white">
       </form>
             
       </div>

@@ -5,7 +5,7 @@
       <?php include PAGES_PATH . '/partials/body-header.php'?>
 
       <div class="contents-container w-[75%] mt-[-60px] bg-slate-100 shadow-teal-500 shadow-xl mx-auto rounded-lg p-5 min-h-[40rem]">
-         <h4 class="font-bold text-center text-3xl text-gray-700 mb-10 mt-4">Dashboard</h4>
+         <h4 class="font-bold text-center text-3xl text-green-600 mb-10 mt-4">Dashboard</h4>
          <div class="dashboard-container flex flex-wrap justify-around">
 
             <div class="content fish-data bg-gradient-to-r from-green-400 via-green-500 to-green-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-green-300 dark:focus:ring-green-800 w-[48%] flex justify-center items-center gap-5 mb-5 p-10 rounded-lg">
