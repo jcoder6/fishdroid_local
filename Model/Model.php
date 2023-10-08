@@ -49,6 +49,12 @@ class Model
         return $stmt->fetchAll(\PDO::FETCH_OBJ);
     }
 
+    public function allByDates($table)
+    {
+        $stmt = $this->executeQuery("SELECT * FROM $table ORDER BY id DESC");
+        return $stmt->fetchAll(\PDO::FETCH_OBJ);
+    }
+
     public function get15($table) {
         $stmt = $this->executeQuery("SELECT * FROM $table
         ORDER BY id DESC
