@@ -3,7 +3,7 @@
 
 <div class="admin-feature-container w-full h-screen overflow-auto px-3">
       <?php include PAGES_PATH . '/partials/body-header.php' ?>
-      <div class="contents-container w-[80%] mt-[-60px] bg-slate-100 mx-auto rounded-lg"> 
+      <div class="contents-container w-[80%] mt-[-60px] mb-8 bg-slate-100 mx-auto rounded-lg"> 
          <h4 class="text-xl text-center font-bold text-green-600 p-3">Manage Fish</h4>
          <div class="manage-header bg-gradient-to-l from-green-400 via-green-500 to-green-600 flex justify-between items-center px-4 py-2">
             <p class="manage-header-title font-bold text-white text-lg">Fish List</p>
