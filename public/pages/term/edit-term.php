@@ -19,7 +19,7 @@
                   <span class="font-semibold text-gray-900 ">Insert term image: </span>
                   <label for="eventPhoto" class="bg-white font-semibold text-[13px] cursor-pointer text-green-600 py-1 px-4 rounded-md hover:text-white hover:bg-gradient-to-r from-green-400 via-green-500 to-green-600  transition-all"><i class="fa-solid fa-upload mr-3  "></i>Upload Photo</label>
                </div>
-               <input type="file" name="term_img" id="eventPhoto" class="hidden" onChange="previewChoosenImage(event)">
+               <input type="file" name="term_img" id="eventPhoto" accept="image/png, image/jpg, image/jpeg" class="hidden" onChange="previewChoosenImage(event)">
                <div id="inputPhoto" class="relative h-52 w-96 border mb-5 text-xs bg-white border-slate-400 overflow-hidden rounded-md text-slate-400 flex justify-center items-center mt-6">
                   <?php if($term->getTerm_img() != 'NO_IMG_YET'): ?>
                      <img src="<?= ROOT_URL ?>/public/assets/images/term_images/<?= $term->getTerm_img() ?>" alt="Term Image">

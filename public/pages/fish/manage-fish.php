@@ -28,38 +28,20 @@
             </div>
             <div class="text-gray-800 flex justify-left items-center fish-name w-[22%]"><?= $fish->getFish_name() ?></div>
             <div class="text-gray-800 flex justify-left items-center img w-[22%]"><?= $fish->getScientific_name() ?></div>
-            <div class="text-blue-700 flex justify-center gap-1 items-center font-semibold text-center action w-[26%]">
-               
-               <a data-tooltip-target="view" href="/fishes/view/<?= $fish->getId() ?>" class="p-3 py-2 rounded-md hover:bg-blue-500 text-blue-500 hover:text-white"><i class="fa-solid fa-eye"></i></a></li>
-               <a data-tooltip-target="edit" href="/fishes/edit/<?= $fish->getId() ?>" class="p-3 py-2 rounded-md hover:bg-green-500 text-green-500 hover:text-white transition-all"><i class="fa-solid fa-pencil"></i></a></li>
-               <a data-tooltip-target="recipe" href="/recipes/viewRecipe/<?= $fish->getId() ?>" class="p-3 py-2 rounded-md hover:bg-orange-500 text-orange-500 hover:text-white"><i class="fa-solid fa-utensils"></i></a></li>
-               <a data-tooltip-target="nutrition" href="/nutritions/viewNutrition/<?= $fish->getId() ?>" class="p-3 py-2 rounded-md hover:bg-purple-500 text-purple-500 hover:text-white"><i class="fa-solid fa-heart-pulse"></i></a></li>
-               <a data-tooltip-target="delete" href="/fishes/confirm/<?= $fish->getId() ?>" class="p-3 py-2 rounded-md hover:bg-red-500 text-red-500 hover:text-white"><i class="fa-solid fa-trash"></i></a></li>
-               
-               <div id="view" role="tooltip" class="absolute z-10 invisible inline-block px-3 py-2 text-sm font-medium text-white transition-opacity duration-300 bg-gray-900 rounded-lg shadow-sm opacity-0 tooltip dark:bg-gray-700">
-                  View
-                  <div class="tooltip-arrow" data-popper-arrow></div>
-               </div>
-               <div id="edit" role="tooltip" class="absolute z-10 invisible inline-block px-3 py-2 text-sm font-medium text-white transition-opacity duration-300 bg-gray-900 rounded-lg shadow-sm opacity-0 tooltip dark:bg-gray-700">
-                  Edit
-                  <div class="tooltip-arrow" data-popper-arrow></div>
-               </div>
-               <div id="recipe" role="tooltip" class="absolute z-10 invisible inline-block px-3 py-2 text-sm font-medium text-white transition-opacity duration-300 bg-gray-900 rounded-lg shadow-sm opacity-0 tooltip dark:bg-gray-700">
-                  Recipes
-                  <div class="tooltip-arrow" data-popper-arrow></div>
-               </div>
-               <div id="nutrition" role="tooltip" class="absolute z-10 invisible inline-block px-3 py-2 text-sm font-medium text-white transition-opacity duration-300 bg-gray-900 rounded-lg shadow-sm opacity-0 tooltip dark:bg-gray-700">
-                  Nutritions
-                  <div class="tooltip-arrow" data-popper-arrow></div>
-               </div>
-               <div id="delete" role="tooltip" class="absolute z-10 invisible inline-block px-3 py-2 text-sm font-medium text-white transition-opacity duration-300 bg-gray-900 rounded-lg shadow-sm opacity-0 tooltip dark:bg-gray-700">
-                  Delete
-                  <div class="tooltip-arrow" data-popper-arrow></div>
+            <div class="text-blue-700 relative font-semibold text-center action w-[26%]">
+               <div class="fish-menu bg-gradient-to-tr from-green-400 via-green-500 to-green-600 text-white rounded-md shadow-md cursor-pointer px-4 py-1 absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%]"><i class="fa-solid fa-ellipsis"></i></div>
+               <div class="bg-blue-100 shadow-md mt-[7.3rem] hidden flex-col absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] z-10">
+                  <a href="/fishes/view/<?= $fish->getId() ?>" class="text-center p-3 py-2 hover:bg-blue-500 text-blue-500 hover:text-white"><i class="pr-3 fa-solid fa-eye"></i>View</a></li>
+                  <a href="/fishes/edit/<?= $fish->getId() ?>" class="text-center p-3 py-2 hover:bg-green-500 text-green-500 hover:text-white transition-all"><i class="pr-3 fa-solid fa-pencil"></i>Edit</a></li>
+                  <a href="/recipes/viewRecipe/<?= $fish->getId() ?>" class="text-center p-3 py-2 hover:bg-orange-500 text-orange-500 hover:text-white"><i class="pr-3 fa-solid fa-utensils"></i>Recipe</a></li>
+                  <a href="/nutritions/viewNutrition/<?= $fish->getId() ?>" class="text-center p-3 py-2 hover:bg-purple-500 text-purple-500 hover:text-white"><i class="pr-3 fa-solid fa-heart-pulse"></i>Nutrition</a></li>
+                  <a href="/fishes/confirm/<?= $fish->getId() ?>" class="text-center p-3 py-2 hover:bg-red-500 text-red-500 hover:text-white"><i class="pr-3 fa-solid fa-trash"></i>Delete</a></li>
                </div>
             </div>
          </div>
          <?php endforeach; ?>   
       </div>
    </div>
+
 <?php include PAGES_PATH . '/partials/footer.php' ?>
 
