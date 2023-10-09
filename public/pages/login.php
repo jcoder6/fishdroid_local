@@ -47,8 +47,20 @@
       </div> -->
    </div>
    <div class="wave-container absolute z-[-1] bottom-0 w-[100%] h-[50vh] overflow-hidden">
-      <img src="./public/assets/images/wave.svg" class="mt-[-8rem]" alt="Svg Wave">
+      <img src="./public/assets/images/wave.svg" class="mt-[-5rem]" alt="Svg Wave">
    </div>
+
+   <!-- <div class="absolute top-5 left-5">
+      <div class="flex gap-5">
+         <div class="h-10 w-14 rounded-full relative">
+            <img class="h-full w-full inset-0 absolute" src="./public/assets/images/bfarlogo.png" alt="BFAR LOGO">
+         </div>
+         <div class="h-10 w-10 rounded-full relative">
+            <img class="h-full w-full inset-0 absolute" src="./public/assets/images/psulogo.png" alt="BFAR LOGO">
+
+         </div>
+      </div>
+   </div> -->
 </body>
 </html>
 

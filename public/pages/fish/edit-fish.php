@@ -40,7 +40,7 @@
                   <span class="font-semibold text-gray-900 ">Insert fish image: </span>
                   <label for="eventPhoto" class="bg-white font-semibold text-[13px] cursor-pointer text-green-600 py-1 px-4 rounded-md hover:text-white hover:bg-gradient-to-r from-green-400 via-green-500 to-green-600  transition-all"><i class="fa-solid fa-upload mr-3  "></i>Upload Photo</label>
                </div>
-               <input type="file" name="fish_image" id="eventPhoto" class="hidden" onChange="previewChoosenImage(event)">
+               <input type="file" name="fish_image" id="eventPhoto" accept="image/png, image/jpg, image/jpeg" class="hidden" onChange="previewChoosenImage(event)">
                <div id="inputPhoto" class="relative h-52 w-96 border mb-5 bg-white border-slate-400 overflow-hidden rounded-md text-slate-400 flex justify-center items-center mt-6">
                   <img src="<?= ROOT_URL ?>/public/assets/images/fish_images/<?= $fish->getFish_image() ?>" alt="Fish Image">
                </div>

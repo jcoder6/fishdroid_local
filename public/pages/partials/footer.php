@@ -109,6 +109,57 @@ try{
   console.log(e)
 }
 
+  /* ======================================
+          FISH MENUS FUNCTIONS
+========================================*/
+
+  window.addEventListener('DOMContentLoaded', () => {
+    const fishMenus = document.querySelectorAll('.fish-menu');
+
+    // Add a click event listener to the document
+    document.addEventListener('click', () => {
+        fishMenus.forEach((menu) => {
+          menu.nextElementSibling.classList.remove('flex');
+          menu.nextElementSibling.classList.add('hidden');
+        });
+    });
+
+    fishMenus.forEach((fishMenu) => {
+        fishMenu.addEventListener('click', (event) => {
+          event.stopPropagation(); // Prevent the click event from bubbling up to the document
+          let menu = fishMenu.nextElementSibling;
+          fishMenus.forEach((menu) => {
+              menu.nextElementSibling.classList.remove('flex');
+              menu.nextElementSibling.classList.add('hidden');
+          });
+          if (menu.classList.contains('hidden')) {
+              menu.classList.remove('hidden');
+              menu.classList.add('flex');
+          } else {
+              menu.classList.remove('flex');
+              menu.classList.add('hidden');
+          }
+        });
+    });
+  });
+
+
+  window.addEventListener('DOMContentLoaded', () => {
+    const currentPage = window.location.href;
+    const splitCurrentPage = currentPage.split('/')
+    const page = splitCurrentPage[3];
+
+    const sidebarlink = document.querySelector('.' + page);
+
+    sidebarlink.classList.add('bg-gradient-to-l')
+    sidebarlink.classList.add('from-green-400')
+    sidebarlink.classList.add('via-green-500')
+    sidebarlink.classList.add('to-green-600')
+    sidebarlink.classList.remove('text-gray-700')
+    sidebarlink.classList.add('text-white')
+  })
+
+
 </script>
 
 </html>

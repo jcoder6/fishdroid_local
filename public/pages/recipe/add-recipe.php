@@ -8,7 +8,7 @@
         <form class="upload-form text-right pb-10" action="/recipes/save/<?= $fishID ?>" method="post" enctype="multipart/form-data">
             <div class="px-10 h-[100%]">
                 
-                <input type="file" name="recipe_image" id="eventPhoto" class="hidden" onChange="previewChoosenImage(event)">
+                <input type="file" name="recipe_image" id="eventPhoto" accept="image/png, image/jpg, image/jpeg" class="hidden" onChange="previewChoosenImage(event)">
                 <div id="inputPhoto" class="relative h-52 w-[100%] border mb-5 bg-white border-slate-400 overflow-hidden rounded-md text-slate-400 flex justify-center text-xs items-center mt-6">No Image Choose</div>
                 <div class="image-label flex justify-center items-center gap-3">
                     <span class="font-semibold text-gray-900 ">Insert Recipe image: </span>
