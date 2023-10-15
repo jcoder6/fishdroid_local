@@ -159,6 +159,19 @@ try{
     sidebarlink.classList.add('text-white')
   })
 
+const pageBtn = document.querySelector('.page-btn')
+const pagesContainer = document.querySelector('.pages-container');
+
+  pageBtn.addEventListener('click', () => {
+      if(pagesContainer.classList.contains('hidden')){   
+        pagesContainer.classList.remove('hidden');
+        pagesContainer.classList.add('flex');
+      } else {
+        pagesContainer.classList.add('hidden');
+        pagesContainer.classList.remove('flex');
+      }
+  })
+
 
 </script>
 

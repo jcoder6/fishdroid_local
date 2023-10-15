@@ -62,6 +62,13 @@ class Model
         return $stmt->fetchAll(\PDO::FETCH_OBJ);
     }
 
+    public function get($table, $offset) {
+        $stmt = $this->executeQuery("SELECT * FROM $table
+        ORDER BY id DESC
+        LIMIT 15 OFFSET $offset");
+        return $stmt->fetchAll(\PDO::FETCH_OBJ);
+    }
+
     public function allById($table, $field,$id) {
         $stmt = $this->executeQuery("SELECT * FROM $table WHERE $field=:id", array(':id' => $id));
         return $stmt->fetchAll(\PDO::FETCH_OBJ);
