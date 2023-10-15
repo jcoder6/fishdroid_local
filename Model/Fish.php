@@ -138,6 +138,27 @@ class Fish extends Model
         return $list;
     }
 
+    public static function getOffset($offset){
+        $m = new Model;
+        $list = [];
+        $r = $m->get('fish', $offset);
+        if($r){
+            foreach($r as $v){
+                $data = new Fish(
+                    $v->id,
+                    $v->fish_name,
+                    $v->scientific_name,
+                    $v->family_name_id,
+                    $v->local_name,
+                    $v->fish_image,
+                    $v->fish_info
+                );
+                $list[] = $data;
+            }
+        }
+        return $list;
+    }
+
     public static function getById($value){
         $m = new Model;
         $data = NULL;

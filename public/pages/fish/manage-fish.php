@@ -7,7 +7,19 @@
          <h4 class="text-xl text-center font-bold text-green-600 p-3">Manage Fish</h4>
          <div class="manage-header bg-gradient-to-l from-green-400 via-green-500 to-green-600 flex justify-between items-center px-4 py-2">
             <p class="manage-header-title font-bold text-white text-lg">Fish List</p>
-            <a href="/fishes/create" class="bg-white hover:bg-gradient-to-r from-teal-400 via-teal-500 to-teal-600 rounded-md text-sm font-semibold hover:text-white pr-4 py-1 pl-3 transition-all text-green-600"><i class="fa-solid fa-plus pr-2"></i>Add Fish</a>
+            <div class="r-side flex items-center justify-center gap-4">
+               <div class="relative">
+                  <span for="page" class="text-white">Pages:</span>
+                  <span class="page-btn cursor-pointer bg-white py-1 px-2 text-xs text-gray-700 ml-2 rounded-md">1<i class="fa-solid fa-sort-down translate-y-[-2.5px] ml-1"></i></span>
+                  <div class="pages-container absolute right-0 top-6 pages-links hidden flex-col z-50 shadow-md">
+                     <a class="px-3 hover:text-white hover:bg-green-600 bg-white" href="/fishes/pages/1">1</a>
+                     <a class="px-3 hover:text-white hover:bg-green-600 bg-white" href="/fishes/pages/2">2</a>
+                     <a class="px-3 hover:text-white hover:bg-green-600 bg-white" href="/fishes/pages/3">3</a>
+                     <a class="px-3 hover:text-white hover:bg-green-600 bg-white" href="/fishes/pages/4">4</a>
+                  </div>
+               </div>
+               <a href="/fishes/create" class="bg-white hover:bg-gradient-to-r from-teal-400 via-teal-500 to-teal-600 rounded-md text-sm font-semibold hover:text-white pr-4 py-1 pl-3 transition-all text-green-600"><i class="fa-solid fa-plus pr-2"></i>Add Fish</a>
+            </div>
          </div>
          <div class="bg-gray-300 flex px-5 py-1">
             <div class="text-gray-700 font-semibold text-center no w-[5%]">No</div>
@@ -42,6 +54,21 @@
          <?php endforeach; ?>   
       </div>
    </div>
+
+   <script>
+      const pageBtn = document.querySelector('.page-btn')
+      const pagesContainer = document.querySelector('.pages-container');
+
+      pageBtn.addEventListener('click', () => {
+         if(pagesContainer.classList.contains('hidden')){   
+            pagesContainer.classList.remove('hidden');
+            pagesContainer.classList.add('flex');
+         } else {
+            pagesContainer.classList.add('hidden');
+            pagesContainer.classList.remove('flex');
+         }
+      })
+   </script>
 
 <?php include PAGES_PATH . '/partials/footer.php' ?>
 

@@ -4,6 +4,7 @@ namespace Makkari\Controllers;
 
 use Exception;
 use Makkari\Controllers\Controller;
+use Makkari\Models\DashboardModel;
 use Makkari\Models\FamilyName;
 use Makkari\Models\Fish;
 
@@ -22,6 +23,21 @@ class Fishes extends Controller
         );
 
         $view->render("manage-fish", $data);
+    }
+
+    public static function pages($page) {
+        $count = new DashboardModel;
+        $pageCount = ceil($count->getFishCount() / 15);
+        $fishes = Fish::getOffset(($page - 1) * 15); 
+        
+        $data = array(
+            'pageCount' => $pageCount,
+            'fishStartCount' => ($page - 1) * 15,
+            'fishes' => $fishes
+        );
+        
+        $view = new View(PAGES_PATH . "/fish");
+        $view->render("page-fish", $data);
     }
 
     public static function view($id) {
