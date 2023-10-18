@@ -3,7 +3,7 @@
 <div class="admin-feature-container w-full h-screen overflow-auto px-3">
       <?php include PAGES_PATH . '/partials/body-header.php' ?>
 
-   <div class="contents-container w-[50%] mt-[-60px] bg-slate-200 mx-auto rounded-lg min-h-[90vh]">
+   <div class="contents-container w-[50%] mt-[-60px] bg-slate-100 mx-auto rounded-lg min-h-[90vh]">
       <h4 class="text-xl font-bold text-green-600 p-3 pl-10 pt-6">Add Terms</h4>
          <form class="upload-form text-right pb-10" action="/terms/save" method="post" enctype="multipart/form-data">
             <div class="flex justify-between py-3 px-10">
@@ -30,10 +30,10 @@
                </div>
             </div>              
             
-            <input type="submit" value="Add term" class="mr-10 transition-all font-semibold text-[13px] text-green-600 shadow-md py-1 rounded-md w-[8rem] cursor-pointer bg-white hover:bg-gradient-to-r from-green-400 via-green-500 to-green-600  hover:text-white">
+            <input type="submit" value="Add" class="mr-10 transition-all font-semibold text-[13px] text-green-600 shadow-md py-1 rounded-md p-5 cursor-pointer bg-white hover:bg-gradient-to-r from-green-400 via-green-500 to-green-600  hover:text-white">
          </form>
             
-      </div>
+      </div>   
       
 </div>
 <?php include PAGES_PATH . '/partials/footer.php' ?>

@@ -9,7 +9,7 @@
             <div class="flex flex-col-reverse justify-center items-center p-4">
                <div class="image-label flex items-center gap-3">
                   <span class="font-semibold text-gray-900 ">Insert user image: </span>
-                  <label for="eventPhoto" class="bg-white font-semibold text-[13px] cursor-pointer text-green-600 py-1 px-4 rounded-md hover:text-white hover:bg-gradient-to-r from-green-400 via-green-500 to-green-600  transition-all"><i class="fa-solid fa-upload mr-3  "></i>Upload Photo</label>
+                  <label for="eventPhoto" class="bg-white font-semibold text-[13px] cursor-pointer shadow-md text-green-600 py-1 px-4 rounded-md hover:text-white hover:bg-gradient-to-r from-green-400 via-green-500 to-green-600  transition-all"><i class="fa-solid fa-upload mr-3  "></i>Upload</label>
                   </div>
                <input type="file" name="user_photo" id="eventPhoto" accept="image/png, image/jpg, image/jpeg" class="hidden" onChange="previewChoosenImage(event)">
                <div id="inputPhoto" class="relative h-44 w-44 border mb-5 text-xs border-slate-400 overflow-hidden text-slate-400 rounded-full flex justify-center items-center">
@@ -40,7 +40,7 @@
                </div>
             </div>
             
-            <input type="submit" value="Update User" class="mr-10 transition-all font-semibold text-[13px] text-green-600 shadow-md py-1 rounded-md w-[8rem] cursor-pointer bg-white hover:bg-gradient-to-r from-green-400 via-green-500 to-green-600  hover:text-white">
+            <input type="submit" value="Update" class="mr-10 transition-all font-semibold text-[13px] text-green-600 shadow-md py-1 rounded-md p-5 cursor-pointer bg-white hover:bg-gradient-to-r from-green-400 via-green-500 to-green-600  hover:text-white">
          </form>
             
       </div>

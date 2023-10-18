@@ -11,7 +11,7 @@
    <script src="https://cdn.ckeditor.com/4.19.0/standard/ckeditor.js"></script>
    <title>Index</title>
 </head>
-<body class="flex bg-gray-300 overflow-hidden">
+<body class="flex bg-slate-200 overflow-hidden">
 <!-- <div class="message fixed z-10 right-5 p-4 rounded-lg text-white font-semibold shadow-md text-md transition-all min-w-[25vw] text-center opacity-0 translate-x-[120%] top-5" data-messageType='error'>Message</div> -->
 <?php
    if(!isset($_SESSION['user-logged'])){

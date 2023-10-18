@@ -4,9 +4,9 @@
 
 <div class="admin-feature-container w-full h-screen overflow-auto px-3">
     <?php include PAGES_PATH . '/partials/body-header.php' ?>
-        <div class="contents-container max-w-[25rem] mt-[-60px] bg-slate-200 mx-auto rounded-lg p-5"> 
-            <h4 class="text-2xl text-center font-bold text-gray-700">View Fish</h4>
-            <div class="relative w-full h-52 bg-white mt-3">
+        <div class="contents-container max-w-[25rem] mt-[-60px] bg-slate-100 mx-auto rounded-lg p-5"> 
+            <h4 class="text-2xl text-center font-bold text-green-600">View Fish</h4>
+            <div class="relative w-full h-52 bg-white mt-3 rounded-md overflow-hidden shadow-md">
                 <img class="absolute inset-0 w-full h-full" src="<?=ROOT_URL?>/public/assets/images/fish_images/<?= $fish->getFish_image() ?>" alt="<?= $fish->getFish_image() ?>">
             </div>
 

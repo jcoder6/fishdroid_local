@@ -28,7 +28,7 @@
         <?php $num = 0; foreach($familyNames as $familyName): $num++?>
         <div class="fish-table border-b border-b-gray-400 bg-slate-100 flex justify-between px-5 py-1">
             <div class="text-gray-800 flex items-center justify-center font-semibold no w-[10%]"><?=$num?></div>
-            <div class="text-gray-800 flex items-center justify-center fish-name w-[60%]"><?=$familyName->getFamily_name()?></div>
+            <div class="text-gray-800 flex items-center justify-center fish-name w-[60%]"><?= ucfirst(strtolower($familyName->getFamily_name())) ?></div>
             <div class="text-blue-700 flex gap-3 items-center justify-center text-center action w-[30%]">
                 <a href="/familyNames/edit/<?=$familyName->getId()?>" class="py-1 px-4 rounded-sm bg-white text-green-500 hover:bg-green-500 hover:text-white transition-all shadow-md"><i class="fa-solid fa-pencil"></i></a>
                 <a href="/familyNames/confirm/<?=$familyName->getId()?>" class="py-1 px-4 rounded-sm bg-white text-red-500 hover:bg-red-500 hover:text-white transition-all shadow-md"><i class="fa-solid fa-trash"></i></a>
