@@ -14,11 +14,14 @@ class Fishes extends Controller
 {
     public static function index()
     {
+        $count = new DashboardModel;
+        $pageCount = ceil($count->getFishCount() / 15);
         $view = new View(PAGES_PATH . "/fish");
 
         $fishes = Fish::getLast15(); 
 
         $data = array(
+            'pageCount' => $pageCount,
             'fishes' => $fishes
         );
 

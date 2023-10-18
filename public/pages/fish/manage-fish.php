@@ -11,13 +11,12 @@
                <div class="relative">
                   <span for="page" class="text-white">Pages:</span>
                   <span class="page-btn cursor-pointer bg-white py-1 px-2 text-xs text-gray-700 ml-2 rounded-md">1<i class="fa-solid fa-sort-down translate-y-[-2.5px] ml-1"></i></span>
-                  <div class="pages-container absolute right-0 top-6 pages-links hidden flex-col z-50 shadow-md">
-                     <a class="px-3 hover:text-white hover:bg-green-600 bg-white" href="/fishes/pages/1">1</a>
-                     <a class="px-3 hover:text-white hover:bg-green-600 bg-white" href="/fishes/pages/2">2</a>
-                     <a class="px-3 hover:text-white hover:bg-green-600 bg-white" href="/fishes/pages/3">3</a>
-                     <a class="px-3 hover:text-white hover:bg-green-600 bg-white" href="/fishes/pages/4">4</a>
-                  </div>
+                  <div class="pages-container absolute right-0 top-6 pages-links hidden flex-col z-50 shadow-md max-h-28 overflow-auto">
+                  <?php for($i = 1; $i <= $pageCount; $i++): ?>
+                  <a class="px-3 hover:text-white hover:bg-green-600 bg-white" href="/fishes/pages/<?= $i ?>"><?= $i ?></a>
+                  <?php endfor; ?>
                </div>
+            </div>
                <a href="/fishes/create" class="bg-white hover:bg-gradient-to-r from-teal-400 via-teal-500 to-teal-600 rounded-md text-sm font-semibold hover:text-white pr-4 py-1 pl-3 transition-all text-green-600"><i class="fa-solid fa-plus pr-2"></i>Add Fish</a>
             </div>
          </div>
@@ -54,21 +53,5 @@
          <?php endforeach; ?>   
       </div>
    </div>
-
-   <script>
-      const pageBtn = document.querySelector('.page-btn')
-      const pagesContainer = document.querySelector('.pages-container');
-
-      pageBtn.addEventListener('click', () => {
-         if(pagesContainer.classList.contains('hidden')){   
-            pagesContainer.classList.remove('hidden');
-            pagesContainer.classList.add('flex');
-         } else {
-            pagesContainer.classList.add('hidden');
-            pagesContainer.classList.remove('flex');
-         }
-      })
-   </script>
-
 <?php include PAGES_PATH . '/partials/footer.php' ?>
 
