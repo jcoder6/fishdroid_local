@@ -63,7 +63,7 @@ class Quiz extends Model
     public static function getAll(){
         $m = new Model;
         $list = [];
-        $r = $m->all('quiz');
+        $r = $m->allByDates('quiz');
         if($r){
             foreach($r as $v){
                 $data = new Quiz(

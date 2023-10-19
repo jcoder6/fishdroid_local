@@ -48,16 +48,22 @@ class Jokes extends Controller
                 $destinationPath = './public/assets/videos/trivia_videos/' . $imgNewName; 
             }
 
+            if(!empty($_FILES['trivia_img']['name'])){
+                $imgNewName = self::renameImg($_FILES['trivia_img']['name'], 'TRIVIA_IMG');
+                $sourcePath = $_FILES['trivia_img']['tmp_name'];  
+                $destinationPath = './public/assets/videos/trivia_videos/' . $imgNewName; 
+            }
+
             $data = array(
                 self::clean($_POST['trivia']),
-                $imgNewName
+                $imgNewName 
             );
 
             $joke = new Joke(NULL, ...$data);
 
             if($joke->save()){
                 self::uploadImageDirectory($sourcePath, $destinationPath);
-                self::messageNotif('success', 'New Joke Added');
+                self::messageNotif('success', 'New Trivia Added');
                 header('location: /jokes');
             } else {
                 self::messageNotif('error', 'Something went wrong, please try again');
@@ -69,8 +75,18 @@ class Jokes extends Controller
     public static function update($id) {   
         if($_SERVER['REQUEST_METHOD'] === 'POST'){
             
-            $videoName = (!empty($_FILES['trivia_video']['name'])) ? self::renameImg($_FILES['trivia_video']['name'], 'TRIVIA_VIDEO') : self::clean($_POST['default_video']);
+            // $videoName = (!empty($_FILES['trivia_video']['name'])) ? self::renameImg($_FILES['trivia_video']['name'], 'TRIVIA_VIDEO') : self::clean($_POST['default_video']);
 
+            $videoName = '';
+
+            if(!empty($_FILES['trivia_video']['name'])){
+                $videoName = self::renameImg($_FILES['trivia_video']['name'], 'TRIVIA_VIDEO');
+            } else if(!empty($_FILES['trivia_img']['name'])){
+                $videoName = self::renameImg($_FILES['trivia_img']['name'], 'TRIVIA_IMG');
+            } else {
+                $videoName = self::clean($_POST['default_video']);
+            }
+            
             $data = array(
                 'trivia' => self::clean($_POST['trivia']),
                 'trivia_video' => $videoName
@@ -92,6 +108,16 @@ class Jokes extends Controller
                     }
                     self::uploadImageDirectory($sourcePath, $destinationPath);
                 }
+                if(!empty($_FILES['trivia_img']['name'])){
+                    $sourcePath = $_FILES['trivia_img']['tmp_name'];  
+                    $destinationPath = './public/assets/videos/trivia_videos/' . $videoName; 
+                    $imgPath = './public/assets/videos/trivia_videos/' . $currentImg;
+                    if($currentImg != 'NO_VIDEO_YET'){
+                        self::deleteCurrentImg($currentImg, $imgPath);
+                    }
+                    self::uploadImageDirectory($sourcePath, $destinationPath);
+                }
+                
                 self::messageNotif('success', 'Joke updated');
                 header('location: /jokes');
             } else {
@@ -119,7 +145,7 @@ class Jokes extends Controller
         $videoPath = './public/assets/videos/trivia_videos/' . $deleteTriviaVideo;
         if($joke->remove()){
             self::deleteCurrentImg($deleteTriviaVideo, $videoPath);
-            self::messageNotif('error', 'joke Deleted');
+            self::messageNotif('error', 'Trivia Deleted');
             header('location: /jokes');
         } else {
             self::messageNotif('error', 'Something went wrong, please try again');

@@ -51,7 +51,7 @@ class FamilyName extends Model
     public static function getAll(){
         $m = new Model;
         $list = [];
-        $r = $m->all('familynames');
+        $r = $m->allByDates('familynames');
         if($r){
             foreach($r as $v){
                 $data = new FamilyName(

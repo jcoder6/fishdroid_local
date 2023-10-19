@@ -51,7 +51,7 @@ class Nutrition extends Model
     public static function getAll(){
         $m = new Model;
         $list = [];
-        $r = $m->all('nutritions');
+        $r = $m->allByDates('nutritions');
         if($r){
             foreach($r as $v){
                 $data = new Nutrition(
