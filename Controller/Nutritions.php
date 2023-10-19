@@ -19,7 +19,7 @@ class Nutritions extends Controller
         $data = array(
             'fishID' => $id,
             'fish' => $fish,
-            'familyName' => $fishFamilyName->getFamily_name(),
+            'familyName' => ucfirst(strtolower($fishFamilyName->getFamily_name())),
             'nutritions' => $nutritions 
         );
         
@@ -58,7 +58,7 @@ class Nutritions extends Controller
         $data = array(
             'fishID' => $fishID,
             'fish' => $fish,
-            'familyName' => $fishFamilyName->getFamily_name(),
+            'familyName' => ucfirst(strtolower($fishFamilyName->getFamily_name())),
             'nutritions' => $nutritions,
             'editNutrition' => $editNutrition
         );

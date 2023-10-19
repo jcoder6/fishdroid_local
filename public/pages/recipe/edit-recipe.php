@@ -17,8 +17,8 @@
                     <?php endif; ?>
                 </div>
                 <div class="image-label flex justify-center items-center gap-3">
-                    <span class="font-semibold text-gray-900 ">Insert Recipe image: </span>
-                    <label for="eventPhoto" class="bg-blue-700 font-semibold border border-blue-700 cursor-pointer text-white py-1 px-4 rounded-md hover:text-blue-700 hover:bg-white transition-all"><i class="fa-solid fa-upload mr-3  "></i>Upload Photo</label>
+                    <span class="font-semibold text-[13px] text-gray-900 ">Insert Recipe image: </span>
+                    <label for="eventPhoto" class="bg-white font-semibold text-[13px] cursor-pointer text-green-600 py-1 px-4 rounded-md hover:text-white hover:bg-gradient-to-r from-green-400 via-green-500 to-green-600  transition-all"><i class="fa-solid fa-upload mr-3  "></i>Upload</label>
                 </div>
                 <input type="hidden" name="default_img" value="<?= $recipe->getRecipe_img() ?>">
                 
@@ -28,13 +28,13 @@
                 </div>
                 <div class="w-[100%]">
                     <label for="recipe_steps" class="block text-left mb-2 text-sm font-medium text-gray-900 dark:text-white">Recipe Steps</label>
-                    <textarea type="text" name="recipe_steps" id="recipe_steps" placeholder="Write the steps for making the recipe" class="bg-gray-50 block border min-h-[20rem] border-gray-300 text-gray-900 text-xs rounded-lg focus:ring-blue-500 focus:border-blue-500 w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 mb-8"><?= $recipe->getRecipe_name() ?></textarea>
+                    <textarea type="text" name="recipe_steps" id="recipe_steps" placeholder="Write the steps for making the recipe" class="bg-gray-50 block border min-h-[20rem] border-gray-300 text-gray-900 text-xs rounded-lg focus:ring-blue-500 focus:border-blue-500 w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 mb-8"><?= $recipe->getRecipe_steps() ?></textarea>
                 </div>
                 
                 
             </div>
                 
-            <input type="submit" value="Update Recipe" class="mr-10 transition-all font-semibold text-gray-700 shadow-md py-1 rounded-md w-[8rem] cursor-pointer bg-white hover:bg-gradient-to-r from-teal-400 via-teal-500 to-teal-600 hover:text-white">
+            <input type="submit" value="Update" class="mr-10 transition-all font-semibold text-[13px] text-green-600 shadow-md py-1 rounded-md p-5 cursor-pointer bg-white  hover:text-white hover:bg-gradient-to-r from-green-400 via-green-500 to-green-600">
         </form>
             
     </div> 

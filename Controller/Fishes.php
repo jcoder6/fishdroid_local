@@ -49,7 +49,7 @@ class Fishes extends Controller
 
         $data = array(
             'fish' => $fish,
-            'familyName' => $familyName->getFamily_name()
+            'familyName' => ucfirst(strtolower($familyName->getFamily_name()))
         );
 
         $view = new View(PAGES_PATH . "/fish");

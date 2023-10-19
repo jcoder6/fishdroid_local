@@ -8,8 +8,8 @@
         <h4 class="text-xl font-bold text-green-600 text-center p-3">Manage Family Name</h4>
         <form action="/familyNames/update/<?= $editFamilyName->getId() ?>" method="post">
             <div class="add-family-name bg-gray-700 p-2 flex justify-center gap-3 items-center text-center mt-5">
-                <label for="family_name" class="text-left text-sm font-bold text-slate-100 dark:text-white">Add Family Name:</label>
-                <input type="text" name="family_name" value="<?=$editFamilyName->getFamily_name()?>" id="family_name" class="bg-slate-100 border border-gray-300 text-gray-900 text-xs rounded-lg focus:ring-blue-500 focus:border-blue-500 p-1 px-2 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 ml-3 w-[40%]" required>
+                <label for="family_name" class="text-left text-sm font-bold text-slate-100 dark:text-white">Edit Family Name:</label>
+                <input type="text" name="family_name" value="<?=ucfirst(strtolower($editFamilyName->getFamily_name()))?>" id="family_name" class="bg-slate-100 border border-gray-300 text-gray-900 text-xs rounded-lg focus:ring-blue-500 focus:border-blue-500 p-1 px-2 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 ml-3 w-[40%]" required>
                 <input type="submit" value="Update" class="transition-all font-semibold text-green-600 py-1 px-4 text-sm rounded-md cursor-pointer bg-white hover:bg-gradient-to-tr from-teal-400 via-teal-500 to-teal-600 hover:text-white">
             </div>
         </form>

@@ -18,7 +18,7 @@
                 <p class="text-gray-700 font-semibold">Local Name:</p>
                 <p class="text-gray-500 text-sm"><?= $fish->getLocal_name() ?></p>
                 <p class="text-gray-700 font-semibold">Family Name: </p>
-                <p class="text-gray-500 text-sm"><?= $familyName ?></p>
+                <p class="text-gray-500 text-sm"><?= ucfirst(strtolower($familyName)) ?></p>
             </div>
         </div>
 
