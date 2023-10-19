@@ -63,7 +63,7 @@ class Term extends Model
     public static function getAll(){
         $m = new Model;
         $list = [];
-        $r = $m->all('terms');
+        $r = $m->allByDates('terms');
         if($r){
             foreach($r as $v){
                 $data = new Term(

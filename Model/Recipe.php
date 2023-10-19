@@ -75,7 +75,7 @@ class Recipe extends Model
     public static function getAll(){
         $m = new Model;
         $list = [];
-        $r = $m->all('recipes');
+        $r = $m->allByDates('recipes');
         if($r){
             foreach($r as $v){
                 $data = new Recipe(

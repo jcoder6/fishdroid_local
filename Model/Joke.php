@@ -51,7 +51,7 @@ class Joke extends Model
     public static function getAll(){
         $m = new Model;
         $list = [];
-        $r = $m->all('jokes');
+        $r = $m->allByDates('jokes');
         if($r){
             foreach($r as $v){
                 $data = new Joke(

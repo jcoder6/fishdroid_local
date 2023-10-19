@@ -32,7 +32,7 @@ try {
     }, 2000);
   })
 } catch (e) {
-  console.log(e);
+  console.log('Message Alert Funtion: Message not active');
 }
 
 function previewChoosenImage(e) {
@@ -106,7 +106,7 @@ try{
     selectedDataValueInput.value = input.value;
   });
 } catch(e) {
-  console.log(e)
+  console.log('Family Name Function: not in the curent page');
 }
 
   /* ======================================
@@ -143,6 +143,9 @@ try{
     });
   });
 
+  /* ======================================
+            SIDEBAR FUNCTIONS
+========================================*/
 
   window.addEventListener('DOMContentLoaded', () => {
     const currentPage = window.location.href;
@@ -159,10 +162,15 @@ try{
     sidebarlink.classList.add('text-white')
   })
 
-const pageBtn = document.querySelector('.page-btn')
-const pagesContainer = document.querySelector('.pages-container');
+    /* ======================================
+        FISH PAGINATION FUNCTIONS
+========================================*/
 
-  pageBtn.addEventListener('click', () => {
+  try {
+    const pageBtn = document.querySelector('.page-btn')
+    const pagesContainer = document.querySelector('.pages-container');
+
+    pageBtn.addEventListener('click', () => {
       if(pagesContainer.classList.contains('hidden')){   
         pagesContainer.classList.remove('hidden');
         pagesContainer.classList.add('flex');
@@ -170,7 +178,44 @@ const pagesContainer = document.querySelector('.pages-container');
         pagesContainer.classList.add('hidden');
         pagesContainer.classList.remove('flex');
       }
-  })
+    })
+  } catch(e) {
+    console.log('Pagination Function: not in the current page');
+  }
+
+    /* ======================================
+          TRIVIA FILE FUNCTIONS
+    ========================================*/
+
+  try {
+    const isImgTriviaBtn = document.getElementById('is_image_trivia');
+    const isVideoTriviaBtn = document.getElementById('is_video_trivia');
+    const inputImgContainer = document.getElementById('input_image_cont');
+    const inputVideoContainer = document.getElementById('input_video_cont');
+
+    isImgTriviaBtn.addEventListener('click', () => {
+      console.log(inputImgContainer);
+      if(inputImgContainer.classList.contains('block')){
+          inputVideoContainer.classList.add('hidden');
+          inputImgContainer.classList.remove('hidden');
+          isVideoTriviaBtn.classList.remove('bg-gradient-to-r', 'from-green-400', 'via-green-500', 'to-green-600', 'text-white')
+          isImgTriviaBtn.classList.add('bg-gradient-to-r', 'from-green-400', 'via-green-500', 'to-green-600', 'text-white')
+      }
+    })
+
+    isVideoTriviaBtn.addEventListener('click', () => {
+      console.log(inputVideoContainer);
+      if(inputVideoContainer.classList.contains('hidden')){
+          inputVideoContainer.classList.remove('hidden');
+          inputImgContainer.classList.add('hidden');
+          isVideoTriviaBtn.classList.add('bg-gradient-to-r', 'from-green-400', 'via-green-500', 'to-green-600', 'text-white')
+          isImgTriviaBtn.classList.remove('bg-gradient-to-r', 'from-green-400', 'via-green-500', 'to-green-600', 'text-white')
+          isImgTriviaBtn.classList.add('bg-white', 'text-green-600')
+      }
+    })
+  } catch(e) {
+    console.log('Trivia Function: not in the current page')
+  }
 
 
 </script>

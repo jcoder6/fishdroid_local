@@ -63,7 +63,7 @@ class Hatchery extends Model
     public static function getAll(){
         $m = new Model;
         $list = [];
-        $r = $m->all('hatcheries');
+        $r = $m->allByDates('hatcheries');
         if($r){
             foreach($r as $v){
                 $data = new Hatchery(
