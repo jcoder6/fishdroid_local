@@ -15,7 +15,7 @@
 
          <div class="bg-slate-300 flex px-5 py-1">
             <div class="text-gray-700 text-center font-semibold no w-[3%]">No</div>
-            <div class="text-gray-700 text-center font-semibold fish-name w-[72%]">Jokes</div>
+            <div class="text-gray-700 text-center font-semibold fish-name w-[72%]">Trivia</div>
             <div class="text-gray-700 text-center font-semibold action w-[25%]">Action</div>
          </div>
 
