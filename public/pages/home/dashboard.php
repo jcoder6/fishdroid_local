@@ -27,7 +27,7 @@
             <div class="content fish-data bg-gradient-to-br from-green-400 to-blue-600 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-green-200 dark:focus:ring-green-800 w-[48%] flex justify-center items-center gap-5 mb-5 p-10 rounded-lg">
                <i class="fa-solid fa-lightbulb mr-3 text-9xl ml-[-30px] text-white"></i>
                <div class="data-fetched">
-                  <p class="text-5xl font-bold text-white"><?= $countData['userCount'] ?></p>
+                  <p class="text-5xl font-bold text-white"><?= $countData['triviaCount'] ?></p>
                   <p class="text-2xl font-bold text-white">Trivias</p>
                </div>
             </div>
