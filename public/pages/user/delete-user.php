@@ -1,49 +1,37 @@
 <?php include PAGES_PATH . '/partials/header.php' ?>
 <?php include PAGES_PATH . '/partials/sidebar.php' ?>
-<div class="admin-feature-container w-full h-screen overflow-auto px-3">
+<div class="admin-feature-container w-full h-screen overflow-auto px-2">
       <?php include PAGES_PATH . '/partials/body-header.php' ?>
 
-      <div class="contents-container w-[95%] mt-[-60px] bg-slate-100 mx-auto rounded-lg min-h-[90vh]">
-      <h4 class="text-xl font-bold text-blue-700 p-3">Edit User</h4>
-         <form class="upload-form text-center" action="/users/update/<?= $user->getId() ?>" method="post" enctype="multipart/form-data">
-            <div class="flex flex-col-reverse justify-center items-center p-4">
-               <div class="image-label flex items-center gap-3">
-                  <span class=" text-gray-500 ">Insert user image: </span>
-                  <label for="eventPhoto" class="bg-blue-700 font-semibold border border-blue-700 cursor-pointer text-white py-1 px-4 rounded-md hover:text-blue-700 hover:bg-white transition-all"><i class="fa-solid fa-upload mr-3  "></i>Upload Photo</label>
-                  </div>
-               <input type="file" name="user_photo" id="eventPhoto" class="hidden" onChange="previewChoosenImage(event)">
-               <div id="inputPhoto" class="relative h-44 w-44 border mb-5 border-slate-400 overflow-hidden text-slate-400 rounded-full flex justify-center items-center">
-                  <img src="<?= ROOT_URL ?>/public/assets/images/user_images/<?= $user->getImg() ?>" alt="Defualt Image">
-               </div>
-               <input type="hidden" name="default_img" value="<?= $user->getImg() ?>">
+      <div class="contents-container w-[100%] mt-[-56px] bg-slate-100 mx-auto min-h-[90vh]">
+        <h4 class="text-xl text-center font-bold text-green-600 p-3">Manage User</h4>
+        <div class="manage-header bg-gradient-to-l from-green-400 via-green-500 to-green-600 flex justify-between items-center px-4 py-2">
+            <p class="manage-header-title font-bold text-slate-100 text-lg">User List</p>
+            <a href="/users/create" class="bg-white hover:bg-gradient-to-r from-teal-400 via-teal-500 to-teal-600 rounded-md text-sm font-semibold hover:text-white pr-4 py-1 pl-3 transition-all text-green-600"><i class="fa-solid fa-plus pr-2"></i>Add User</a>
+        </div>
+        <div class="bg-slate-300 flex px-5 py-1">
+            <div class="text-gray-700 text-center font-semibold no w-[5%]">No</div>
+            <div class="text-gray-700 font-semibold fish-name w-[35%] pl-12">Name</div>
+            <div class="text-gray-700 font-semibold img w-[35%]">Email</div>
+            <div class="text-gray-700 text-center font-semibold action w-[25%]">Action</div>
+        </div>
+        <?php 
+            $i = 0;
+            foreach($users as $user) :
+            $i++;
+        ?>
+        <div class="fish-table border-b border-b-gray-400 bg-slate-100 flex px-5 py-1">
+            <div class="text-gray-800 flex justify-center items-center font-semibold no w-[5%]"><?= $i ?></div>
+            <div class="text-gray-800 flex items-center fish-name w-[35%] pl-12"><?= $user->getFullname() ?></div>
+            <div class="text-gray-800 flex items-center img w-[35%]"><?= $user->getEmail() ?></div>
+            <div class="text-blue-700 flex justify-center gap-3 items-center font-semibold text-center action w-[25%]">
+              <a href="/users/edit/<?= $user->getId() ?>" class="py-1 px-4 bg-white shadow-md rounded-sm text-green-500 hover:bg-green-500 hover:text-white transition-all"><i class="fa-solid fa-pencil"></i></a>
+              <a href="/users/confirm/<?= $user->getId() ?>" class="py-1 px-4 bg-white shadow-md rounded-sm text-red-500 hover:bg-red-500 hover:text-white transition-all"><i class="fa-solid fa-trash"></i></a>
             </div>
-
-            <div class="flex justify-center gap-5 p-3">
-               <div class="fullname w-[40%]">
-                  <label for="fullname" class="block text-left mb-2 text-sm font-medium text-gray-900 dark:text-white">Fullname</label>
-                  <input type="text" name="fullname" id="fullname" value="<?= $user->getFullname() ?>" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 mb-3">
-               </div>
-               <div class="email w-[40%]">
-               <label for="email" class="block text-left mb-2 text-sm font-medium text-gray-900 dark:text-white">Email</label>
-                  <input type="email" name="email" id="email" value="<?= $user->getEmail() ?>" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 mb-3">
-               </div>
-            </div>
-
-            <div class="flex justify-center gap-5 p-3">
-               <div class="username w-[40%]">
-                  <label for="username" class="block text-left mb-2 text-sm font-medium text-gray-900 dark:text-white">Username</label>
-                  <input type="text" name="username" id="username" value="<?= $user->getUsername() ?>" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 mb-3">
-               </div>
-               <div class="password w-[40%]">
-               <label for="password" class="block text-left mb-2 text-sm font-medium text-gray-900 dark:text-white">Password</label>
-                  <input type="password" name="password" id="password" value="<?= $user->getPassword() ?>" placeholder="Enter your new password" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 mb-3">
-               </div>
-            </div>
-            
-            <input type="submit" value="Update User" class="border border-blue-700 bg-blue-700 transition-all font-semibold text-white py-1 rounded-md w-[80%] cursor-pointer hover:bg-white hover:text-blue-700">
-         </form>
-            
+        </div>
+        <?php endforeach; ?>
       </div>
+      
 </div>
 
 <div class="relative z-10" aria-labelledby="modal-title" role="dialog" aria-modal="true">
@@ -80,13 +68,13 @@
               </svg>
             </div>
             <div class="mt-3 text-center sm:ml-4 sm:mt-0 sm:text-left">
-              <h3 class="text-base font-semibold leading-6 text-gray-900" id="modal-title">Delete <?= $user->getFullname() ?> as user?</h3>
+              <h3 class="text-base font-semibold leading-6 text-gray-900" id="modal-title">Delete this user?</h3>
             </div>
           </div>
         </div>
         <div class="bg-gray-50 px-4 py-4 flex justify-center items center gap-3">
-           <a href="/users/delete/<?= $user->getId() ?>" type="button" class="min-w-[30%] transition-all rounded-md text-center bg-red-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-red-500">Delete</a>
-           <a href="/users" type="button" class="min-w-[30%] transition-all rounded-md text-center bg-white px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50">Cancel</a>
+          <a href="/users/delete/<?= $user->getId() ?>" type="button" class="min-w-[30%] transition-all rounded-md text-center bg-red-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-red-500">Delete</a>
+          <a href="/users" type="button" class="min-w-[30%] transition-all rounded-md text-center bg-white px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50">Cancel</a>
         </div>
       </div>
     </div>

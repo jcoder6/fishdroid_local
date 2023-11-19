@@ -1,10 +1,10 @@
 <?php include PAGES_PATH . '/partials/header.php' ?>
 <?php include PAGES_PATH . '/partials/sidebar.php' ?>
 
-<div class="admin-feature-container w-full h-screen overflow-auto px-3">
+<div class="admin-feature-container w-full h-screen overflow-auto px-2">
       <?php include PAGES_PATH . '/partials/body-header.php' ?>
 
-      <div class="contents-container w-[70%] mt-[-60px] bg-slate-100 mx-auto rounded-lg min-h-[90vh]">
+      <div class="contents-container w-[100%] mt-[-56px] bg-slate-100 mx-auto min-h-[90vh]">
          <h4 class="text-xl text-center font-bold text-green-600 p-3">Manage User</h4>
          <div class="manage-header bg-gradient-to-l from-green-400 via-green-500 to-green-600 flex justify-between items-center px-4 py-2">
             <p class="manage-header-title font-bold text-slate-100 text-lg">User List</p>

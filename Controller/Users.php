@@ -4,6 +4,7 @@ namespace Makkari\Controllers;
 
 use Makkari\Controllers\Controller;
 use Makkari\Models\User;
+use Makkari\Models\Role;
 
 require_once "./Model/User.php";
 
@@ -12,6 +13,11 @@ class Users extends Controller
     public static function index()
     {
         // Your code here
+        if($_SESSION['role_id'] != 2){
+            self::messageNotif('error', 'You don\'t have persmission');
+            header('location: /dashboard');
+        }
+        
         $view = new View(PAGES_PATH . "/user");
 
         $users = User::getAll();
@@ -27,15 +33,21 @@ class Users extends Controller
     {
         // Your code here
         $view = new View(PAGES_PATH . '/user');
+        $roles = Role::getAll();
         $view->render('add-user');
     }
+
     public static function edit($id)
     {
         // Your edit code goes here
         $view = new View(PAGES_PATH . '/user');
         $user = User::getById($id);
+        $role = Role::getById($user->getRole_id());
 
+        
         $data = array(
+            'role_id' => $role->getId(),
+            'role' => $role->getRole_name(),
             'user' => $user
         );
 
@@ -56,6 +68,12 @@ class Users extends Controller
                 header('location: /users/create');
                 die();
             }
+
+            if($_POST['role_id'] == "0"){
+                self::messageNotif('error', 'Please enter a valid role');
+                header('location: /users/create');
+                die();
+            }
             $date = date('Y-m-d H:i:s');
             $data = array(
                 self::clean($_POST['fullname']),
@@ -63,7 +81,8 @@ class Users extends Controller
                 self::clean($_POST['email']),
                 self::clean($_POST['password']),
                 $imgNewName,
-                $date
+                $date,
+                intval(self::clean($_POST['role_id']))
             );
             
             $user = new User(NULL, ...$data);
@@ -92,7 +111,8 @@ class Users extends Controller
                 'email' => self::clean($_POST['email']),
                 'password' => self::clean($_POST['password']),
                 'img' => $imgNewName,
-                'created_at' => $date
+                'created_at' => $date,
+                'role_id' => intval(self::clean($_POST['role_id']))
             );
             
             $user = User::getById($id);
@@ -104,6 +124,7 @@ class Users extends Controller
             $user->setPassword($data['password']);
             $user->setImg($data['img']);
             $user->setCreated_at($data['created_at']);
+            $user->setRole_id($data['role_id']);
 
             if($user->save()){
                 if(!empty($_FILES['user_photo']['name'])){
@@ -126,9 +147,11 @@ class Users extends Controller
         // Your code goes here
         $view = new View(PAGES_PATH . '/user');
         $user = User::getById($id);
+        $users = User::getAll();
 
         $data = array(
-            'user' => $user
+            'id' => $id,
+            'users' => $users
         );
 
         $view->render("delete-user", $data);
