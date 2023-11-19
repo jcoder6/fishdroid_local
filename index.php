@@ -30,6 +30,7 @@ require_once("./Controller/terms.php");
 require_once("./Controller/hatcheries.php");
 require_once("./Controller/fishrecognitions.php");
 require_once("./Controller/Messages.php");
+require_once("./Controller/FishNutritions.php");
 
 
 Route::contentToRender();
