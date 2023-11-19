@@ -11,8 +11,9 @@
       <ul>
          <a href="/dashboard"><li class="dashboard py-2 pl-2 text-gray-700 border-b border-gray-400 cursor-pointer hover:bg-gradient-to-l to-green-600 via-green-500 from-green-400  hover:text-white transition-all"><i class="fa-solid fa-table-columns w-8 mr-1 text-center"></i>Dashboard</li></a>
          <a href="/fishes"><li class="fishes py-2 pl-2 text-gray-700 border-b border-gray-400 cursor-pointer hover:bg-gradient-to-l to-green-600 via-green-500 from-green-400  hover:text-white transition-all"><i class="fa-solid fa-fish w-8 mr-1 text-center"></i>Manage Fish</li></a>
-         <a href="/familynames"><li class="familynames py-2 pl-2 text-gray-700 border-b border-gray-400 cursor-pointer hover:bg-gradient-to-l to-green-600 via-green-500 from-green-400  hover:text-white transition-all"><i class="fa-solid fa-people-roof w-8 mr-1 text-center"></i>Family Name</li></a>
          <a href="/hatcheries"><li class="hatcheries py-2 pl-2 text-gray-700 border-b border-gray-400 cursor-pointer hover:bg-gradient-to-l to-green-600 via-green-500 from-green-400  hover:text-white transition-all"><i class="fa-solid fa-egg w-8 mr-1 text-center"></i>Hatchery</li></a>
+         <a href="/familynames"><li class="familynames py-2 pl-2 text-gray-700 border-b border-gray-400 cursor-pointer hover:bg-gradient-to-l to-green-600 via-green-500 from-green-400  hover:text-white transition-all"><i class="fa-solid fa-people-roof w-8 mr-1 text-center"></i>Family Name</li></a>
+         <a href="/fishnutritions"><li class="fishnutritions py-2 pl-2 text-gray-700 border-b border-gray-400 cursor-pointer hover:bg-gradient-to-l to-green-600 via-green-500 from-green-400  hover:text-white transition-all"><i class="fa-solid fa-heart-pulse w-8 mr-1 text-center"></i>Nutritions</li></a>
          <?php if($_SESSION['role_id'] == 2): ?>
             <a href="/users"><li class="users py-2 pl-2 text-gray-700 border-b border-gray-400 cursor-pointer hover:bg-gradient-to-l to-green-600 via-green-500 from-green-400  hover:text-white transition-all"><i class="fa-solid fa-users w-8 mr-1 text-center"></i>Manage User</li></a>
          <?php endif ?>
