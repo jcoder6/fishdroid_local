@@ -56,7 +56,11 @@ class Role extends Model
         $r = $m->all('roles');
         if ($r) {
             foreach ($r as $v) {
-                $data = new Role(...$v);
+                $data = new Role(
+                    $v->id,
+                    $v->role_name,
+                    $v->description
+                );
                 $list[] = $data;
             }
         }
@@ -69,8 +73,11 @@ class Role extends Model
         $data = NULL;
         $r = $m->getOne('roles', 'id', $value);
         if ($r) {
-
-            $data = new Role(...$r);
+            $data = new Role(
+                $r->id,
+                $r->role_name,
+                $r->description
+            );
         }
         return $data;
     }

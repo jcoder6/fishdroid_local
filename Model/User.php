@@ -13,8 +13,9 @@ class User extends Model
     protected $password;
     protected $img;
     protected $created_at;
+    protected $role_id;
 
-    public function __construct($id,$fullname,$username,$email,$password,$img,$created_at)
+    public function __construct($id,$fullname,$username,$email,$password,$img,$created_at,$role_id)
     {
         parent::__construct();
             $this->id=$id;
@@ -24,6 +25,7 @@ class User extends Model
             $this->password=$password;
             $this->img=$img;
             $this->created_at=$created_at;
+            $this->role_id=$role_id;
     }
 
     public function getId()
@@ -61,6 +63,11 @@ class User extends Model
         return $this->created_at;
     }
 
+    public function getRole_id()
+    {
+        return $this->role_id;
+    }
+
     public function setId($value)
     {
         $this->id = $value;
@@ -96,6 +103,10 @@ class User extends Model
         $this->created_at = $value;
     }
 
+    public function setRole_id($value){
+        $this->role_id = $value;
+    }
+
     public static function getAll(){
         $m = new Model;
         $list = [];
@@ -109,7 +120,8 @@ class User extends Model
                     $v->email, 
                     $v->password, 
                     $v->img,
-                    $v->created_at
+                    $v->created_at,
+                    $v->role_id
                 );
                 $list[] = $data;
             }
@@ -129,7 +141,8 @@ class User extends Model
                 $v->email, 
                 $v->password, 
                 $v->img,
-                $v->created_at
+                $v->created_at,
+                $v->role_id
             );   
         }
         return $data;
@@ -137,13 +150,13 @@ class User extends Model
 
     public function save(){
         if($this->id){
-            $query = 'UPDATE users SET fullname=:fullname,username=:username,email=:email,password=:password,img=:img,created_at=:created_at WHERE  id=:id';
-            $params = array(':id'=>$this->id,':fullname'=>$this->fullname,':username'=>$this->username,':email'=>$this->email,':password'=>$this->password,':img'=>$this->img,':created_at'=>$this->created_at);
+            $query = 'UPDATE users SET fullname=:fullname,username=:username,email=:email,password=:password,img=:img,created_at=:created_at,role_id=:role_id WHERE  id=:id';
+            $params = array(':id'=>$this->id,':fullname'=>$this->fullname,':username'=>$this->username,':email'=>$this->email,':password'=>$this->password,':img'=>$this->img,':created_at'=>$this->created_at, 'role_id'=>$this->role_id);
             $result = $this->executeQuery($query,$params);
             return $result;
         }else{
-            $query = 'INSERT INTO users VALUES (:id,:fullname,:username,:email,:password,:img,:created_at)';
-            $params = array(':id'=>$this->id,':fullname'=>$this->fullname,':username'=>$this->username,':email'=>$this->email,':password'=>$this->password,':img'=>$this->img,':created_at'=>$this->created_at);
+            $query = 'INSERT INTO users VALUES (:id,:fullname,:username,:email,:password,:img,:created_at,:role_id)';
+            $params = array(':id'=>$this->id,':fullname'=>$this->fullname,':username'=>$this->username,':email'=>$this->email,':password'=>$this->password,':img'=>$this->img,':created_at'=>$this->created_at,'role_id'=>$this->role_id);
             $result = $this->executeQuery($query,$params);
             return $result;
         }
