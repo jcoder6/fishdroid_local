@@ -39,12 +39,12 @@
                     <div class="bg-white p-3 rounded-lg shadow-md mb-10 min-h-[26rem] max-h-[26rem] overflow-auto">
                         <ul class="">
                             <?php foreach($nutritions as $nutrition) : ?>
-                                <li class="px-5 py-2 mb-2 text-lg text-gray-700 border-b border-b-gray-700 flex items-center justify-between cursor-pointer hover:bg-slate-200 transition-colors">
+                              <li class="px-5 py-2 mb-2 text-lg text-gray-700 border-b border-b-gray-700 flex items-center justify-between cursor-pointer hover:bg-slate-200 transition-colors">
                                     <i class="fa-solid fa-hand-point-right text-gray-900"></i>
-                                    <?= $nutrition->getNutrition_name() ?>
+                                    <span class="text-[13px]"><?= $nutrition['nutrition_name'] ?></span>
                                     <div class="btns">
-                                        <a href="/nutritions/edit/<?= $fishID?>/<?= $nutrition->getId() ?>" class="py-1 px-4 rounded-sm bg-white text-green-500 hover:bg-green-500 hover:text-white transition-all shadow-md"><i class="fa-solid fa-pencil"></i></a>
-                                        <a href="/nutritions/confirm/<?= $fishID?>/<?= $nutrition->getId() ?>" class="py-1 px-4 rounded-sm bg-white text-red-500 hover:bg-red-500 hover:text-white transition-all shadow-md"><i class="fa-solid fa-trash"></i></a>
+                                        <a href="/nutritions/edit/<?= $fishID?>/<?= $nutrition['id'] ?>" class="py-1 px-4 rounded-sm bg-white text-green-500 hover:bg-green-500 hover:text-white transition-all shadow-md"><i class="fa-solid fa-pencil"></i></a>
+                                        <a href="/nutritions/confirm/<?= $fishID?>/<?= $nutrition['id'] ?>" class="py-1 px-4 rounded-sm bg-white text-red-500 hover:bg-red-500 hover:text-white transition-all shadow-md"><i class="fa-solid fa-trash"></i></a>
                                     </div>
                                 </li>
                             <?php endforeach ?>
@@ -75,7 +75,7 @@
           </div>
         </div>
         <div class="bg-gray-50 px-4 py-4 flex justify-center items center gap-3">
-          <a href="/nutritions/delete/<?= $fishID ?>/<?= $editNutrition->getId() ?>" type="button" class="min-w-[30%] transition-all rounded-md text-center bg-red-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-red-500">Delete</a>
+          <a href="/nutritions/delete/<?= $fishID ?>/<?= $nutrition['id'] ?>" type="button" class="min-w-[30%] transition-all rounded-md text-center bg-red-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-red-500">Delete</a>
           <a href="/nutritions/viewNutrition/<?= $fishID ?>" type="button" class="min-w-[30%] transition-all rounded-md text-center bg-white px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50">Cancel</a>
         </div>
       </div>
