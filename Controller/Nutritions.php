@@ -4,6 +4,7 @@ namespace Makkari\Controllers;
 use Makkari\Controllers\Controller;
 use Makkari\Models\FamilyName;
 use Makkari\Models\Fish;
+use Makkari\Models\Fishnutrition;
 use Makkari\Models\Nutrition;
 
 require_once './Model/Nutrition.php';
@@ -15,15 +16,14 @@ class Nutritions extends Controller
         $fish = Fish::getById($id);
         $nutritions = Nutrition::getAllById($id);
         $fishFamilyName = FamilyName::getById($fish->getFamily_name_id());
-
+        $fishNutritions = Fishnutrition::getAll();
         $data = array(
             'fishID' => $id,
             'fish' => $fish,
             'familyName' => ucfirst(strtolower($fishFamilyName->getFamily_name())),
-            'nutritions' => $nutritions 
+            'nutritions' => $nutritions,
+            'fishNutritions' => $fishNutritions 
         );
-        
-        // die();
 
 
         $view = new View(PAGES_PATH . "/nutrition");
@@ -33,9 +33,17 @@ class Nutritions extends Controller
     {
         // Your code here
         if($_SERVER['REQUEST_METHOD'] === 'POST'){
+            $isExist = Nutrition::isExist($fishID, $_POST['nutrition_id']);
+
+            if($isExist > 0) {
+                self::messageNotif('error', 'Nutrients already added');
+                header('location: /nutritions/viewNutrition/' . $fishID);
+                die();
+            }
+
             $nutrition = Nutrition::getById($nutritionID);
             
-            $nutrition->setNutrition_name(self::clean($_POST['nutrition_name']));
+            $nutrition->setnutrition_id(self::clean($_POST['nutrition_id']));
 
             if($nutrition->save()){
                 self::messageNotif('success', 'Nutrition Updated');
@@ -54,28 +62,52 @@ class Nutritions extends Controller
         $nutritions = Nutrition::getAllById($fishID);
         $fishFamilyName = FamilyName::getById($fish->getFamily_name_id());
         $editNutrition = Nutrition::getById($nutritionID);
+        $editNutritionName = Fishnutrition::getById($editNutrition->getnutrition_id());
+        $fishNutritions = Fishnutrition::getAll();
+
 
         $data = array(
             'fishID' => $fishID,
             'fish' => $fish,
             'familyName' => ucfirst(strtolower($fishFamilyName->getFamily_name())),
             'nutritions' => $nutritions,
-            'editNutrition' => $editNutrition
+            'editNutrition' => $editNutrition,
+            'editNutriName' => $editNutritionName->getNutrition_name(),
+            'fishNutritions' => $fishNutritions 
         );
         
 
         $view = new View(PAGES_PATH . "/nutrition");
         $view->render("edit-fish-nutrition", $data);
     }
+
+
     public static function save($fishID){
         // Your save code goes here
         if($_SERVER['REQUEST_METHOD'] == 'POST'){
+            if($_POST['nutrition_id'] == '0'){
+                self::messageNotif('error', 'Please Enter Nutrients');
+                header('location: /nutritions/viewNutrition/' . $fishID);
+                die();
+            }
+
+            
             $data = array(
                 'fish_id' => $fishID,
-                'nutrition_name' => self::clean($_POST['nutrition_name'])
+                'nutrition_id' => self::clean($_POST['nutrition_id'])
             );
 
+
+            $isExist = Nutrition::isExist($fishID, $data['nutrition_id']);
+
+            if($isExist > 0) {
+                self::messageNotif('error', 'Nutrients already added');
+                header('location: /nutritions/viewNutrition/' . $fishID);
+                die();
+            }
             $nutrition = new Nutrition(null, ...$data);
+
+            
 
             if($nutrition->save()){
                 self::messageNotif('success', 'New Nutrition Added');

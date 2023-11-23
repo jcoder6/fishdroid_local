@@ -49,6 +49,12 @@ class Model
         return $stmt->fetchAll(\PDO::FETCH_OBJ);
     }
 
+    public function allSorted($table, $field)
+    {
+        $stmt = $this->executeQuery("SELECT * FROM $table ORDER BY $field");
+        return $stmt->fetchAll(\PDO::FETCH_OBJ);
+    }
+
     public function allByDates($table)
     {
         $stmt = $this->executeQuery("SELECT * FROM $table ORDER BY id DESC");
@@ -72,6 +78,27 @@ class Model
     public function allById($table, $field,$id) {
         $stmt = $this->executeQuery("SELECT * FROM $table WHERE $field=:id", array(':id' => $id));
         return $stmt->fetchAll(\PDO::FETCH_OBJ);
+    }
+
+    public function nutritionByFishID($table, $fishID){
+        $query = "SELECT n.*, fs.id AS nutriID, fs.nutrition_name FROM $table n JOIN fishnutritions fs ON n.nutrition_id = fs.id WHERE n.fish_id = :fish_id";
+        $params = array(
+            'fish_id' => $fishID,
+        );
+        $stmt = $this->executeQuery($query, $params);
+
+        return $stmt->fetchAll(\PDO::FETCH_OBJ);
+    }
+
+    public function checkIfExist($fishID, $nutriID){
+        $query = "SELECT * FROM nutritions WHERE fish_id = :fish_id AND nutrition_id = :nutri_id";
+        $params = array(
+            "fish_id" => $fishID,
+            "nutri_id" => $nutriID
+        );
+        $stmt = $this->executeQuery($query, $params);
+
+        return $stmt->rowCount();
     }
 
     public function delete($table, $id)

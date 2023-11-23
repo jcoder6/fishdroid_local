@@ -39,7 +39,7 @@ class Fishnutrition extends Model
     public static function getAll(){
         $m = new Model;
         $list = [];
-        $r = $m->all('fishnutritions');
+        $r = $m->allSorted('fishnutritions', 'nutrition_name');
         if($r){
             foreach($r as $v){
                 $data = new Fishnutrition(

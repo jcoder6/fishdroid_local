@@ -1,6 +1,7 @@
 <?php include PAGES_PATH . '/partials/header.php' ?>
 <?php include PAGES_PATH . '/partials/sidebar.php' ?>
 
+
 <div class="admin-feature-container w-full h-screen overflow-auto px-3">
     <?php include PAGES_PATH . '/partials/body-header.php' ?>
         <div class="contents-container w-[70%] mt-[-60px] bg-slate-100 mx-auto rounded-lg"> 
@@ -9,7 +10,12 @@
             <form action="/nutritions/save/<?= $fishID ?>" method="post">
                 <div class="add-family-name bg-gradient-to-bl from-green-400 via-green-500 to-green-600 b p-2 flex justify-center gap-2 items-center text-center mt-5">
                     <label for="nutrition_name" class="text-left text-sm font-bold text-slate-100">Add Fish Nutrition:</label>
-                    <input type="text" name="nutrition_name" placeholder="Enter Nutrition" id="nutrition_name" class="bg-slate-100 border border-gray-300 text-gray-900 text-xs rounded-lg focus:ring-blue-500 focus:border-blue-500 p-1 px-2 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 ml-3 w-[40%]" required>
+                    <select type="text" name="nutrition_id" placeholder="Enter Nutrition" id="nutrition_name" class="bg-slate-100 border border-gray-300 text-gray-900 text-xs rounded-lg focus:ring-blue-500 focus:border-blue-500 p-1 px-2 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 ml-3 w-[40%]" required>
+                        <option value="0" hidden>Enter nutrition</option>
+                        <?php foreach($fishNutritions as $fn): ?>
+                            <option value="<?= $fn->getId() ?>" class="p-3 hover:bg-slate-200 transition-all"><?= $fn->getNutrition_name() ?></option>
+                        <?php endforeach; ?>
+                    </select>
                     <input type="submit" value="Add" class="transition-all font-semibold text-gray-700 py-1 px-4 text-sm rounded-md cursor-pointer bg-white hover:bg-gradient-to-tr from-teal-400 via-teal-500 to-teal-600 hover:text-white">
                 </div>
             </form>
@@ -41,10 +47,10 @@
                             <?php foreach($nutritions as $nutrition) : ?>
                                 <li class="px-5 py-2 mb-2 text-lg text-gray-700 border-b border-b-gray-700 flex items-center justify-between cursor-pointer hover:bg-slate-200 transition-colors">
                                     <i class="fa-solid fa-hand-point-right text-gray-900"></i>
-                                    <span class="text-[13px]"><?= $nutrition->getNutrition_name() ?></span>
+                                    <span class="text-[13px]"><?= $nutrition['nutrition_name'] ?></span>
                                     <div class="btns">
-                                        <a href="/nutritions/edit/<?= $fishID?>/<?= $nutrition->getId() ?>" class="py-1 px-4 rounded-sm bg-white text-green-500 hover:bg-green-500 hover:text-white transition-all shadow-md"><i class="fa-solid fa-pencil"></i></a>
-                                        <a href="/nutritions/confirm/<?= $fishID?>/<?= $nutrition->getId() ?>" class="py-1 px-4 rounded-sm bg-white text-red-500 hover:bg-red-500 hover:text-white transition-all shadow-md"><i class="fa-solid fa-trash"></i></a>
+                                        <a href="/nutritions/edit/<?= $fishID?>/<?= $nutrition['id'] ?>" class="py-1 px-4 rounded-sm bg-white text-green-500 hover:bg-green-500 hover:text-white transition-all shadow-md"><i class="fa-solid fa-pencil"></i></a>
+                                        <a href="/nutritions/confirm/<?= $fishID?>/<?= $nutrition['id'] ?>" class="py-1 px-4 rounded-sm bg-white text-red-500 hover:bg-red-500 hover:text-white transition-all shadow-md"><i class="fa-solid fa-trash"></i></a>
                                     </div>
                                 </li>
                             <?php endforeach ?>
