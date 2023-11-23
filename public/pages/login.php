@@ -80,6 +80,7 @@ function login() {
                $_SESSION['fullname'] = $user['fullname'];
                $_SESSION['img'] = $user['img'];
                $_SESSION['role_id'] = $user['role_id'];
+               $_SESSION['username'] = $user['username'];
                header('location: /dashboard');
                echo 'success';
             } else {

@@ -4,7 +4,7 @@
     <?php include PAGES_PATH . '/partials/body-header.php' ?>
 
 <div class="contents-container w-[40%] mt-[-60px] bg-slate-100 mx-auto rounded-lg">
-    <h4 class="text-xl font-bold text-blue-700 p-3 pl-10 pt-6">Edit Recipe</h4>
+    <h4 class="text-xl font-bold text-green-600 p-3 pl-10 pt-6">Edit Recipe</h4>
         <form class="upload-form text-right pb-10" action="/recipes/update/<?= $fishID ?>/<?= $recipe->getId() ?>" method="post" enctype="multipart/form-data">
             <div class="px-10 h-[100%]">
                 
