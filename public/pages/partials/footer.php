@@ -152,7 +152,7 @@ try{
     const splitCurrentPage = currentPage.split('/')
     const page = splitCurrentPage[3];
 
-    const sidebarlink = document.querySelector('.' + page);
+    const sidebarlink = (page === 'quizzes' || page === 'jokes') ? document.querySelector('.fun-facts') : document.querySelector('.' + page);
 
     sidebarlink.classList.add('bg-gradient-to-l')
     sidebarlink.classList.add('from-green-400')
@@ -161,6 +161,27 @@ try{
     sidebarlink.classList.remove('text-gray-700')
     sidebarlink.classList.add('text-white')
   })
+
+    /* ======================================
+            USER MENU FUNCTIONS
+========================================*/
+
+  try {
+    const userMenuBtn = document.querySelector('.menu-button');
+    const userMenuContainer = document.querySelector('.menu-container');
+    
+    userMenuBtn.addEventListener('click', () => {
+      if(userMenuContainer.classList.contains('hidden')){
+          userMenuContainer.classList.remove('hidden');
+          userMenuContainer.classList.add('flex');
+      } else {
+          userMenuContainer.classList.add('hidden');
+          userMenuContainer.classList.remove('flex');
+      }
+    })
+  } catch(e) {
+    console.log('User Menu Functoin: not in the current page');
+  }
 
     /* ======================================
         FISH PAGINATION FUNCTIONS
