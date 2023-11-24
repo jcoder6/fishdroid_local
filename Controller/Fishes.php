@@ -7,6 +7,8 @@ use Makkari\Controllers\Controller;
 use Makkari\Models\DashboardModel;
 use Makkari\Models\FamilyName;
 use Makkari\Models\Fish;
+use Makkari\Models\Nutrition;
+use Makkari\Models\Recipe;
 
 require_once './Model/Fish.php';
 
@@ -46,10 +48,14 @@ class Fishes extends Controller
     public static function view($id) {
         $fish = Fish::getById($id);
         $familyName = FamilyName::getById($fish->getFamily_name_id());
+        $recipes = Recipe::getAllById($id);
+        $nutritions = Nutrition::getAllById($id);
 
         $data = array(
             'fish' => $fish,
-            'familyName' => ucfirst(strtolower($familyName->getFamily_name()))
+            'familyName' => ucfirst(strtolower($familyName->getFamily_name())),
+            'recipes' => $recipes,
+            'nutritions' => $nutritions
         );
 
         $view = new View(PAGES_PATH . "/fish");
