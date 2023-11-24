@@ -35,6 +35,36 @@
                <input type="hidden" id="selected_data_value" name="family_name_id"/>
             </div>
 
+            <div class="flex justify-between py-3 gap-3 px-10">
+               <div class="gender_selection w-[50%]">
+                  <label class="block text-left mb-2 text-sm font-medium text-gray-900 dark:text-white">Is Edible?<span class="text-red-500 font-bold"> *</span></label>
+                  <div class="flex gap-3">
+                     <label for="true-edible" class="flex items-center text-xs">
+                        <input type="radio" id="true-edible" name="is_edible" value="1" class="mr-2">
+                        YES
+                     </label>
+                     <label for="false-edible" class="flex items-center text-xs">
+                        <input type="radio" id="false-edible" name="is_edible" value="0" class="mr-2">
+                        NO
+                     </label>
+                  </div>
+               </div>
+
+               <div class="gender_selection w-[50%]">
+                  <label class="block text-left mb-2 text-sm font-medium text-gray-900 dark:text-white">Can be a Pet?<span class="text-red-500 font-bold"> *</span></label>
+                  <div class="flex gap-3">
+                     <label for="true-pet" class="flex items-center text-xs">
+                        <input type="radio" id="true-pet" name="is_pettable" value="1" class="mr-2">
+                        YES
+                     </label>
+                     <label for="false-pet" class="flex items-center text-xs">
+                        <input type="radio" id="false-pet" name="is_pettable" value="0" class="mr-2">
+                        NO
+                     </label>
+                  </div>
+               </div>
+            </div>
+
             <div class="ml-10 mt-6">
                <div class="image-label flex items-center gap-3">
                   <span class="font-semibold text-gray-900 ">Insert fish image: </span>

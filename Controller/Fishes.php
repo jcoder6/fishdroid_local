@@ -68,6 +68,7 @@ class Fishes extends Controller
 
         $view->render("add-fish", $data);
     }
+
     public static function edit($id)
     {
         $view = new View(PAGES_PATH . "/fish");
@@ -82,6 +83,7 @@ class Fishes extends Controller
 
         $view->render("edit-fish", $data);  
     }
+
     public static function save(){
         if($_SERVER['REQUEST_METHOD'] === 'POST'){
             $familyNameID = 0;
@@ -118,8 +120,10 @@ class Fishes extends Controller
                 $familyNameID,
                 self::clean($_POST['life_span']),
                 $imgNewName,
-                $_POST['fish_info']
-            ); 
+                $_POST['fish_info'],
+                self::clean($_POST['is_edible']),
+                self::clean($_POST['is_pettable']),
+            );
             
             $fish = new Fish(NULL, ...$data);
 
@@ -160,7 +164,9 @@ class Fishes extends Controller
                 'family_name' => $familyNameID,
                 'life_span' => self::clean($_POST['life_span']),
                 'fish_image' => $imgNewName,
-                'fish_info' => $_POST['fish_info']
+                'fish_info' => $_POST['fish_info'],
+                'is_edible' => self::clean($_POST['is_edible']),
+                'is_pettable' => self::clean($_POST['is_pettable']),
                 
             );
 
@@ -173,8 +179,10 @@ class Fishes extends Controller
             $fish->setLocal_name($data['life_span']);
             $fish->setFish_image($data['fish_image']);
             $fish->setFish_info($data['fish_info']);
+            $fish->setIs_edible($data['is_edible']);
+            $fish->setIs_pettable($data['is_pettable']);
 
-            
+
 
             if($fish->save()){
                 if(!empty($_FILES['fish_image']['name'])){
@@ -184,7 +192,7 @@ class Fishes extends Controller
                     self::deleteCurrentImg($currentImg, $imgPath);
                     self::uploadImageDirectory($sourcePath, $destinationPath);
                 }
-                self::messageNotif('success', 'fish updated');
+                self::messageNotif('success', 'Fish Updated');
                 header('location: /fishes');
             } else {
                 echo 'failed';

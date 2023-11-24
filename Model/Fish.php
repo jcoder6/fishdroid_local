@@ -13,8 +13,11 @@ class Fish extends Model
     protected $local_name;
     protected $fish_image;
     protected $fish_info;
+    protected $is_edible;
+    protected $is_pettable;
 
-    public function __construct($id,$fish_name,$scientific_name,$family_name_id,$local_name,$fish_image,$fish_info)
+
+    public function __construct($id,$fish_name,$scientific_name,$family_name_id,$local_name,$fish_image,$fish_info,$is_edible,$is_pettable)
     {
         parent::__construct();
             $this->id=$id;
@@ -24,6 +27,8 @@ class Fish extends Model
             $this->local_name=$local_name;
             $this->fish_image=$fish_image;
             $this->fish_info=$fish_info;
+            $this->is_edible=$is_edible;
+            $this->is_pettable=$is_pettable;
     }
 
     public function getId()
@@ -61,6 +66,16 @@ class Fish extends Model
         return $this->fish_info;
     }
 
+    public function getIs_edible()
+    {
+        return $this->is_edible;
+    }
+
+    public function getIs_pettable()
+    {
+        return $this->is_pettable;
+    }
+
     public function setId($value)
     {
         $this->id = $value;
@@ -96,6 +111,16 @@ class Fish extends Model
         $this->fish_info = $value;
     }
 
+    public function setIs_edible($value)
+    {
+        $this->is_edible = $value;
+    }
+
+    public function setIs_pettable($value)
+    {
+        $this->is_pettable = $value;
+    }
+
     public static function getAll(){
         $m = new Model;
         $list = [];
@@ -109,7 +134,9 @@ class Fish extends Model
                     $v->family_name_id,
                     $v->local_name,
                     $v->fish_image,
-                    $v->fish_info
+                    $v->fish_info,
+                    $v->is_edible,
+                    $v->is_pettable,
                 );
                 $list[] = $data;
             }
@@ -130,7 +157,9 @@ class Fish extends Model
                     $v->family_name_id,
                     $v->local_name,
                     $v->fish_image,
-                    $v->fish_info
+                    $v->fish_info,
+                    $v->is_edible,
+                    $v->is_pettable,
                 );
                 $list[] = $data;
             }
@@ -151,7 +180,9 @@ class Fish extends Model
                     $v->family_name_id,
                     $v->local_name,
                     $v->fish_image,
-                    $v->fish_info
+                    $v->fish_info,
+                    $v->is_edible,
+                    $v->is_pettable,
                 );
                 $list[] = $data;
             }
@@ -172,7 +203,9 @@ class Fish extends Model
                 $r->family_name_id,
                 $r->local_name,
                 $r->fish_image,
-                $r->fish_info
+                $r->fish_info,
+                $r->is_edible,
+                $r->is_pettable,
             );
             
         }
@@ -181,13 +214,33 @@ class Fish extends Model
 
     public function save(){
         if($this->id){
-            $query = 'UPDATE fish SET fish_name=:fish_name,scientific_name=:scientific_name,family_name_id=:family_name_id,local_name=:local_name,fish_image=:fish_image,fish_info=:fish_info WHERE id=:id';
-            $params = array(':id'=>$this->id,':fish_name'=>$this->fish_name,':scientific_name'=>$this->scientific_name,':family_name_id'=>$this->family_name_id,':local_name'=>$this->local_name,':fish_image'=>$this->fish_image,':fish_info'=>$this->fish_info);
+            $query = 'UPDATE fish SET fish_name=:fish_name,scientific_name=:scientific_name,family_name_id=:family_name_id,local_name=:local_name,fish_image=:fish_image,fish_info=:fish_info,is_edible=:is_edible,is_pettable=:is_pettable WHERE id=:id';
+            $params = array(
+                ':id'=>$this->id,
+                ':fish_name'=>$this->fish_name,
+                ':scientific_name'=>$this->scientific_name,
+                ':family_name_id'=>$this->family_name_id,
+                ':local_name'=>$this->local_name,
+                ':fish_image'=>$this->fish_image,
+                ':fish_info'=>$this->fish_info,
+                ':is_edible' => $this->is_edible, 
+                ':is_pettable' => $this->is_pettable
+            );
             $result = $this->executeQuery($query,$params);
             return $result;
         }else{
-            $query = 'INSERT INTO fish VALUES (:id,:fish_name,:scientific_name,:family_name_id,:local_name,:fish_image,:fish_info)';
-            $params = array(':id'=>$this->id,':fish_name'=>$this->fish_name,':scientific_name'=>$this->scientific_name,':family_name_id'=>$this->family_name_id,':local_name'=>$this->local_name,':fish_image'=>$this->fish_image,':fish_info'=>$this->fish_info);
+            $query = 'INSERT INTO fish VALUES (:id,:fish_name,:scientific_name,:family_name_id,:local_name,:fish_image,:fish_info,:is_edible,:is_pettable)';
+            $params = array(
+                ':id'=>$this->id,
+                ':fish_name'=>$this->fish_name,
+                ':scientific_name'=>$this->scientific_name,
+                ':family_name_id'=>$this->family_name_id,
+                ':local_name'=>$this->local_name,
+                ':fish_image'=>$this->fish_image,
+                ':fish_info'=>$this->fish_info,
+                ':is_edible' => $this->is_edible, 
+                ':is_pettable' => $this->is_pettable
+            );
             $result = $this->executeQuery($query,$params);
             return $result;
         }
