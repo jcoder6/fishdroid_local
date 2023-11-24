@@ -41,11 +41,13 @@
             <div class="text-gray-800 flex justify-left items-center img w-[22%]"><?= $fish->getScientific_name() ?></div>
             <div class="text-blue-700 relative font-semibold text-center action w-[26%]">
                <div class="fish-menu bg-gradient-to-tr from-green-400 via-green-500 to-green-600 text-white rounded-md shadow-md cursor-pointer px-4 py-1 absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%]"><i class="fa-solid fa-ellipsis"></i></div>
-               <div class="bg-blue-100 shadow-md mt-[7.3rem] hidden flex-col absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] z-10">
+               <div class="bg-blue-100 shadow-md <?= $fish->getIs_edible() ? 'mt-[7.3rem]' : 'mt-[4.9rem]' ?> hidden flex-col absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] z-10">
                   <a href="/fishes/view/<?= $fish->getId() ?>" class="text-center p-3 py-2 hover:bg-blue-500 text-blue-500 hover:text-white"><i class="pr-3 fa-solid fa-eye"></i>View</a></li>
                   <a href="/fishes/edit/<?= $fish->getId() ?>" class="text-center p-3 py-2 hover:bg-green-500 text-green-500 hover:text-white transition-all"><i class="pr-3 fa-solid fa-pencil"></i>Edit</a></li>
-                  <a href="/recipes/viewRecipe/<?= $fish->getId() ?>" class="text-center p-3 py-2 hover:bg-orange-500 text-orange-500 hover:text-white"><i class="pr-3 fa-solid fa-utensils"></i>Recipe</a></li>
-                  <a href="/nutritions/viewNutrition/<?= $fish->getId() ?>" class="text-center p-3 py-2 hover:bg-purple-500 text-purple-500 hover:text-white"><i class="pr-3 fa-solid fa-heart-pulse"></i>Nutrition</a></li>
+                  <?php if($fish->getIs_edible()): ?>
+                     <a href="/recipes/viewRecipe/<?= $fish->getId() ?>" class="text-center p-3 py-2 hover:bg-orange-500 text-orange-500 hover:text-white"><i class="pr-3 fa-solid fa-utensils"></i>Recipe</a></li>
+                     <a href="/nutritions/viewNutrition/<?= $fish->getId() ?>" class="text-center p-3 py-2 hover:bg-purple-500 text-purple-500 hover:text-white"><i class="pr-3 fa-solid fa-heart-pulse"></i>Nutrition</a></li>
+                  <?php endif; ?>
                   <a href="/fishes/confirm/<?= $fish->getId() ?>" class="text-center p-3 py-2 hover:bg-red-500 text-red-500 hover:text-white"><i class="pr-3 fa-solid fa-trash"></i>Delete</a></li>
                </div>
             </div>
