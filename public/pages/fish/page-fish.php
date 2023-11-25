@@ -10,7 +10,7 @@
           <div class="r-side flex items-center justify-center gap-4">
               <div class="relative">
                 <span for="page" class="text-white">Pages:</span>
-                <span class="page-btn cursor-pointer bg-white py-1 px-2 text-xs text-gray-700 ml-2 rounded-md"><?= $fishStartCount/15 + 1 ?><i class="fa-solid fa-sort-down translate-y-[-2.5px] ml-1"></i></span>
+                <span class="page-btn cursor-pointer bg-white py-1 px-2 text-xs text-gray-700 ml-2 rounded-md"><?= $fishStartCount/30 + 1 ?><i class="fa-solid fa-sort-down translate-y-[-2.5px] ml-1"></i></span>
                 <div class="pages-container absolute right-0 top-6 pages-links hidden flex-col z-50 shadow-md max-h-28 overflow-auto">
                   <?php for($i = 1; $i <= $pageCount; $i++): ?>
                   <a class="px-3 hover:text-white hover:bg-green-600 bg-white" href="/fishes/pages/<?= $i ?>"><?= $i ?></a>

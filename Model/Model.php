@@ -63,15 +63,15 @@ class Model
 
     public function get15($table) {
         $stmt = $this->executeQuery("SELECT * FROM $table
-        ORDER BY id DESC
-        LIMIT 15 OFFSET 0");
+        ORDER BY fish_name
+        LIMIT 30 OFFSET 0");
         return $stmt->fetchAll(\PDO::FETCH_OBJ);
     }
 
     public function get($table, $offset) {
         $stmt = $this->executeQuery("SELECT * FROM $table
-        ORDER BY id DESC
-        LIMIT 15 OFFSET $offset");
+        ORDER BY fish_name
+        LIMIT 30 OFFSET $offset");
         return $stmt->fetchAll(\PDO::FETCH_OBJ);
     }
 
