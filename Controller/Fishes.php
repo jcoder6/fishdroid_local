@@ -17,7 +17,7 @@ class Fishes extends Controller
     public static function index()
     {
         $count = new DashboardModel;
-        $pageCount = ceil($count->getFishCount() / 15);
+        $pageCount = ceil($count->getFishCount() / 30);
         $view = new View(PAGES_PATH . "/fish");
 
         $fishes = Fish::getLast15(); 
@@ -32,12 +32,12 @@ class Fishes extends Controller
 
     public static function pages($page) {
         $count = new DashboardModel;
-        $pageCount = ceil($count->getFishCount() / 15);
-        $fishes = Fish::getOffset(($page - 1) * 15); 
+        $pageCount = ceil($count->getFishCount() / 30);
+        $fishes = Fish::getOffset(($page - 1) * 30); 
         
         $data = array(
             'pageCount' => $pageCount,
-            'fishStartCount' => ($page - 1) * 15,
+            'fishStartCount' => ($page - 1) * 30,
             'fishes' => $fishes
         );
         
