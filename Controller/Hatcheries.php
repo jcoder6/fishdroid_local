@@ -42,25 +42,25 @@ class Hatcheries extends Controller
     }
     public static function update($id) {
         if($_SERVER['REQUEST_METHOD'] === 'POST'){
-            $hatchVideo = (!empty($_FILES['hatch_video']['name'])) ? self::renameImg($_FILES['hatch_video']['name'], 'HATCH_VIDEO') : self::clean($_POST['default_video']);
+            // $hatchVideo = (!empty($_FILES['hatch_video']['name'])) ? self::renameImg($_FILES['hatch_video']['name'], 'HATCH_VIDEO') : self::clean($_POST['default_video']);
 
             $hatchery = Hatchery::getById($id);
-            $currentHatchVideo = $hatchery->getHatch_video();
+            // $currentHatchVideo = $hatchery->getHatch_video();
 
             $hatchery->setFish_name(self::clean($_POST['fish_name']));
-            $hatchery->setHatch_video($hatchVideo);
+            // $hatchery->setHatch_video($hatchVideo);
             $hatchery->setHatch_process(self::clean($_POST['hatch_process']));
 
             if($hatchery->save()){
-                if(!empty($_FILES['hatch_video']['name'])){
-                    $sourcePath = $_FILES['hatch_video']['tmp_name'];
-                    $destinationPath = './public/assets/videos/hatch_videos/' . $hatchVideo;
-                    $currentVideoPath = './public/assets/videos/hatch_videos/' . $currentHatchVideo;
-                    if($currentHatchVideo != 'NO_VIDEO_YET'){
-                        self::deleteCurrentImg($currentHatchVideo, $currentVideoPath);
-                    }
-                    self::uploadImageDirectory($sourcePath, $destinationPath);
-                }
+                // if(!empty($_FILES['hatch_video']['name'])){
+                //     $sourcePath = $_FILES['hatch_video']['tmp_name'];
+                //     $destinationPath = './public/assets/videos/hatch_videos/' . $hatchVideo;
+                //     $currentVideoPath = './public/assets/videos/hatch_videos/' . $currentHatchVideo;
+                //     if($currentHatchVideo != 'NO_VIDEO_YET'){
+                //         self::deleteCurrentImg($currentHatchVideo, $currentVideoPath);
+                //     }
+                //     self::uploadImageDirectory($sourcePath, $destinationPath);
+                // }
                 self::messageNotif('success', 'Hatchery updated');
                 header('location: /hatcheries');
             } else {
@@ -74,17 +74,16 @@ class Hatcheries extends Controller
         // Your save code goes here
         if($_SERVER['REQUEST_METHOD'] == 'POST'){
             // echo 'save';
-            $newVideoName = self::clean($_POST['default_video']);
-            if(!empty($_FILES['hatch_video']['name'])){
-                $newVideoName = self::renameImg($_FILES['hatch_video']['name'], 'HATCH_VIDEO');
-                $sourcePath = $_FILES['hatch_video']['tmp_name'];
-                $destinationPath = './public/assets/videos/hatch_videos/' . $newVideoName;
-                self::uploadImageDirectory($sourcePath, $destinationPath);
-            }
+            // $newVideoName = self::clean($_POST['default_video']);
+            // if(!empty($_FILES['hatch_video']['name'])){
+            //     $newVideoName = self::renameImg($_FILES['hatch_video']['name'], 'HATCH_VIDEO');
+            //     $sourcePath = $_FILES['hatch_video']['tmp_name'];
+            //     $destinationPath = './public/assets/videos/hatch_videos/' . $newVideoName;
+            //     self::uploadImageDirectory($sourcePath, $destinationPath);
+            // }
             
             $data = array(
                 self::clean($_POST['fish_name']),
-                $newVideoName,
                 self::clean($_POST['hatch_process'])
             );
 
@@ -115,12 +114,11 @@ class Hatcheries extends Controller
     }
     public static function delete($id){
         //your delete code goes here
-        echo $id;
         $hatchery = Hatchery::getById($id);
-        $videoPath = './public/assets/videos/hatch_videos/' . $hatchery->getHatch_video();
-        if($hatchery->getHatch_video() != 'NO_VIDEO_YET'){
-            self::deleteCurrentImg($hatchery->getHatch_video(), $videoPath);
-        }
+        // $videoPath = './public/assets/videos/hatch_videos/' . $hatchery->getHatch_video();
+        // if($hatchery->getHatch_video() != 'NO_VIDEO_YET'){
+        //     self::deleteCurrentImg($hatchery->getHatch_video(), $videoPath);
+        // }
         if($hatchery->remove()){
             self::messageNotif('error', 'Hatchery Deleted');
             header('location: /hatcheries');

@@ -55,6 +55,12 @@ class Model
         return $stmt->fetchAll(\PDO::FETCH_OBJ);
     }
 
+    public function allByIdSorted($table, $id, $field, $sortField)
+    {
+        $stmt = $this->executeQuery("SELECT * FROM $table WHERE $field = $id ORDER BY $sortField");
+        return $stmt->fetchAll(\PDO::FETCH_OBJ);
+    }
+
     public function allByDates($table)
     {
         $stmt = $this->executeQuery("SELECT * FROM $table ORDER BY id DESC");

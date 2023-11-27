@@ -10,19 +10,18 @@
             <div class="flex justify-between py-3 px-10">
                 <div class="w-[100%]">
                     <label for="fish_name" class="block text-left mb-2 text-sm font-medium text-gray-900 dark:text-white">Enter Fish Name<span class="text-red-500 font-bold"> *</span></label>
-                    <input required type="text" name="fish_name" id="fish_name" placeholder="Enter Name of Fish" value="<?= $hatchery->getFish_name() ?>" class="bg-gray-100 border border-gray-300 text-gray-900 text-xs rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 mb-3">
+                    <input required type="text" name="fish_name" id="fish_name" placeholder="Enter Name of Fish" value="<?= $hatchery->getFish_name() ?>" class="border border-gray-300 text-gray-900 text-xs rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 mb-3">
                 </div>
             </div>
 
-            <div class="py-3 px-10">
+            <!-- <div class="py-3 px-10">
                 <div class="w-[100%]">
                     <label for="hatchVideo" class="block text-left mb-2 text-sm font-medium text-gray-900 dark:text-white">Upload Video:</label>
                     <input type="file" name="hatch_video" accept="video/*" id="hatchVideo"  class="block w-full mb-5 text-xs text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50" id="small_size" >
-                    <!-- <input type="file" name="hatch_video" accept="video/*" id="hatchVideo">     -->
                 </div>   
-            <input type="text" name="default_video" value="<?= $hatchery->getHatch_video() ?>" class="hidden">
+            <input type="text" name="default_video" value="" class="hidden">
 
-            </div>
+            </div> -->
 
             <div class="flex justify-between py-3 px-10">
                 <div class="username w-[100%]">
