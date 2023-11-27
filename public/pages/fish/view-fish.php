@@ -12,22 +12,38 @@
                         <img class="absolute inset-0 w-full h-full" src="<?=ROOT_URL?>/public/assets/images/fish_images/<?= $fish->getFish_image() ?>" alt="<?= $fish->getFish_image() ?>">
                     </div>
                     <div class="p-2 rounded-md border border-gray-400 mt-3">
-                        <h5 class="font-bold"><i class="fa-solid fa-square-xmark pr-2 text-red-400"></i>Can be a Pet</h5>
-                        <h5 class="font-bold mb-3"><i class="fa-solid fa-square-check pr-2 text-green-400"></i>Edible</h5>
+                        <h5 class="font-bold">
+                            <?php if($fish->getIs_pettable()) : ?>
+                                <i class="fa-solid fa-square-check pr-2 text-green-400"></i>
+                            <?php else : ?>
+                                <i class="fa-solid fa-square-xmark pr-2 text-red-400"></i>
+                            <?php endif; ?>
+                            Can be a Pet
+                        </h5>
+                        <h5 class="font-bold mb-3">
+                            <?php if($fish->getIs_edible()) : ?>
+                                <i class="fa-solid fa-square-check pr-2 text-green-400"></i>
+                            <?php else : ?>
+                                <i class="fa-solid fa-square-xmark pr-2 text-red-400"></i>
+                            <?php endif; ?>
+                            Edible
+                        </h5>
                         <div class="btn-links flex gap-2">
-                            <a href="/recipes/viewRecipe/<?= $fish->getId() ?>" class="bg-green-400 py-2 px-5 text-xs rounded-sm w-[50%] hover:bg-green-500 transition-all text-center"><i class="ml-[-10px] pr-3 fa-solid fa-utensils"></i>Manage Recipes</a>
-                            <a href="/nutritions/viewNutrition/<?= $fish->getId() ?>" class="bg-green-400 py-2 px-5 text-xs rounded-sm w-[50%] hover:bg-green-500 transition-all text-center"><i class="ml-[-10px] pr-3 fa-solid fa-heart-pulse"></i>Manage Nutritions</a>
+                            <?php $disableBtn = 'opacity-50 pointer-events-none cursor-not-allowed'?>
+                            <a href="/recipes/viewRecipe/<?= $fish->getId() ?>" class="<?= $fish->getIs_edible() ? '' : $disableBtn ?> bg-green-400 py-2 px-5 text-xs rounded-sm w-[50%] hover:bg-green-500 transition-all text-center"><i class="ml-[-10px] pr-3 fa-solid fa-utensils"></i>Manage Recipes</a>
+                            <a href="/nutritions/viewNutrition/<?= $fish->getId() ?>" class="<?= $fish->getIs_edible() ? '' : $disableBtn ?> bg-green-400 py-2 px-5 text-xs rounded-sm w-[50%] hover:bg-green-500 transition-all text-center"><i class="ml-[-10px] pr-3 fa-solid fa-heart-pulse"></i>Manage Nutritions</a>
                         </div>
                     </div>
                 </div>
 
-                <div class="bg-slate-200 p-6 rounded-md w-[60%]">
+                <div class="bg-slate-200 p-6 rounded-md w-[60%] relative">
                     <h3 class="text-center font-bold text-gray-900 text-lg mb-3"><?= $fish->getFish_name() ?></h3>
                     <h2 class="text-sm mb-2 text-gray-700"><span class="font-semibold text-gray-900">Scientific name: </span><?= $fish->getScientific_name() ?></h2>
                     <h2 class="text-sm mb-2 text-gray-700"><span class="font-semibold text-gray-900">Family name: </span><?= $familyName ?></h2>
                     <h2 class="text-sm mb-2 text-gray-700"><span class="font-semibold text-gray-900">Local Name(Pangasinan): </span><?= $fish->getLocal_name() ?></h2>
                     <h2 class="text-sm mb-2 mt-5 text-gray-700 text-center"><span class="font-semibold text-gray-900">Fish Description</span></h2>
                     <p class="text-sm leading-[1rem] text-gray-700"><?= $fish->getFish_info() ?></p>
+                    <a href="/fishes/edit/<?= $fish->getId() ?>" class="absolute bottom-3 right-3 bg-green-400 py-2 px-8 text-xs rounded-sm hover:bg-green-500 transition-all text-center"><i class="ml-[-10px] pr-3 fa-solid fa-pencil"></i>Edit Fish</a>
                 </div>
             </div>
 
@@ -35,7 +51,7 @@
                 <div class="recipe-container border border-gray-400 min-h-[10rem] w-[50%] rounded-md p-3">
                     <h5 class="mb-3">List of Recipe:</h5>
                     <ul class="ml-5 text-sm pr-8">
-                        <?php if(!count($nutritions)) echo 'No recipe added yet'; ?>
+                        <?php if(!count($recipes)) echo 'No recipe added yet'; ?>
                         <?php foreach($recipes as $recipe): ?>
                             <li class="flex justify-between p-1 text-gray-900 border-b border-green-900">
                                 <span><i class="fa-solid fa-utensils mr-3 text-green-600"></i><?= $recipe->getRecipe_name() ?></span>
