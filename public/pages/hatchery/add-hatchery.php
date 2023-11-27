@@ -14,13 +14,12 @@
                 </div>
             </div>
 
-            <div class="py-3 px-10">
+            <!-- <div class="py-3 px-10">
                 <div class="w-[100%]">
                     <label for="hatchVideo" class="block text-left mb-2 text-sm font-medium text-gray-900 dark:text-white">Upload Video:</label>
-                    <input type="file" name="hatch_video" accept="video/*" id="hatchVideo"  class="block w-full mb-5 text-xs text-gray-900 border border-slate-100 rounded-lg cursor-pointer bg-gray-50" id="small_size" >
-                    <!-- <input type="file" name="hatch_video" accept="video/*" id="hatchVideo">     -->
+                    <input type="file" name="hatch_video" accept="video/*" id="hatchVideo"  class="block w-full mb-5 text-xs text-gray-900 border border-slate-100 rounded-lg cursor-pointer bg-gray-50" id="small_size" >  
                 </div>   
-            </div>
+            </div> -->
 
             <div class="flex justify-between py-3 px-10">
                 <div class="username w-[100%]">
