@@ -19,7 +19,7 @@
          <?php endif ?>
          <div class="group h-[41px] overflow-hidden hover:h-auto">
             <li class="fun-facts py-2 pl-2 text-gray-700 border-b border-gray-400 cursor-pointer hover:bg-gradient-to-l to-green-600 via-green-500 from-green-400  hover:text-white transition-all"><i class="fa-sharp fa-solid fa-brain w-8 mr-1 text-center"></i>Fun Facts<i class="ml-16 fa-solid fa-caret-up rotate-90 group-hover:rotate-180 transition-all duration-300"></i></li>
-            <a href="/quizzes"><li class="quizzes py-2 pl-8 text-gray-600 border-b border-gray-400 cursor-pointer hover:bg-gradient-to-l to-green-600 via-green-500 from-green-400  hover:text-white transition-all"><i class="fa-sharp fa-solid fa-pen-to-square w-8 mr-1 text-center"></i>Quizzes</li></a>
+            <a href="/quizzes"><li class="quizzes py-2 pl-8 text-gray-600 border-b border-gray-400 cursor-pointer hover:bg-gradient-to-l to-green-600 via-green-500 from-green-400  hover:text-white transition-all"><i class="fa-sharp fa-solid fa-pen-to-square w-8 mr-1 text-center"></i>Game</li></a>
             <a href="/jokes"><li class="jokes py-2 pl-8 text-gray-600 border-b border-gray-400 cursor-pointer hover:bg-gradient-to-l to-green-600 via-green-500 from-green-400  hover:text-white transition-all"><i class="fa-solid fa-lightbulb w-8 mr-1 text-center"></i>Trivia</li></a>
          </div>
          <a href="/terms"><li class="terms py-2 pl-2 text-gray-700 border-b border-gray-400 cursor-pointer hover:bg-gradient-to-l to-green-600 via-green-500 from-green-400  hover:text-white transition-all"><i class="fa-solid fa-book w-8 mr-1 text-center"></i>Terms</li></a>
