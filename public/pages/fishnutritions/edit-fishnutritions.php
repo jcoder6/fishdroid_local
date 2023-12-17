@@ -16,7 +16,7 @@
     
         <div class="manage-header bg-gradient-to-l from-green-400 via-green-500 to-green-600 flex justify-between items-center px-4 py-2">
             
-            <p class="manage-header-title font-bold text-slate-100 text-s">Nutrtion list</p>
+            <p class="manage-header-title font-bold text-slate-100 text-s">Nutrition list</p>
         </div>
 
         

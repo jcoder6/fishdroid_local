@@ -39,8 +39,7 @@
                </div>
             </div>
 
-            <?php if($_SESSION['role_id'] == 2) : ?>
-            <div class="flex justify-center gap-2">
+            <div class="justify-center gap-2 <?= $_SESSION['role_id'] != 2 ? 'hidden' : 'flex' ?>">
                <div class="password w-[70%]">
                   <label for="role_id" class="block text-left mb-2 text-sm font-medium text-gray-900 dark:text-white">Role<span class="text-red-500 font-bold"> *</span></label>
                   <select type="text" name="role_id" id="role_id" placeholder="Enter your username" class="bg-gray-50 border border-gray-300 text-gray-900 text-xs rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 mb-3">
@@ -50,7 +49,6 @@
                   </select>
                </div>
             </div>
-            <?php endif; ?>
 
             <div class="flex justify-center gap-2 mb-5">
                <div class="password w-[70%]">

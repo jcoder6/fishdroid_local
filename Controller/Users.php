@@ -124,10 +124,11 @@ class Users extends Controller
     public static function update($id) {
         // your code goes here
         $isAdmin = self::validateAdmin($_SESSION['role_id']);
-        if(!$isAdmin){
+        if(!$isAdmin and ($id != $_SESSION['user-logged'])){
             self::messageNotif('error', 'You don\'t have persmission');
             header('location: /dashboard');
             die;
+            // echo !$isAdmin and ($id != $_SESSION['user-logged']);
         }
 
         if($_SERVER['REQUEST_METHOD'] === 'POST'){
@@ -166,7 +167,7 @@ class Users extends Controller
                     self::uploadImageDirectory($sourcePath, $destinationPath);
                 }
                 self::messageNotif('success', 'User updated successfuly');
-                header('location: /users');
+                header('location: /dashboard');
             } else {
                 echo 'failed';
             }
