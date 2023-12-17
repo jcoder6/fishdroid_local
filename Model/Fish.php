@@ -212,6 +212,28 @@ class Fish extends Model
         return $data;
     }
 
+    public static function getLast(){
+        $m = new Model;
+        $data = NULL;
+        $r = $m->getLastData('fish');
+        if($r){
+            $data = new Fish(
+                $r->id,
+                $r->fish_name,
+                $r->scientific_name,
+                $r->family_name_id,
+                $r->local_name,
+                $r->fish_image,
+                $r->fish_info,
+                $r->is_edible,
+                $r->is_pettable,
+            );
+        }
+
+        // var_dump($data);
+        return $data;
+    }
+
     public function save(){
         if($this->id){
             $query = 'UPDATE fish SET fish_name=:fish_name,scientific_name=:scientific_name,family_name_id=:family_name_id,local_name=:local_name,fish_image=:fish_image,fish_info=:fish_info,is_edible=:is_edible,is_pettable=:is_pettable WHERE id=:id';

@@ -26,6 +26,16 @@ class Recipes extends Controller
         $view = new View(PAGES_PATH . "/recipe");
         $view->render('manage-recipe', $data);
     }
+
+    public static function viewOne($id){
+        $recipe = Recipe::getById($id);
+        $data = array(
+            'recipe' => $recipe
+        );
+
+        $view = new View(PAGES_PATH . '/recipe');
+        $view->render('view-recipe', $data);
+    }
     public static function create($id)
     {
         // Your code here
@@ -81,7 +91,6 @@ class Recipes extends Controller
             self::messageNotif('error', 'Something went wrong, please try again');
             header('location: /recipes/viewRecipe/' . $fishID);
         }
-
     }
 
     public static function save($fishID){

@@ -96,6 +96,12 @@ class Model
         return $stmt->fetchAll(\PDO::FETCH_OBJ);
     }
 
+    public function getLastData($table){
+        $query = "SELECT * FROM $table ORDER BY id DESC LIMIT 1";
+        $stmt = $this->executeQuery($query);
+        return $stmt->fetch(\PDO::FETCH_OBJ);
+    }
+
     public function checkIfExist($fishID, $nutriID){
         $query = "SELECT * FROM nutritions WHERE fish_id = :fish_id AND nutrition_id = :nutri_id";
         $params = array(

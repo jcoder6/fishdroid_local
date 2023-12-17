@@ -39,6 +39,7 @@
                </div>
             </div>
 
+            <?php if($_SESSION['role_id'] == 2) : ?>
             <div class="flex justify-center gap-2">
                <div class="password w-[70%]">
                   <label for="role_id" class="block text-left mb-2 text-sm font-medium text-gray-900 dark:text-white">Role<span class="text-red-500 font-bold"> *</span></label>
@@ -49,6 +50,7 @@
                   </select>
                </div>
             </div>
+            <?php endif; ?>
 
             <div class="flex justify-center gap-2 mb-5">
                <div class="password w-[70%]">

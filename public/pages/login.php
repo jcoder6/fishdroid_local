@@ -12,7 +12,7 @@
    
    <div class="login-container bg-slate-100 border mt-[-2rem]relative w-[28%] h-[60%] flex flex-col item-center justify-center items-center rounded-xl drop-shadow-gray-600 drop-shadow-2xl">
       <div class="logo w-36 h-36 inset-0 mx-auto mt-[-4.2rem] absolute justify-center rounded-full flex flex-col items-center">
-         <div class="logo-container mt-[-3px] w-[11.3rem] h-48 relative overflow-hidden">
+         <div class="logo-container mt-[-3px] w-[10rem] h-40 relative overflow-hidden">
             <img class="absolute inset-0 h-[100%] w-[99%]" src="./public/assets/images/logo-fishdroid.webp" alt="Fishdroid Logo">
          </div>
          <!-- <span class="text-gray-700 text-lg mt-[-2rem] font-bold">FishDroid</span> -->

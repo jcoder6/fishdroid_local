@@ -4,7 +4,7 @@
 <div class="admin-feature-container w-full h-screen overflow-auto px-3">
       <?php include PAGES_PATH . '/partials/body-header.php' ?>
 
-      <div class="contents-container w-[70%] mt-[-60px] bg-slate-100 mx-auto rounded-lg min-h-[90vh]">
+      <div class="contents-container w-full mt-[-56px] bg-slate-100 mx-auto min-h-[90vh]">
 
          <h4 class="text-xl text-center font-bold text-green-600 p-3">Manage Trivia</h4>
 
@@ -15,15 +15,15 @@
 
          <div class="bg-slate-300 flex px-5 py-1">
             <div class="text-gray-700 text-center font-semibold no w-[3%]">No</div>
-            <div class="text-gray-700 text-center font-semibold fish-name w-[72%]">Trivia</div>
-            <div class="text-gray-700 text-center font-semibold action w-[25%]">Action</div>
+            <div class="text-gray-700 text-center font-semibold fish-name w-[77%]">Trivia</div>
+            <div class="text-gray-700 text-center font-semibold action w-[20%]">Action</div>
          </div>
 
          <?php $num = 0; foreach($trivias as $trivia): $num++ ?>
          <div class="fish-table border-b border-b-gray-400 bg-slate-100 flex px-5 py-1">
             <div class="text-gray-800 flex justify-center items-center font-semibold no w-[3%]"><?= $num ?></div>
-            <div class="text-gray-800 flex ml-10 items-center truncate fish-name w-[72%]"><?= $trivia->getTrivia() ?></div>
-            <div class="text-blue-700 flex justify-center gap-3 items-center font-semibold text-center action w-[25%]">
+            <div class="text-gray-800 flex ml-10 items-center truncate fish-name w-[77%]"><?= $trivia->getTrivia() ?></div>
+            <div class="text-blue-700 flex justify-center gap-3 items-center font-semibold text-center action w-[20%]">
                <a href="/jokes/edit/<?= $trivia->getId() ?>" class="py-1 px-4 bg-white shadow-md text-center rounded-sm text-green-500 hover:bg-green-500 hover:text-white transition-all"><i class="fa-solid fa-pencil"></i></a>
                <a href="/jokes/confirm/<?= $trivia->getId() ?>" class="py-1 px-4 bg-white shadow-md text-center rounded-sm text-red-500 hover:bg-red-500 hover:text-white transition-all"><i class="fa-solid fa-trash"></i></a>
             </div>

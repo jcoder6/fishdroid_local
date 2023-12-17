@@ -4,7 +4,7 @@
 
 <div class="admin-feature-container w-full h-screen overflow-auto px-3">
     <?php include PAGES_PATH . '/partials/body-header.php'?>
-     <div class="contents-container w-[60%] mt-[-60px] bg-slate-100 mx-auto rounded-lg min-h-[90vh] shadow-lg">
+     <div class="contents-container w-full mt-[-56px] bg-slate-100 mx-auto min-h-[90vh] shadow-lg">
         <h4 class="text-xl font-bold text-green-600 text-center p-3">Manage Fish Nutrition</h4>
         <form action="/fishnutritions/update/<?= $currID ?>" method="post">
             <div class="add-family-name bg-gray-700 p-2 flex justify-center gap-2 items-center text-center mt-5">
