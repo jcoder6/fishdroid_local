@@ -3,7 +3,7 @@
 
 <div class="admin-feature-container w-full h-screen overflow-auto px-3">
     <?php include PAGES_PATH . '/partials/body-header.php'?>
-     <div class="contents-container w-[60%] mt-[-60px] bg-slate-100 mx-auto rounded-lg min-h-[90vh] shadow-lg">
+     <div class="contents-container w-full mt-[-56px] bg-slate-100 mx-auto min-h-[90vh] shadow-lg">
         <h4 class="text-xl font-bold text-green-600 text-center p-3">Manage Family Name</h4>
         <form action="/familyNames/save" method="post">
             <div class="add-family-name bg-gray-700 p-2 flex justify-center gap-2 items-center text-center mt-5">
@@ -21,15 +21,15 @@
         
         <div class="bg-slate-300 flex justify-between px-5 py-1">
             <div class="text-gray-700 font-semibold text-center no w-[10%]">No</div>
-            <div class="text-gray-700 font-semibold text-center fish-name w-[60%]">Family Name</div>
-            <div class="text-gray-700 font-semibold text-center action w-[30%]">Action</div>
+            <div class="text-gray-700 font-semibold text-center fish-name w-[65%]">Family Name</div>
+            <div class="text-gray-700 font-semibold text-center action w-[25%]">Action</div>
         </div>
         
         <?php $num = 0; foreach($familyNames as $familyName): $num++?>
         <div class="fish-table border-b border-b-gray-400 bg-slate-100 flex justify-between px-5 py-1">
             <div class="text-gray-800 flex items-center justify-center font-semibold no w-[10%]"><?=$num?></div>
-            <div class="text-gray-800 flex items-center justify-center fish-name w-[60%]"><?= ucfirst(strtolower($familyName->getFamily_name())) ?></div>
-            <div class="text-blue-700 flex gap-3 items-center justify-center text-center action w-[30%]">
+            <div class="text-gray-800 flex items-center justify-center fish-name w-[65%]"><?= ucfirst(strtolower($familyName->getFamily_name())) ?></div>
+            <div class="text-blue-700 flex gap-3 items-center justify-center text-center action w-[25%]">
                 <a href="/familyNames/edit/<?=$familyName->getId()?>" class="py-1 px-4 rounded-sm bg-white text-green-500 hover:bg-green-500 hover:text-white transition-all shadow-md"><i class="fa-solid fa-pencil"></i></a>
                 <a href="/familyNames/confirm/<?=$familyName->getId()?>" class="py-1 px-4 rounded-sm bg-white text-red-500 hover:bg-red-500 hover:text-white transition-all shadow-md"><i class="fa-solid fa-trash"></i></a>
             </div>  

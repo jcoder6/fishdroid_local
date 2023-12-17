@@ -13,9 +13,11 @@ class Users extends Controller
     public static function index()
     {
         // Your code here
-        if($_SESSION['role_id'] != 2){
+        $isAdmin = self::validateAdmin($_SESSION['role_id']);
+        if(!$isAdmin){
             self::messageNotif('error', 'You don\'t have persmission');
             header('location: /dashboard');
+            die;
         }
         
         $view = new View(PAGES_PATH . "/user");
@@ -32,6 +34,13 @@ class Users extends Controller
     public static function create()
     {
         // Your code here
+        $isAdmin = self::validateAdmin($_SESSION['role_id']);
+        if(!$isAdmin){
+            self::messageNotif('error', 'You don\'t have persmission');
+            header('location: /dashboard');
+            die;
+        }
+
         $view = new View(PAGES_PATH . '/user');
         $roles = Role::getAll();
         $view->render('add-user');
@@ -40,6 +49,13 @@ class Users extends Controller
     public static function edit($id)
     {
         // Your edit code goes here
+        $isAdmin = self::validateAdmin($_SESSION['role_id']);
+        if(!$isAdmin and ($id != $_SESSION['user-logged'])){
+            self::messageNotif('error', 'You don\'t have persmission');
+            header('location: /dashboard');
+            die;
+        } 
+
         $view = new View(PAGES_PATH . '/user');
         $user = User::getById($id);
         $role = Role::getById($user->getRole_id());
@@ -56,6 +72,13 @@ class Users extends Controller
 
     public static function save(){
         // Your save code goes here
+        $isAdmin = self::validateAdmin($_SESSION['role_id']);
+        if(!$isAdmin){
+            self::messageNotif('error', 'You don\'t have persmission');
+            header('location: /dashboard');
+            die;
+        }
+
         if($_SERVER['REQUEST_METHOD'] === 'POST'){
             $imgNewName = self::clean($_POST['default_img']);
             if(!empty($_FILES['user_photo']['name'])){
@@ -100,6 +123,13 @@ class Users extends Controller
 
     public static function update($id) {
         // your code goes here
+        $isAdmin = self::validateAdmin($_SESSION['role_id']);
+        if(!$isAdmin){
+            self::messageNotif('error', 'You don\'t have persmission');
+            header('location: /dashboard');
+            die;
+        }
+
         if($_SERVER['REQUEST_METHOD'] === 'POST'){
 
             $imgNewName = (!empty($_FILES['user_photo']['name'])) ? self::renameImg($_FILES['user_photo']['name'], 'USER_IMG') : self::clean($_POST['default_img']);
@@ -142,9 +172,31 @@ class Users extends Controller
             }
         }
     }
+
+    public static function view(){
+        // echo $_SESSION['user-logged'];
+        $view = new View(PAGES_PATH . '/user');
+        $user = User::getById($_SESSION['user-logged']);
+
+        $role = Role::getById($user->getRole_id());
+
+        $data = array(
+            'user' => $user,
+            'role' => $role->getRole_name()
+        );
+        
+        $view->render('view-profile', $data);
+    }
     
     public static function confirm($id){
         // Your code goes here
+        $isAdmin = self::validateAdmin($_SESSION['role_id']);
+        if(!$isAdmin){
+            self::messageNotif('error', 'You don\'t have persmission');
+            header('location: /dashboard');
+            die;
+        }
+
         $view = new View(PAGES_PATH . '/user');
         $user = User::getById($id);
         $users = User::getAll();
@@ -158,6 +210,13 @@ class Users extends Controller
     }
 
     public static function delete($id){
+        $isAdmin = self::validateAdmin($_SESSION['role_id']);
+        if(!$isAdmin){
+            self::messageNotif('error', 'You don\'t have persmission');
+            header('location: /dashboard');
+            die;
+        }
+        
         $user = User::getById($id);
         $currentImg = $user->getImg();
         if($user->remove()){

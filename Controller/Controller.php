@@ -116,4 +116,8 @@ class Controller
             unset($_SESSION['msg']);
         }
     }
+
+    public static function validateAdmin($roleID){
+        return $roleID == 2 ? true : false;
+    }
 }

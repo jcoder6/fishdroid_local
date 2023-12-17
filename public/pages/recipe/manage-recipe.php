@@ -3,10 +3,10 @@
 
 <div class="admin-feature-container w-full h-screen overflow-auto px-3">
 <?php include PAGES_PATH . '/partials/body-header.php' ?>
-    <div class="contents-container w-[70%] mt-[-60px] bg-slate-100 mx-auto rounded-lg"> 
+    <div class="contents-container w-full mt-[-56px] bg-slate-100 mx-auto"> 
         <h4 class="text-2xl text-center font-bold text-gray-700 p-3"><?= $fish->getFish_name() ?> Recipes</h4>
         
-        <div class="fish-info-container w-[80%] mt-5 mb-10 mx-auto bg-slate-100 shadow-md rounded-lg overflow-hidden flex">
+        <div class="fish-info-container w-[60%] mt-5 mb-10 mx-auto bg-slate-100 shadow-md rounded-lg overflow-hidden flex">
             <div class="fish-img-container relative w-[50%] bg-cyan-300 h-56">
                 <img src="<?= ROOT_URL ?>/public/assets/images/fish_images/<?= $fish->getFish_image() ?>" class="absolute w-full h-full inset-0" alt="Fish Img">
             </div>

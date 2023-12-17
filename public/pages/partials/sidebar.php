@@ -2,7 +2,7 @@
 
    <div class="logo flex bg-gradient-to-l from-teal-400 via-teal-500 to-teal-600 ml-[-2rem] justify-center items-center pt-2">
       <div class="logo-container w-12 relative h-12 overflow-hidden"> 
-         <img class="absoulute inset-0 h-[100%] w-[100%]" src="<?= ROOT_URL ?>/public/assets/images/logo-fishdroid.webp" alt="Fishdroid Logo">
+         <img class="absoulute inset-0 h-[100%] w-[100%] mt-[-2px]" src="<?= ROOT_URL ?>/public/assets/images/logo-fishdroid.webp" alt="Fishdroid Logo">
       </div>
       <span class="text-white text-xl font-bold mb-2 tracking-[1px]">FishDroid</span>
    </div>

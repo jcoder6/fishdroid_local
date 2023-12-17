@@ -2,7 +2,7 @@
    <div class="mr-3 text-slate-100 relative">
       <div class="menu-button cursor-pointer"><i class="fa-solid fa-user mr-2"></i><?= $_SESSION['fullname'] ?><i class="fa-solid fa-caret-down ml-3"></i></div>
       <div class="menu-container hidden flex-col bg-slate-100 absolute w-40 right-0 rounded-md shadow-md overflow-hidden mt-2">
-         <a href="#" class="userfullname text-gray-700 text-sm py-3 pl-3 pr-6 flex items-center gap-2 border-b border-b-slate-300 hover:bg-slate-300 transition-all">
+         <a href="/users/view" class="userfullname text-gray-700 text-sm py-3 pl-3 pr-6 flex items-center gap-2 border-b border-b-slate-300 hover:bg-slate-300 transition-all">
             <div class="user-img-container w-7 h-7 relative bg-black rounded-full overflow-hidden">
                <img class="absolute h-full w-full inset-0" src="<?= ROOT_URL ?>/public/assets/images/user_images/<?= $_SESSION['img'] ?>" alt="User profile">
             </div>

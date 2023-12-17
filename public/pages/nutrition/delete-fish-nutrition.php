@@ -3,7 +3,7 @@
 
 <div class="admin-feature-container w-full h-screen overflow-auto px-3">
     <?php include PAGES_PATH . '/partials/body-header.php' ?>
-        <div class="contents-container w-[70%] mt-[-60px] bg-slate-200 mx-auto rounded-lg"> 
+        <div class="contents-container w-full mt-[-56px] bg-slate-100 mx-auto"> 
             <h4 class="text-2xl text-center font-bold text-gray-700 p-3"><?= $fish->getFish_name() ?> Nutritions</h4>
             
             <form action="/nutritions/save/<?= $fishID ?>" method="post">
